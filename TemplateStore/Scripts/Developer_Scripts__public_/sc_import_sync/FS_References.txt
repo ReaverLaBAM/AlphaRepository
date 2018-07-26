@@ -1,10 +1,6 @@
 [self]
 uid=sc_import_sync
-<<<<<<< HEAD
 gid=01596a4d-fa22-4035-94e8-189f940d606d
-=======
-gid=74520c4e-c584-4c2f-917f-24194fc7207a
->>>>>>> 3c3094ee1467b9eb7c66aeac2db9ff781696bbd3
 uidType=TEMPLATESTORE
 class=de.espirit.firstspirit.store.access.templatestore.ScriptImpl
 
