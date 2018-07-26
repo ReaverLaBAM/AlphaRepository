@@ -1,0 +1,16 @@
+<CMS_HEADER>
+</CMS_HEADER>
+$CMS_IF(!#row.lastChange.isEmpty)$
+	$CMS_SET(feed_time,#row.lastChange.format("yyyy-MM-dd'T'HH:mm:ssZ").toString)$
+	$CMS_SET(formated_feed_time, feed_time.substring(0, 22) + ":" + feed_time.substring(22))$
+$CMS_ELSE$
+	$CMS_SET(feed_time,#global.page.changeDate.format("yyyy-MM-dd'T'HH:mm:ssZ").toString)$
+	$CMS_SET(formated_feed_time, feed_time.substring(0, 22) + ":" + feed_time.substring(22))$
+$CMS_END_IF$
+	<entry>
+		<title>$CMS_IF(!#row.Name.isEmpty)$$CMS_VALUE(#row.Name)$$CMS_END_IF$</title>
+		<link href="$CMS_REF(ss_product_details, contentId:#row.getId(), templateSet:"html")$" />
+		<id>$CMS_REF(ss_product_details, contentId:#row.getId(), templateSet:"html")$</id>
+		<updated>$CMS_VALUE(formated_feed_time)$</updated>
+		<summary>$CMS_IF(!#row.Name.isEmpty)$$CMS_VALUE(#row.Name)$$CMS_END_IF$</summary>
+	</entry>

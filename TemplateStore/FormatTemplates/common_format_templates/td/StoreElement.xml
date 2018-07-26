@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="4234156813120766049" name="td">
+	<LANG displayname="Tabellenzelle" language="DE"/>
+	<LANG displayname="Table cell" language="EN"/>
+	<style parent="tr" quote="1" system="1" tag="td" view="table_cell" visible="0">
+		<attr name="align" value="LEFT"/>
+		<attr name="name" value="td"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

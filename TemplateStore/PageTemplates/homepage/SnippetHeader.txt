@@ -1,0 +1,3 @@
+if(!pt_headline.isEmpty, pt_headline) +
+if(!pt_headline.isEmpty && !pt_subheadline.isEmpty, " / ") +
+if(!pt_subheadline.isEmpty, pt_subheadline)

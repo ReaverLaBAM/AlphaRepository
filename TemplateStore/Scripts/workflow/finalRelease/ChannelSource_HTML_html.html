@@ -1,0 +1,38 @@
+//!Beanshell
+
+import de.espirit.firstspirit.access.AccessUtil;
+import de.espirit.firstspirit.access.store.pagestore.Page;
+import de.espirit.firstspirit.access.store.IDProvider;
+import de.espirit.firstspirit.access.schedule.ScheduleEntryRunningException;
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+checkOnly = false; 		// Testlauf
+releaseParentPath = true;	// Vaterkette freigeben
+recursive = false;		// Rekursiv
+IDProvider.DependentReleaseType dependentType = IDProvider.DependentReleaseType.DEPENDENT_RELEASE_NEW_AND_CHANGED; // Neue und geänderte Objekte (PageRef->Page->Media)
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+storeElement = context.getElement();
+
+if (storeElement != null) {
+
+	if (storeElement instanceof Page) {
+		storeElement.setLock(false, true); // Sperre rekursiv lösen, damit der ServerActionHandle die Seite freigeben kann	
+		recursive = true;
+	} else {
+		storeElement.setLock(false, false); // Sperre lösen, damit der ServerActionHandle die Seite freigeben kann
+	}
+
+	sah = AccessUtil.release(storeElement, checkOnly, releaseParentPath, recursive, dependentType);
+	result = sah.getResult(true);
+
+
+	// Sperre NICHT rekursiv setzen, damit die Transition geschaltet werden kann
+	storeElement.setLock(true, false);
+}
+
+context.doTransition("Final");

@@ -1,0 +1,7 @@
+[self]
+uid=/globalcontentarea
+gid=485c8f1b-b0a6-4eb9-9871-fe401c930262
+store=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.TemplateFolderImpl
+root=de.espirit.firstspirit.store.access.templatestore.PageTemplatesImpl
+

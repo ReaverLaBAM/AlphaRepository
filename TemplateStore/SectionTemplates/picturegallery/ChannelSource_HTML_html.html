@@ -1,0 +1,82 @@
+$CMS_IF(!st_gallery.isEmpty)$
+	$CMS_SET(_picturesPerRow, 3)$
+
+	$-- Pictures --$
+	$CMS_IF(#global.preview)$
+		<div$CMS_VALUE(editorId(reloadPreview:true))$>
+	$CMS_END_IF$
+	$CMS_SET(_view, "gallerymedia")$
+	$CMS_FOR(_medium, st_gallery.dataset.entity.gallery_MediaList.sort(x -> x.Order_Index))$
+
+		$-- First element of row --$
+		$CMS_IF((#for.index % _picturesPerRow) == 0)$
+			<div class="clearfix module gallery">
+		$CMS_END_IF$
+		$-- /First element of row --$
+
+		$CMS_IF(!_medium.Media_Ref.isEmpty)$
+			<div class="smallTeaser$--
+				--$$CMS_IF((#for.index % _picturesPerRow) == 0)$$--
+					--$ first$--
+				--$$CMS_END_IF$$--
+			--$"$CMS_VALUE(editorId(entity:_medium, view:_view))$>
+				<h3 style="width:153px"$CMS_VALUE(editorId(entity:_medium, view:_view, editorName:"cs_name"))$>$--
+					--$$CMS_VALUE(if(!_medium.Name.isEmpty, _medium.Name, "&nbsp;"))$$--
+				--$</h3>
+				<dl>
+					<dt>
+						<a href="$CMS_REF(_medium.Media_Ref)$" rel="floatbox.pix" title="$--
+							--$$CMS_IF(!_medium.Name.isEmpty)$$--
+								--$$CMS_VALUE(_medium.Name)$$--
+							--$$CMS_END_IF$$--
+						--$" rev="caption:`$--
+							--$$CMS_IF(!_medium.Description.isEmpty)$$--
+								--$$CMS_VALUE(_medium.Description)$$--
+							--$$CMS_END_IF$$--
+						--$`">$--
+							--$<img src="$CMS_REF(_medium.Media_Ref, resolution:"PictureGallery")$"$CMS_VALUE(editorId(entity:_medium, view:_view, editorName:"cs_picture", resolution:"PictureGallery"))$ />$--
+							--$<img src="$CMS_REF(media:"icon_zoom")$" class="lupe" alt="$CMS_VALUE(#global.gca("largeresolution"))$" />$--
+						--$</a>
+					</dt>
+					<dd$CMS_VALUE(editorId(entity:_medium, view:_view, editorName:"cs_description"))$>
+						$CMS_IF(!_medium.Description.isEmpty)$$--
+							--$$CMS_VALUE(_medium.Description)$$--
+						--$$CMS_END_IF$
+					</dd>
+				</dl>
+			</div>
+		$CMS_END_IF$
+
+		$-- Last element of row or last element of page --$
+		$CMS_IF(((#for.index % _picturesPerRow) == (_picturesPerRow - 1)) || #for.isLast)$
+
+			$CMS_IF(#global.preview && #for.isLast)$
+				$CMS_IF((#for.index % _picturesPerRow) == (_picturesPerRow - 1))$$--
+					--$</div>$--
+					--$<div class="clearfix module gallery">$--
+				--$$CMS_END_IF$
+
+				<div class="smallTeaser$--
+					--$$CMS_IF((#for.index % _picturesPerRow) == (_picturesPerRow - 1))$$--
+						--$ first$--
+					--$$CMS_END_IF$$--
+				--$"$CMS_VALUE(editorId(entity:st_gallery.dataset.entity, view:"galleries", editorName:"cs_picturelist", reloadPreview:true))$>
+					<h3 style="width:153px">&nbsp;</h3>
+					<dl>
+						<dt>$CMS_VALUE(#global.gca("drop_picture_here"))$</dt>
+					</dl>
+				</div>
+			$CMS_END_IF$
+
+			</div>
+		$CMS_END_IF$
+		$-- /Last element of row or last element of page --$
+
+	$CMS_END_FOR$
+	$CMS_IF(#global.preview)$
+		</div>
+	$CMS_END_IF$
+	$-- /Pictures --$
+$CMS_ELSIF(#global.preview)$
+	<p style="font-weight:bold !important;color:red !important;"$CMS_VALUE(editorId(editorName:"st_gallery"))$>$CMS_VALUE(#global.gca("must_not_be_empty"))$</p>
+$CMS_END_IF$

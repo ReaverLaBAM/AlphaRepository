@@ -1,0 +1,30 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block>
+$CMS_IF(!#row.JobTitle.isEmpty)$
+	<fo:block space-after="3mm">
+		<fo:inline font-size="13pt" font-weight="bold" color="#CF6100">$CMS_VALUE(#row.JobTitle)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Description.isEmpty)$
+	<fo:block space-after="3mm">
+		<fo:inline font-size="11pt" color="#CF6100">$CMS_VALUE(#row.Description)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+	<fo:block space-after="2mm">
+		<fo:inline font-size="11pt" font-weight="bold">$CMS_VALUE(#global.gca("task"))$</fo:inline>
+	</fo:block>
+$CMS_IF(!#row.Tasks.isEmpty)$
+	<fo:block space-after="2mm">
+		$CMS_VALUE(#row.Tasks)$
+	</fo:block>
+$CMS_END_IF$
+	<fo:block space-after="2mm">
+		<fo:inline font-size="11pt" font-weight="bold">$CMS_VALUE(#global.gca("profil"))$</fo:inline>
+	</fo:block>
+$CMS_IF(!#row.Profil.isEmpty)$
+	<fo:block space-after="2mm">
+		$CMS_VALUE(#row.Profil)$
+	</fo:block>
+$CMS_END_IF$
+</fo:block>

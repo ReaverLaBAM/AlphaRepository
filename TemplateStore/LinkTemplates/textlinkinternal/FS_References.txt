@@ -1,0 +1,17 @@
+[self]
+uid=textlinkinternal
+gid=5646974e-fe30-4aec-b82e-675d82928170
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=textLink
+gid=4b6c2432-e3b3-4aee-99c5-0f8d132e4afc
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+
+uid=root
+gid=3e7ded55-05c5-42f6-9263-ab540f41ab1c
+uidType=SITESTORE_FOLDER
+class=de.espirit.firstspirit.store.access.sitestore.SiteStoreRootImpl
+

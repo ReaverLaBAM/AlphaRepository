@@ -1,0 +1,15 @@
+$CMS_IF(linktemplate.key ==  "downloadcenterlinkexternal.standard")$
+<fo:block padding="1mm">
+	<fo:external-graphic src="$CMS_REF(media:"icon_defaultLink",abs:3)$" border-right="3mm solid #ffffff" content-height="3mm"/>
+	$CMS_VALUE(if(!text.isEmpty, text, "Link"))$
+</fo:block>
+$CMS_IF(!comment.isEmpty)$
+	<fo:block padding-left="7mm" font-size="9pt" color="#666666">
+		$CMS_VALUE(comment)$
+	</fo:block>
+$CMS_END_IF$
+$CMS_ELSIF(linktemplate.key ==  "downloadcenterlinkexternal.mail")$
+$-- not edited --$
+$CMS_ELSE$
+$CMS_VALUE(#global.logError("invalid value for attribute 'linktemplate': '" + linktemplate + "'"))$
+$CMS_END_IF$

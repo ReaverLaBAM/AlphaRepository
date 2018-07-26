@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WIZARD MODE -->
+<QUERY entityType="Press_Releases">
+	<FILTERPARAM parameter="End" datatype="java.util.Date" value="1356994799000"/>
+	<FILTERPARAM parameter="Start" datatype="java.util.Date" value="1325372400000"/>
+	<AND>
+		<GTE attribute="Date" parameter="Start"/>
+		<LTE attribute="Date" parameter="End"/>
+	</AND>
+</QUERY>

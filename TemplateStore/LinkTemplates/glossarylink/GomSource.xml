@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_DATASET name="content" allowEdit="no" allowNew="no" hFill="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Data record"/>
+      <LANGINFO lang="DE" label="Datensatz"/>
+    </LANGINFOS>
+    <SOURCES>
+      <CONTENT name="glossar"/>
+    </SOURCES>
+  </FS_DATASET>
+
+</CMS_MODULE>

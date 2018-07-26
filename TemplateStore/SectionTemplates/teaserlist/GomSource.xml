@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_LIST name="st_teaser">
+    <DATASOURCE type="inline" useLanguages="no">
+      <LABELS>
+        <LABEL lang="*">#item.st_headline</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD"/>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="center"/>
+        <ADD component="stackedview" constraint="hide"/>
+      </LAYOUT>
+      <TEMPLATES source="sectiontemplates">
+        <TEMPLATE uid="teaserlistelement"/>
+      </TEMPLATES>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Teaser" description="Add teasers."/>
+      <LANGINFO lang="DE" label="Teaser" description="Fügen Sie die Teaser hinzu."/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

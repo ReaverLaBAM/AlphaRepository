@@ -1,0 +1,53 @@
+$-- Flash module --$
+<div class="clearfix module"$CMS_VALUE(editorId())$>
+	$CMS_IF(!st_headline.isEmpty)$
+		<h3$CMS_VALUE(editorId(editorName:"st_headline"))$>
+			$CMS_VALUE(st_headline.convert2)$
+			$CMS_RENDER(template:"tooltip",
+			            infoLayer:st_infoLayer,
+			            infoLink:st_infoLink,
+			            infoPicture:st_infoPicture,
+			            infoHeadline:st_infoHeadline)$
+		</h3>
+	$CMS_END_IF$
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="500" height="200" id="espirit-demo_f8" align="middle">
+		<param name="allowScriptAccess" value="sameDomain" />
+		<param name="allowFullScreen" value="false" />
+		<param name="movie" value="$--
+			--$$CMS_REF(media:"product_flash")$$--
+
+			--$$CMS_IF(#global.preview)$$--
+
+				--$?xmlPath=$--
+				--$$CMS_REF(st_product_flash_xml, abs:2)$$--
+				--$/noEvent$--
+
+			--$$CMS_ELSIF(!st_product_flash_xml.isEmpty)$$--
+
+				--$?xmlPath=$--
+
+				--$$CMS_REF(st_product_flash_xml)$$--
+
+			--$$CMS_END_IF$$--
+		--$" />
+		<param name="quality" value="high" />
+		<param name="bgcolor" value="#ffffff" />
+		<embed src="$--
+			--$$CMS_REF(media:"product_flash")$$--
+
+			--$$CMS_IF(#global.preview)$$--
+
+				--$?xmlPath=$--
+				--$$CMS_REF(st_product_flash_xml, abs:2)$$--
+				--$/noEvent$--
+
+			--$$CMS_ELSIF(!st_product_flash_xml.isEmpty)$$--
+
+				--$?xmlPath=$--
+				--$$CMS_REF(st_product_flash_xml)$$--
+
+			--$$CMS_END_IF$$--
+		--$" quality="high" bgcolor="#ffffff" width="500" height="200" name="espirit-demo" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+	</object>
+</div>
+$-- /Flash module --$

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Page information" description="Fill the page components."/>
+        <LANGINFO lang="DE" label="Seiteninformationen" description="Geben Sie ihre Seiteninformationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_headline" hFill="yes" noBreak="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert your headline for that page."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Überschrift der Seite."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TOGGLE name="pt_headlineType" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Create graphical headline" description="Choose your type of headline (Image/Text)."/>
+          <LANGINFO lang="DE" label="Überschrift als Grafik erzeugen" description="Wählen Sie die Art der Überschrift (Grafik/Text)."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TEXT name="pt_subheadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Subheadline" description="Insert your subheadline for that page."/>
+          <LANGINFO lang="DE" label="Zusatzüberschrift" description="Zusatzüberschrift der Seite."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="pt_intro" hFill="yes" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="p"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Introduction" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Einleitung" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkexternal"/>
+          <LINKEDITOR name="textlinkinternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+        <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Info-Layer-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_infoHeadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="pt_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="hometeaser"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <FS_REFERENCE name="pt_infoPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="pt_infoLink" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link" description="Choose an optional Link."/>
+          <LANGINFO lang="DE" label="Verweis" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Browser title" description="Insert your title for that page."/>
+        <LANGINFO lang="DE" label="Browser-Titelzeile" description="Titel der Seite für die Anzeige im Browser-Fenster."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_title" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Browser title" description="Insert your title for that page."/>
+          <LANGINFO lang="DE" label="Browser-Titelzeile" description="Titel der Seite für die Anzeige im Browser-Fenster."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+  <FS_BUTTON
+    name="pt_createSection"
+    hidden="yes"
+    icon="fs:new"
+    onClick="class:NewSection"
+    style="firstspirit"
+    useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Create section"/>
+      <LANGINFO lang="DE" label="Absatz anlegen"/>
+    </LANGINFOS>
+  </FS_BUTTON>
+
+  <FS_BUTTON
+    name="pt_editMenu"
+    hidden="yes"
+    icon="fs:new"
+    onClick="class:EditMenu"
+    style="firstspirit"
+    useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Edit menu"/>
+      <LANGINFO lang="DE" label="Menü bearbeiten"/>
+    </LANGINFOS>
+  </FS_BUTTON>
+
+</CMS_MODULE>

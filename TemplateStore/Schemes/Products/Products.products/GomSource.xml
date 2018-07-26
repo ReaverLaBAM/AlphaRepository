@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Product information" description="Fill the product information."/>
+        <LANGINFO lang="DE" label="Produktinformationen" description="Geben Sie die Produktinformationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Product name" description="Insert the product name."/>
+          <LANGINFO lang="DE" label="Produktname" description="Tragen Sie den Produktname ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="p"/>
+          <TEMPLATE name="h4"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Product description" description="Insert a product description."/>
+          <LANGINFO lang="DE" label="Produktbeschreibung" description="Fügen Sie eine Produktbeschreibung hinzu."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Picture" description="Insert your picture."/>
+        <LANGINFO lang="DE" label="Bildauswahl" description="Wählen Sie hier ihr Bild aus."/>
+      </LANGINFOS>
+
+      <FS_REFERENCE name="cs_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose a picture."/>
+          <LANGINFO lang="DE" label="Bildauswahl" description="Wählen Sie hier ein Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <CMS_INPUT_TEXT name="cs_picture_description" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture description" description="Insert a picture description."/>
+          <LANGINFO lang="DE" label="Bildbeschreibung" description="Fügen Sie eine Bildbeschreibung hinzu."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Product categories" description="Choose the product categories."/>
+        <LANGINFO lang="DE" label="Produktkategorien" description="Wählen Sie die Produktkategorien aus."/>
+      </LANGINFOS>
+
+      <FS_LIST name="cs_categories" hFill="yes" height="475">
+        <DATASOURCE type="database" useLanguages="no">
+          <LABELS>
+            <LABEL lang="*">#item.cs_name</LABEL>
+          </LABELS>
+          <ACTIONS>
+            <ACTION name="ADD">
+              <PARAM name="add-index">LAST</PARAM>
+              <PARAM name="select-ui">LIST</PARAM>
+            </ACTION>
+            <ACTION name="REMOVE">
+              <PARAM name="show-confirm">YES</PARAM>
+            </ACTION>
+            <ACTION name="EDIT"/>
+          </ACTIONS>
+          <COLUMNS>
+            <COLUMN show="no">#identifier</COLUMN>
+            <COLUMN show="yes" sortOrder="ascending">cs_name</COLUMN>
+          </COLUMNS>
+          <LAYOUT>
+            <ADD component="toolbar" constraint="top"/>
+            <ADD component="overview" constraint="hide"/>
+            <ADD component="stackedview" constraint="center"/>
+          </LAYOUT>
+          <table>Products.product_categories</table>
+        </DATASOURCE>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Product categories" description="Choose the product categories."/>
+          <LANGINFO lang="DE" label="Produktkategorien" description="Wählen Sie die Produktkategorien aus."/>
+        </LANGINFOS>
+      </FS_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Product properties" description="Choose the product properties."/>
+        <LANGINFO lang="DE" label="Produkteigenschaften" description="Wählen Sie die Produkteigenschaften aus."/>
+      </LANGINFOS>
+
+      <FS_LIST name="cs_properties" hFill="yes" height="475">
+        <DATASOURCE type="database" useLanguages="no">
+          <LABELS>
+            <LABEL lang="*">#item.product_Properties_Type.Name</LABEL>
+          </LABELS>
+          <ACTIONS>
+            <ACTION name="ADD">
+              <PARAM name="add-index">LAST</PARAM>
+              <PARAM name="select-ui">LIST</PARAM>
+            </ACTION>
+            <ACTION name="NEW">
+              <PARAM name="create-index">LAST</PARAM>
+            </ACTION>
+            <ACTION name="REMOVE">
+              <PARAM name="show-confirm">YES</PARAM>
+            </ACTION>
+            <ACTION name="EDIT"/>
+          </ACTIONS>
+          <COLUMNS>
+            <COLUMN show="no">#identifier</COLUMN>
+            <COLUMN show="yes" sortOrder="ascending">cs_property</COLUMN>
+          </COLUMNS>
+          <LAYOUT>
+            <ADD component="toolbar" constraint="top"/>
+            <ADD component="overview" constraint="hide"/>
+            <ADD component="stackedview" constraint="center"/>
+          </LAYOUT>
+          <table>Products.product_properties</table>
+        </DATASOURCE>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Product properties" description="Choose the product propertie.s"/>
+          <LANGINFO lang="DE" label="Produkteigenschaften" description="Wählen Sie die Produkteigenschaften aus."/>
+        </LANGINFOS>
+      </FS_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Product offers" description="Choose additional product offers."/>
+        <LANGINFO lang="DE" label="Produktvorschläge" description="Wählen Sie Produktvorschläge aus."/>
+      </LANGINFOS>
+
+      <FS_LIST name="cs_productOffers" hFill="yes" height="475">
+        <DATASOURCE type="database" useLanguages="no">
+          <ACTIONS>
+            <ACTION name="ADD">
+              <PARAM name="add-index">LAST</PARAM>
+              <PARAM name="select-ui">LIST</PARAM>
+            </ACTION>
+            <ACTION name="REMOVE">
+              <PARAM name="show-confirm">YES</PARAM>
+            </ACTION>
+          </ACTIONS>
+          <COLUMNS>
+            <COLUMN show="no">#identifier</COLUMN>
+            <COLUMN show="no">#released</COLUMN>
+            <COLUMN show="no">#fs_id</COLUMN>
+            <COLUMN show="yes" sortOrder="ascending" width="200">cs_name</COLUMN>
+            <COLUMN show="yes" width="300">cs_description</COLUMN>
+          </COLUMNS>
+          <LAYOUT>
+            <ADD component="stackedview" constraint="hide"/>
+            <ADD component="toolbar" constraint="top"/>
+            <ADD component="overview" constraint="left"/>
+          </LAYOUT>
+          <table>Products.product_offers</table>
+        </DATASOURCE>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Product offers" description="Choose additional product offers."/>
+          <LANGINFO lang="DE" label="Produktvorschläge" description="Wählen Sie Produktvorschläge aus."/>
+        </LANGINFOS>
+      </FS_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Contact" description="Choose the contact."/>
+        <LANGINFO lang="DE" label="Kontakt" description="Wählen Sie die Kontaktdaten aus."/>
+      </LANGINFOS>
+
+      <FS_DATASET
+        name="cs_contact"
+        allowDelete="no"
+        allowEdit="no"
+        allowNew="no"
+        hFill="yes"
+        height="475"
+        useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO
+            lang="*"
+            label="Contact"
+            description="Choose the contact."
+            expression="if(!#item.isEmpty, &quot;[X]&quot;)"/>
+          <LANGINFO
+            lang="DE"
+            label="Kontakt"
+            description="Wählen Sie die Kontaktdaten aus."
+            expression="if(!#item.isEmpty, &quot;[X]&quot;)"/>
+        </LANGINFOS>
+        <SOURCES>
+          <CONTENT name="contacts"/>
+        </SOURCES>
+      </FS_DATASET>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+  <CMS_GROUP>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Control"/>
+      <LANGINFO lang="DE" label="Steuerung"/>
+    </LANGINFOS>
+
+    <CMS_INPUT_TOGGLE name="cs_doNotGenerate" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Generation suppression"/>
+        <LANGINFO lang="DE" label="Generierungsunterdrückung"/>
+      </LANGINFOS>
+      <OFF>
+        <LANGINFO lang="*" label="Generate"/>
+        <LANGINFO lang="DE" label="Generieren"/>
+      </OFF>
+      <ON>
+        <LANGINFO lang="*" label="Do not generate"/>
+        <LANGINFO lang="DE" label="Nicht generieren"/>
+      </ON>
+    </CMS_INPUT_TOGGLE>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

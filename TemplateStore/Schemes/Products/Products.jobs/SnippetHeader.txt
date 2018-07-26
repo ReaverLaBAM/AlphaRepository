@@ -1,0 +1,2 @@
+if(!cs_date.isEmpty, "[" + cs_date.format("dd.MM.yyyy") + "] ") +
+if(!cs_jobtitle.isEmpty, cs_jobtitle)

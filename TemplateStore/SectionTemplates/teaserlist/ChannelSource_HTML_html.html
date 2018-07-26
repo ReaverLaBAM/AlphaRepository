@@ -1,0 +1,30 @@
+$-- Teaser List --$
+
+$CMS_IF(#global.preview)$$--
+	--$<div$CMS_VALUE(editorId())$>$--
+--$$CMS_END_IF$
+
+$CMS_SET(_teasersPerRow, 3)$
+$CMS_FOR(_teaser, st_teaser)$$--
+
+	    First element of row
+	--$$CMS_IF((#for.index % _teasersPerRow) == 0)$$--
+		--$<div class="clearfix module"$CMS_VALUE(editorId(editorName:"st_teaser"))$>$--
+	--$$CMS_END_IF$$--
+	    /First element of row
+
+	--$$CMS_VALUE(_teaser)$$--
+
+	    Last element of row or last element of page
+	--$$CMS_IF(((#for.index % _teasersPerRow) == (_teasersPerRow - 1)) || #for.isLast)$$--
+		--$</div>$--
+	--$$CMS_END_IF$$--
+	    /Last element of row or last element of page
+
+--$$CMS_END_FOR$
+
+$CMS_IF(#global.preview)$$--
+	--$</div>$--
+--$$CMS_END_IF$
+
+$-- /Teaser List --$

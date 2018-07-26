@@ -1,0 +1,12 @@
+[self]
+uid=ul
+gid=6be9a517-37fd-4abd-8283-db20a40ba9cf
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+
+[optionalId]
+uid=dot
+gid=0c7a93ae-8922-4498-83af-f9a2e7f0af0f
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+

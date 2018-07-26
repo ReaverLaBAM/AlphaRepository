@@ -1,0 +1,69 @@
+$-- Text / Table / Picture --$
+<div class="clearfix module"$CMS_VALUE(editorId())$>
+	<h3$CMS_VALUE(editorId(editorName:"st_headline"))$>$--
+		--$$CMS_IF(!st_headline.isEmpty)$$--
+			--$$CMS_VALUE(st_headline.convert2)$$--
+		--$$CMS_END_IF$
+	</h3>
+	$CMS_IF(!st_picture.isEmpty)$
+		<dl style="width:160px;" class="Img$--
+			--$$CMS_IF(st_picture_position)$$--
+				--$Left$--
+			--$$CMS_ELSE$$--
+				--$Right$--
+			--$$CMS_END_IF$$--
+		--$">
+			$CMS_IF(st_picture_zoomable)$$--
+				--$<dt>$--
+
+					--$<a href="$CMS_REF(st_picture)$" rel="floatbox" title="$--
+						--$$CMS_IF(!st_picture.comment.isEmpty)$$--
+							--$$CMS_VALUE(st_picture.comment)$$--
+						--$$CMS_ELSIF(!st_picture.picture.description.isEmpty)$$--
+							--$$CMS_VALUE(st_picture.picture.description)$$--
+						--$$CMS_END_IF$$--
+					--$" rev="caption:`$--
+						--$$CMS_IF(!st_picture_description.isEmpty)$$--
+							--$$CMS_VALUE(st_picture_description)$$--
+						--$$CMS_END_IF$$--
+					--$`">$--
+			--$$CMS_ELSE$$--
+				--$<dt>$--
+			--$$CMS_END_IF$$--
+
+			--$<img src="$CMS_REF(st_picture, resolution:"TextBildTeaser")$" alt="$--
+				--$$CMS_IF(!st_picture.comment.isEmpty)$$--
+					--$$CMS_VALUE(st_picture.comment)$$--
+				--$$CMS_ELSIF(!st_picture.picture.description.isEmpty)$$--
+					--$$CMS_VALUE(st_picture.picture.description)$$--
+				--$$CMS_END_IF$$--
+			--$" width="160"$CMS_VALUE(editorId(editorName:"st_picture", resolution:"TextBildTeaser"))$ />$--
+
+			--$$CMS_IF(st_picture_zoomable)$$--
+						--$<img src="$CMS_REF(media:"icon_zoom")$" class="lupe" alt="$CMS_VALUE(#global.gca("largeresolution"))$" />$--
+					--$</a>$--
+				--$</dt>$--
+				--$<dd>$--
+					--$$CMS_VALUE(#global.gca("zoomimage"))$$--
+				--$</dd>$--
+			--$$CMS_ELSE$$--
+				--$</dt>$--
+			--$$CMS_END_IF$
+
+		</dl>
+	$CMS_END_IF$
+
+	$CMS_IF(!st_text.isEmpty)$$--
+		--$$CMS_IF(#global.preview)$$--
+			--$<div$CMS_VALUE(editorId(editorName:"st_text"))$>$--
+		--$$CMS_END_IF$$--
+
+		--$$CMS_VALUE(st_text)$$--
+
+		--$$CMS_IF(#global.preview)$$--
+			--$</div>$--
+		--$$CMS_END_IF$$--
+	--$$CMS_END_IF$
+
+</div>
+$-- /Text / Table / Picture  --$

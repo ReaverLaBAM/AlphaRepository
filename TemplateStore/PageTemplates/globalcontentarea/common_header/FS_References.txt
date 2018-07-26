@@ -1,0 +1,17 @@
+[self]
+uid=common_header
+gid=650bb00e-590d-4046-87be-c820040ec276
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+
+[optionalId]
+uid=globallinksinternal
+gid=8e6ffa6d-8378-46a3-a775-366c7996ac15
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+uid=search
+gid=7247a8ad-14f3-4370-a456-eec4ae2435d9
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+

@@ -1,0 +1,12 @@
+[self]
+uid=Products.product_properties_type_sort
+gid=36ecb277-af73-463a-9e9a-209fecf9197a
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+
+[optionalId]
+uid=Products.product_properties_type
+gid=00fde84c-3e90-40f1-b7ef-3293ccad2089
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

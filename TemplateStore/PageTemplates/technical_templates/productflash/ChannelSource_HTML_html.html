@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="$CMS_VALUE(#global.encoding)$"?>
+<products headline="$CMS_VALUE(if(!pt_headline.isEmpty, pt_headline))$" linktext="$CMS_VALUE(if(!pt_linktext.isEmpty, pt_linktext))$" standtime="4000" transitiontime="2000">
+$--
+	--$$CMS_FOR(_product, pt_products.filter(x -> !x.cs_doNotGenerate))$$--
+
+--$	<product>
+$--
+--$		<headline>$CMS_VALUE(if(!_product.cs_name.isEmpty, _product.cs_name))$</headline>
+$--
+--$		<abstract>$--
+			--$$CMS_IF(!_product.cs_description.isEmpty)$$--
+				--$$CMS_SET(_productDescription, _product.cs_description.toText(false))$$--
+				--$$CMS_VALUE(
+					if(
+						_productDescription.length > 135,
+						_productDescription.substring(0, _productDescription.substring(0, 135).lastIndexOf(" ")).trim() + " ...",
+						_productDescription
+					)
+				)$$--
+			--$$CMS_END_IF$$--
+		--$</abstract>
+$--
+--$		<url>$--
+			--$$CMS_IF(!#global.preview && (#global.node.depth > 1))$$--
+				--$$CMS_FOR(_void, [1..(#global.node.depth - 1)])$$--
+					--$../$--
+				--$$CMS_END_FOR$$--
+			--$$CMS_END_IF$$--
+			--$$CMS_REF(ss_product_details, contentId:_product.fs_id)$</url>
+$--
+--$		<image>$--
+			--$$CMS_IF(!#global.preview && (#global.node.depth > 1))$$--
+				--$$CMS_FOR(_void, [1..(#global.node.depth - 1)])$$--
+					--$../$--
+				--$$CMS_END_FOR$$--
+			--$$CMS_END_IF$$--				
+			--$$CMS_IF(!_product.cs_picture.isEmpty)$$--
+				--$$CMS_REF(_product.cs_picture)$$--
+			--$$CMS_END_IF$$--
+		--$</image>
+$--
+--$	</product>
+$--
+
+	--$$CMS_END_FOR$$--
+
+--$</products>

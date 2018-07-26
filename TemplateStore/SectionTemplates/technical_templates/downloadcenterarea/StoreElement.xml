@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE comment="" filename="downloadcenterarea" id="8349149162748747993" previewPageRefUid="downloadcenter_5" templateid="-7287940446249861970" type="section">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Download center area" language="EN"/>
+	<LANG displayname="Download-Center-Bereich" language="DE"/>
+</TEMPLATE>

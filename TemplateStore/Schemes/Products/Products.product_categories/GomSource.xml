@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Name of category" description="Insert the name of category."/>
+      <LANGINFO lang="DE" label="Name der Kategorie" description="Tragen Sie den Namen der Kategorie ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+    <FORMATS>
+      <TEMPLATE name="hometeaser"/>
+    </FORMATS>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Description of category" description="Add a category description."/>
+      <LANGINFO lang="DE" label="Beschreibung der Kategorie" description="Fügen Sie eine Beschreibung der Kategorie hinzu."/>
+    </LANGINFOS>
+    <LINKEDITORS>
+      <LINKEDITOR name=""/>
+    </LINKEDITORS>
+  </CMS_INPUT_DOM>
+
+  <FS_REFERENCE name="cs_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+    <FILTER>
+      <ALLOW type="picture"/>
+      <HIDE type="file"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Picture" description="Insert your picture."/>
+      <LANGINFO lang="DE" label="Bildauswahl" description="Wählen Sie hier ihr Bild aus."/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="mediastore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+  <FS_REFERENCE name="cs_link" hFill="yes" imagePreview="no" sections="no" useLanguages="no">
+    <FILTER>
+      <ALLOW type="pageref"/>
+      <HIDE type="documentgroup"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Link for text" description="Choose an optional link."/>
+      <LANGINFO lang="DE" label="Verweis für Text" description="Wählen Sie einen Verweis aus."/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="sitestore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+</CMS_MODULE>

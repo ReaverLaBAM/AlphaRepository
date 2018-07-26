@@ -1,0 +1,3 @@
+if(!cs_lastname.isEmpty, cs_lastname) +
+if(!cs_lastname.isEmpty && !cs_firstname.isEmpty, ", ") +
+if(!cs_firstname.isEmpty, cs_firstname)

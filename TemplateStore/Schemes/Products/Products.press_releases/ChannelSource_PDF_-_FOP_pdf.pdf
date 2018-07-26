@@ -1,0 +1,18 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block>
+$CMS_IF(!#row.Headline.isEmpty)$
+	<fo:block>
+		<fo:inline font-size="15pt" font-weight="bold" color="#CF6100">$CMS_VALUE(#row.Headline)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Subheadline.isEmpty)$
+	<fo:block space-after="1mm">
+		<fo:inline font-size="11pt" color="#CF6100">$CMS_VALUE(#row.Subheadline)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Teaser.isEmpty)$$CMS_VALUE(#row.Teaser)$$CMS_END_IF$
+$CMS_FOR(section, #row.Content)$
+	$CMS_VALUE(section)$
+$CMS_END_FOR$
+</fo:block>

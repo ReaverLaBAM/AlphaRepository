@@ -1,0 +1,57 @@
+$CMS_IF(sitestoreref.isEmpty)$$--
+
+	early escape on empty external URL
+	--$$CMS_VALUE(#global.logError("no element chosen!"))$$--
+
+--$$CMS_ELSE$$--
+
+	if the link is a media link with one of the extensions underneath, the css_class is switched
+	--$$CMS_SET(_cssClass, "default")$$--
+	--$$CMS_IF(!sitestoreref.media.isEmpty)$$--
+	
+		--$$CMS_SET(_fileSize, ref(sitestoreref).size.humanReadable("KiB", "#,##0"))$$--
+		--$$CMS_SET(_linkTarget, " target=\"_blank\"")$$--
+		--$$CMS_SET(_fileInfo, " (" + ref(sitestoreref).extension.upperCase + ", " + if(_fileSize == "0", "1", _fileSize) + " KB)")$$--
+	
+		--$$CMS_SET(_fileExtensions, {
+			"doc",
+			"jpg",
+			"mp3",
+			"pdf",
+			"ppt",
+			"video"
+		})$$--
+		--$$CMS_IF(ref(sitestoreref).extension.lowerCase == "xls")$$--
+	
+			use special CSS class for Excel files
+			--$$CMS_SET(_cssClass, "excel")$$--
+	
+		--$$CMS_ELSIF(_fileExtensions.contains(ref(sitestoreref).extension.lowerCase))$$--
+	
+			use CSS class according to allowed extension
+			--$$CMS_SET(_cssClass, ref(sitestoreref).extension.lowerCase)$$--
+	
+		--$$CMS_END_IF$$--
+	
+	--$$CMS_ELSE$$--
+	
+		--$$CMS_SET(_linkTarget, "")$$--
+		--$$CMS_SET(_fileInfo, "")$$--
+	
+	--$$CMS_END_IF$$--
+	
+	--$<li$CMS_VALUE(editorId(editorName:"sitestoreref"))$><a href="$CMS_REF(sitestoreref)$" class="$CMS_VALUE(_cssClass)$"$--
+		--$$CMS_IF(!text.isEmpty)$$--
+			--$ title="$CMS_VALUE(text)$"$--
+		--$$CMS_END_IF$$--
+		--$$CMS_VALUE(_linkTarget)$$--
+	--$>$--
+		--$$CMS_VALUE(if(!text.isEmpty, text, "Link"))$$--
+		--$$CMS_VALUE(_fileInfo)$$--
+		--$$CMS_IF(!comment.isEmpty)$$--
+			--$<span$CMS_VALUE(editorId(editorName:"comment"))$ title="$CMS_VALUE(comment)$">$--
+				--$$CMS_VALUE(comment)$$--
+			--$</span>$--
+		--$$CMS_END_IF$$--
+	--$</a></li>$--
+--$$CMS_END_IF$

@@ -1,0 +1,144 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="PageGroup" resultname="fr_cs_navigation">
+
+		<CMS_CDATA_PARAM name="directoryRendering"><![CDATA[$--
+			--$$CMS_IF((#nav.pos > (act_pos - 4)) && (#nav.pos < (act_pos + 4)))$$--
+				--$<a href="$CMS_REF(#nav.ref)$">$--
+					--$$CMS_VALUE(#nav.pos)$$--
+				--$</a>$--
+				--$<span class="trennstrich">$--
+					--$|$--
+				--$</span>$--
+			--$$CMS_END_IF$$--
+		--$]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="directoryRenderingSelected"><![CDATA[$CMS_VALUE(#nav.pos)$<span class="trennstrich">|</span>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="nextAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("next_product"))$">$CMS_VALUE(#global.gca("next_product"))$</a>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="nextNotAvailable"><![CDATA[<div style="margin:0px;padding-right:25px;float:right;width:35px">&nbsp;</div>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="previousAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("previous_product"))$">$CMS_VALUE(#global.gca("previous_product"))$</a>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="previousNotAvailable"><![CDATA[<div style="margin:0px;padding-left:25px; float:left;width:35px">&nbsp;</div]]></CMS_CDATA_PARAM>
+
+	</CMS_FUNCTION>
+
+</CMS_HEADER>
+$-- browseIn --$
+<div class="clearfix browseIn twoBorder" style="margin:bottom:0px">
+	<ul>
+		<li class="pageStart">$--
+			--$<a href="$CMS_REF(ss_product_overview, contentId:#row.getId())$" title="$CMS_VALUE(#global.gca("productback"))$"$CMS_VALUE(editorId(element:#global.gca("productback")))$>$--
+				--$$CMS_VALUE(#global.gca("productback"))$$--
+			--$</a>$--
+		--$</li>
+	</ul>
+	$CMS_IF(#cs.isFirstContentRow)$
+		$CMS_SET(act_pos, fr_cs_navigation.pos)$
+		<ul style="float:left;margin-top:10px">
+			<li class="pageStart">$CMS_VALUE(fr_cs_navigation.previous)$</li>
+			<li class="pageEnd">$CMS_VALUE(fr_cs_navigation.next)$</li>
+			<li class="page">
+				<span class="trennstrich">|</span>$CMS_VALUE(fr_cs_navigation.directory)$
+			</li>
+		</ul>
+	$CMS_END_IF$
+</div>
+$-- /browseIn --$
+
+$CMS_SET(_view, "products")$
+$CMS_IF(#global.preview)$
+	<div$CMS_VALUE(editorId(view:_view))$>
+$CMS_END_IF$
+<div class="ContainerHead">
+	<h1$CMS_VALUE(editorId(view:_view, editorName:"cs_name"))$>
+		$CMS_IF(!cs_name.isEmpty)$$--
+			--$$CMS_VALUE(cs_name.convert2)$$--
+		--$$CMS_END_IF$
+	</h1>
+</div>
+
+$-- Product Details --$
+<div class="clearfix module podDetails">
+
+	<dl class="clearfix">
+		$CMS_IF(!cs_picture.isEmpty)$$--
+			--$<dt>
+				<a href="$CMS_REF(cs_picture)$" rel="floatbox"  rev="caption:`$--
+					--$$CMS_IF(!cs_picture_description.isEmpty)$$--
+						--$$CMS_VALUE(cs_picture_description)$$--
+					--$$CMS_END_IF$$--
+				--$`">$--
+					--$<img$CMS_VALUE(editorId(view:_view, editorName:"cs_picture", resolution:"Produkt"))$ src="$CMS_REF(cs_picture, resolution:"Produkt")$" alt="$--
+						--$$CMS_IF(!cs_picture_description.isEmpty)$$--
+							--$$CMS_VALUE(cs_picture_description)$$--
+						--$$CMS_END_IF$$--
+					--$" />$--
+				--$</a>
+			</dt>$--
+		--$$CMS_END_IF$
+		<dd>
+			<table class="m31Table"  cellpadding="0"$CMS_VALUE(editorId(view:_view, editorName:"cs_properties"))$>
+				<tbody>
+					$CMS_IF(!#row.PropertiesList.isEmpty)$
+						$CMS_FOR(_property, #row.PropertiesList.sort(x -> if(!x.product_Properties_Type.Order_Index.isNull, x.product_Properties_Type.Order_Index, "")))$
+							<tr>
+								<th>$--
+									--$$CMS_IF(!_property.product_Properties_Type.Name.isEmpty)$$--
+										--$$CMS_VALUE(_property.product_Properties_Type.Name)$$--
+									--$$CMS_END_IF$$--
+								--$</th>
+								<td>$--
+									--$$CMS_IF(!_property.Value.isEmpty)$$--
+										--$$CMS_VALUE(_property.Value)$$--
+									--$$CMS_END_IF$$--
+									--$$CMS_IF(!_property.product_Properties_Type.Unit.isEmpty)$$--
+										--$ $CMS_VALUE(_property.product_Properties_Type.Unit)$$--
+									--$$CMS_END_IF$$--
+								--$</td>
+							</tr>
+						$CMS_END_FOR$
+					$CMS_END_IF$
+				</tbody>
+			</table>
+		</dd>
+	</dl>
+
+	<div class="clearfix m31Footer">
+		<span>
+			$CMS_IF(!cs_picture.isEmpty)$$--
+				--$<a href="$CMS_REF(cs_picture)$" rel="floatbox"  rev="caption:`$--
+					--$$CMS_IF(!cs_picture_description.isEmpty)$$--
+						--$$CMS_VALUE(cs_picture_description.convert2)$$--
+					--$$CMS_END_IF$$--
+				--$`">$--
+					--$<img src="$CMS_REF(media:"icon_zoom")$" class="lupe" alt="$CMS_VALUE(#global.gca("largeresolution"))$" />$--
+				--$</a>$--
+			--$$CMS_END_IF$ 
+		</span>
+	</div>
+
+</div>
+$-- /Product Details --$
+
+$-- Product Features --$
+<div class="clearfix module">
+	<h3$CMS_VALUE(editorId(element:#global.gca("features")))$>$--
+		--$$CMS_VALUE(#global.gca("features"))$$--
+	--$</h3>
+
+	$CMS_IF(#global.preview)$$--
+		--$<div$CMS_VALUE(editorId(view:_view, editorName:"cs_description"))$>$--
+	--$$CMS_END_IF$$--
+
+	--$$CMS_IF(!cs_description.isEmpty)$$--
+		--$$CMS_VALUE(#row.Description)$$--
+	--$$CMS_END_IF$$--
+
+	--$$CMS_IF(#global.preview)$$--
+		--$</div>$--
+	--$$CMS_END_IF$
+</div>
+$-- /Product Features --$
+
+$CMS_IF(#global.preview)$
+	</div>
+$CMS_END_IF$

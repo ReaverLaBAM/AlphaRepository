@@ -1,0 +1,1 @@
+<fo:list-item><fo:list-item-label start-indent="2mm"><fo:block>$CMS_VALUE(#listitem.indexText)$</fo:block></fo:list-item-label><fo:list-item-body start-indent="10mm"><fo:block>$CMS_VALUE(#content)$</fo:block></fo:list-item-body></fo:list-item>

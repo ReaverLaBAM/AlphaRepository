@@ -1,0 +1,7 @@
+[self]
+uid=/mithras_energy_format_templates/inlinetable
+gid=22edb976-9e08-4d93-83ec-b27259fad0f9
+store=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateFolderImpl
+root=de.espirit.firstspirit.store.access.templatestore.FormatTemplatesImpl
+

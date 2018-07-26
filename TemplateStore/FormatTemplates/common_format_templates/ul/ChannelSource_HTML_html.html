@@ -1,0 +1,15 @@
+$CMS_IF(#list.style == 2)$$--
+	--$<ol>$--
+--$$CMS_ELSE$$--
+	--$<ul$--
+		--$$CMS_IF(#list.style == 8)$$--
+			--$ style="list-style-image: url($CMS_REF(media:"dot")$);"$--
+		--$$CMS_END_IF$$--
+	--$>$--
+--$$CMS_END_IF$$--
+--$$CMS_VALUE(#content)$$--
+--$$CMS_IF(#list.style == 2)$$--
+	--$</ol>$--
+--$$CMS_ELSE$$--
+	--$</ul>$--
+--$$CMS_END_IF$

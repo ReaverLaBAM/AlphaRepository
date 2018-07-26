@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_LIST name="st_linklist" hFill="yes">
+    <DATASOURCE type="inline" useLanguages="yes">
+      <LABELS>
+        <LABEL lang="*">#item.text</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD"/>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="center"/>
+        <ADD component="stackedview" constraint="hide"/>
+      </LAYOUT>
+      <TEMPLATES source="linktemplates">
+        <TEMPLATE uid="searchresultinternal"/>
+      </TEMPLATES>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Search results"/>
+      <LANGINFO lang="DE" label="Suchergebnisse"/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

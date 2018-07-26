@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="st_downloadareas"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_downloadareas"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

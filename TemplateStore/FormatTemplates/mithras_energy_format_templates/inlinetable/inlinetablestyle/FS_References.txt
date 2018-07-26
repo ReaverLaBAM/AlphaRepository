@@ -1,0 +1,6 @@
+[self]
+uid=inlinetablestyle
+gid=892b4086-d8ff-4e17-8cbe-4b54f9994cc9
+uidType=TEMPLATESTORE_STYLETEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.StyleTemplateImpl
+

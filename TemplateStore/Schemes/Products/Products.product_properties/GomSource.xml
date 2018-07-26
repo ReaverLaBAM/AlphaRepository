@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_COMBOBOX name="cs_property" hFill="yes" singleLine="no" useLanguages="no">
+    <CMS_INCLUDE_OPTIONS type="database">
+      <LABELS>
+        <LABEL lang="*">#item.Name + " [" + #item.Unit + "]"</LABEL>
+      </LABELS>
+      <TABLE>Products.product_properties_type</TABLE>
+    </CMS_INCLUDE_OPTIONS>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Type" description="Choose the type."/>
+      <LANGINFO lang="DE" label="Typ" description="Wählen Sie den Typ aus."/>
+    </LANGINFOS>
+  </CMS_INPUT_COMBOBOX>
+
+  <CMS_INPUT_TEXT name="cs_value" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Value" description="Insert the value."/>
+      <LANGINFO lang="DE" label="Wert" description="Tragen Sie den Wert ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

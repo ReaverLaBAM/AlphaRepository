@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.press_releases" filename="Press_Releases" height="2" id="3404502153230233952" previewPageRefUid="pressreleasesdetails" templateid="-364355654681805948" type="content" webeditSupported="1">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Press releases" language="EN"/>
+	<LANG displayname="Pressemitteilungen" language="DE"/>
+</TABLE>

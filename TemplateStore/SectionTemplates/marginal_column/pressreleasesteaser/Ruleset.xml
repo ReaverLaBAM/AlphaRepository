@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<LESS_THAN>
+					<PROPERTY name="VALUE" source="st_rows"/>
+					<NUMBER>1</NUMBER>
+				</LESS_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_rows"/>
+				<MESSAGE lang="*" text="The value may not be less than 1!"/>
+				<MESSAGE lang="DE" text="Der Wert darf nicht unter 1 liegen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="VALUE" source="st_rows"/>
+					<NUMBER>5</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_rows"/>
+				<MESSAGE lang="*" text="The value may not exceed 5!"/>
+				<MESSAGE lang="DE" text="Der Wert darf nicht über 5 liegen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="st_headline"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_headline"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

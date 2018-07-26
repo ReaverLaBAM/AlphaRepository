@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<FALSE/>
+		</WITH>
+		<DO>
+			<PROPERTY name="EDITABLE" source="cs_name"/>
+			<PROPERTY name="EDITABLE" source="cs_description"/>
+			<PROPERTY name="EDITABLE" source="cs_picture"/>
+		</DO>
+	</RULE>
+</RULES>

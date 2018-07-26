@@ -1,0 +1,1 @@
+if(!cs_property.isEmpty, cs_property.label(#language))

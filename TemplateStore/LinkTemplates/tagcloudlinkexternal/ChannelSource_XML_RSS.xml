@@ -1,0 +1,7 @@
+$CMS_IF(linktemplate.key ==  "tagcloudlinkexternal.standard")$
+$-- not edited --$
+$CMS_ELSIF(linktemplate.key ==  "tagcloudlinkexternal.mail")$
+$-- not edited --$
+$CMS_ELSE$
+$CMS_VALUE(#global.logError("invalid value for attribute 'linktemplate': '" + linktemplate + "'"))$
+$CMS_END_IF$

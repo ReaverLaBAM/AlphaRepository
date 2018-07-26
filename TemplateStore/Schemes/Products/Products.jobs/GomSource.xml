@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Job description" description="Fill the job description."/>
+        <LANGINFO lang="DE" label="Sellenbeschreibung" description="Geben Sie die Stellenbeschreibung ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_DATE name="cs_date" hFill="yes" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Date" description="Insert a date." format="dd.MM.yyyy"/>
+          <LANGINFO lang="DE" label="Datum" description="Fügen Sie ein Datum hinzu." format="dd.MM.yyyy"/>
+        </LANGINFOS>
+      </CMS_INPUT_DATE>
+
+      <CMS_INPUT_TEXT name="cs_jobtitle" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Job title" description="Insert the job title."/>
+          <LANGINFO lang="DE" label="Berufsbezeichnung" description="Tragen Sie die Bezeichnung des Berufs ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <FS_LIST name="cs_occupational_group" hFill="yes">
+        <DATASOURCE type="database" useLanguages="no">
+          <LABELS>
+            <LABEL lang="*">#item.cs_name</LABEL>
+          </LABELS>
+          <ACTIONS>
+            <ACTION name="ADD"/>
+            <ACTION name="REMOVE"/>
+            <ACTION name="EDIT"/>
+          </ACTIONS>
+          <COLUMNS>
+            <COLUMN show="no">#identifier</COLUMN>
+            <COLUMN show="yes" sortOrder="ascending">cs_name</COLUMN>
+          </COLUMNS>
+          <LAYOUT>
+            <ADD component="stackedview" constraint="hide"/>
+            <ADD component="toolbar" constraint="top"/>
+            <ADD component="overview" constraint="hide"/>
+            <ADD component="tabbedview" constraint="bottom"/>
+          </LAYOUT>
+          <table>Products.job_categories</table>
+        </DATASOURCE>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Occupational group" description="Choose the occupational group."/>
+          <LANGINFO lang="DE" label="Berufsgruppe" description="Wählen Sie die Berufsgruppe aus."/>
+        </LANGINFOS>
+      </FS_LIST>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Job details" description="Fill the job details."/>
+        <LANGINFO lang="DE" label="Stellendetails" description="Geben Sie die Stellendetails ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Job description" description="Add a description"/>
+          <LANGINFO lang="DE" label="Berufsbeschreibung" description="Fügen Sie eine Berufsbeschreibung hinzu"/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <CMS_INPUT_DOM name="cs_task" hFill="yes" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Job task" description="Add a description."/>
+          <LANGINFO lang="DE" label="Aufgabenbeschreibung" description="Fügen Sie eine Beschreibung der Aufgaben hinzu."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <CMS_INPUT_DOM name="cs_profil" hFill="yes" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Job profil" description="Add a description."/>
+          <LANGINFO lang="DE" label="Berufsvorraussetzungen" description="Fügen Sie die Berufsvorraussetzungen hinzu."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

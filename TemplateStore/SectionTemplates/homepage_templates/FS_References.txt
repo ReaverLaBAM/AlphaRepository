@@ -1,0 +1,7 @@
+[self]
+uid=/homepage_templates
+gid=09ffef03-73e0-4b84-9833-a277176f04db
+store=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.TemplateFolderImpl
+root=de.espirit.firstspirit.store.access.templatestore.SectionTemplatesImpl
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.product_properties_type_sort" filename="Product_Properties_Type_Sort" id="-7046325072171435494" templateid="-7945155647750445353" type="content">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Product properties (sort)" language="EN"/>
+	<LANG displayname="Produkteigenschaften (Sortierung)" language="DE"/>
+</TABLE>

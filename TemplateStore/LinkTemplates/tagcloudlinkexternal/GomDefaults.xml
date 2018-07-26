@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FIELDS>
+	<FIELD name='size'><FIG>1</FIG></FIELD>
+	<FIELD name='linktemplate'><SEL><VALUE>tagcloudlinkexternal.standard</VALUE></SEL></FIELD>
+</FIELDS>

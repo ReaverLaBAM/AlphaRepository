@@ -1,0 +1,4 @@
+if(!cs_date.isEmpty, "[" + cs_date.format("dd.MM.yyyy") + "] ") +
+if(!cs_headline.isEmpty, cs_headline) +
+if(!cs_headline.isEmpty && !cs_subheadline.isEmpty, " / ") +
+if(!cs_subheadline.isEmpty, cs_subheadline)

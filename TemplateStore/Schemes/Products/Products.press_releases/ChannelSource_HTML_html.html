@@ -1,0 +1,102 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="PageGroup" resultname="fr_cs_navigation">
+
+		<CMS_CDATA_PARAM name="directoryRendering"><![CDATA[$--
+			--$$CMS_IF((#nav.pos > (act_pos - 4)) && (#nav.pos < (act_pos + 4)))$$--
+				--$<a href="$CMS_REF(#nav.ref)$">$--
+					--$$CMS_VALUE(#nav.pos)$$--
+				--$</a>$--
+				--$<span class="trennstrich">$--
+					--$|$--
+				--$</span>$--
+			--$$CMS_END_IF$$--
+		--$]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="directoryRenderingSelected"><![CDATA[$CMS_VALUE(#nav.pos)$<span class="trennstrich">|</span>]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="nextAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("next"))$">$CMS_VALUE(#global.gca("next"))$</a>]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="nextNotAvailable"><![CDATA[<div style="margin:0px;padding-right:25px;float:right;width:35px">&nbsp;</div>]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="previousAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("previous"))$">$CMS_VALUE(#global.gca("previous"))$</a>]]></CMS_CDATA_PARAM>
+
+		<CMS_CDATA_PARAM name="previousNotAvailable"><![CDATA[<div style="margin:0px;padding-left:25px; float:left;width:35px">&nbsp;</div]]></CMS_CDATA_PARAM>
+	</CMS_FUNCTION>
+
+</CMS_HEADER>
+$-- browseIn --$
+<div class="clearfix browseIn twoBorder" style="margin:bottom:0px">
+	<ul>
+		<li class="pageStart"><a href="$CMS_REF(ss_press_releases_overview, contentId:#row.getId())$" title="$CMS_VALUE(#global.gca("pressback"))$"$CMS_VALUE(editorId(element:#global.gca("pressback")))$>$CMS_VALUE(#global.gca("pressback"))$</a></li>
+	</ul>
+	$CMS_IF(#cs.isFirstContentRow)$
+		$CMS_SET(act_pos, fr_cs_navigation.pos)$
+		<ul style="float:left;margin-top:10px">
+			<li class="pageStart">$CMS_VALUE(fr_cs_navigation.previous)$</li>
+			<li class="pageEnd">$CMS_VALUE(fr_cs_navigation.next)$</li>
+			<li class="page">
+				<span class="trennstrich">|</span>$CMS_VALUE(fr_cs_navigation.directory)$
+			</li>
+		</ul>
+	$CMS_END_IF$
+</div>
+$-- /browseIn --$
+
+$CMS_SET(_view, "pressreleases")$$--
+--$$CMS_IF(#global.preview)$$--
+	--$<div$CMS_VALUE(editorId(view:_view))$>$--
+--$$CMS_END_IF$
+
+$-- Page Header --$
+<div class="vevent clearfix ContainerHead" style="padding:0px; margin:0px">
+	<span class="datum press"$CMS_VALUE(editorId(view:_view, editorName:"cs_date"))$>$--
+		--$$CMS_IF(!cs_date.isEmpty)$$--
+			--$<span class="datum dtstart">$--
+				--$$CMS_IF(!cs_date.isEmpty)$$--
+					--$$CMS_VALUE(cs_date.format("dd.MM.yyyy"))$$--
+					--$<span class="value-title" title="$CMS_VALUE(cs_date.format("yyyy-MM-dd'T'HH:mm:ss"))$">$--
+					--$</span>$--
+				--$$CMS_END_IF$$--
+			--$</span>$--
+		--$$CMS_END_IF$$--
+	--$</span>
+
+	<h1 class="summary"$CMS_VALUE(editorId(view:_view, editorName:"cs_headline"))$>
+		$CMS_IF(!cs_headline.isEmpty)$$--
+			--$$CMS_VALUE(cs_headline.convert2)$$--
+		--$$CMS_END_IF$
+	</h1>
+
+	<h2 class="description"$CMS_VALUE(editorId(view:_view, editorName:"cs_subheadline"))$>
+		$CMS_IF(!cs_subheadline.isEmpty)$$--
+			--$$CMS_VALUE(cs_subheadline.convert2)$$--
+		--$$CMS_END_IF$
+	</h2>
+
+	$CMS_IF(#global.preview)$$--
+		--$<div$CMS_VALUE(editorId(view:_view, editorName:"cs_teaser"))$>$--
+	--$$CMS_END_IF$$--
+	--$$CMS_IF(!cs_teaser.isEmpty)$$--
+		--$$CMS_VALUE(cs_teaser.convert2)$$--
+	--$$CMS_END_IF$$--
+	--$$CMS_IF(#global.preview)$$--
+		--$</div>$--
+	--$$CMS_END_IF$
+
+	<a class="url" style="display:none" href="$CMS_REF(#global.node)$">Link</a>
+	<abbr class="location" style="display:none" title="Dortmund">Dortmund</abbr>
+	<abbr class="geo" style="display:none" title="51.502973;7.529132">Dortmund</abbr>
+</div>
+$-- /Page Header --$
+
+$CMS_IF(#global.preview)$$--
+	--$<div$CMS_VALUE(editorId(view:_view, editorName:"cs_content"))$>$--
+--$$CMS_END_IF$$--
+
+--$$CMS_VALUE(cs_content)$$--
+
+--$$CMS_IF(#global.preview)$$--
+		--$</div>$--
+	--$</div>$--
+--$$CMS_END_IF$

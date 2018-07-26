@@ -1,0 +1,43 @@
+<CMS_HEADER>
+</CMS_HEADER>
+$CMS_IF(!st_gallery.isEmpty && st_gallery.dataset.entity.gallery_MediaList.size>0)$
+<fo:block space-after="3mm">
+	<fo:table table-layout="fixed" width="100%">
+		<fo:table-column column-width="55mm"/>
+		<fo:table-column column-width="54mm"/>
+		<fo:table-column column-width="54mm"/>
+		<fo:table-body>
+			<fo:table-row>
+		$CMS_FOR(medium, st_gallery.dataset.entity.gallery_MediaList)$
+			<fo:table-cell padding-left="1mm" padding-right="1mm">
+				<fo:block-container background-color="#F6F6F6" border-color="#D1D1D1" border-style="solid" border-width="0.5mm" height="54mm" space-after="3mm" display-align="center">
+					$CMS_IF(!medium.Media_Ref.isEmpty)$
+					<fo:block margin="2mm" text-align="center">
+						<fo:external-graphic src="$CMS_REF(medium.Media_Ref,abs:3)$" width="100%" height="48mm" content-width="scale-to-fit" content-height="scale-to-fit" scaling="uniform"/>
+					</fo:block>
+					$CMS_END_IF$
+				</fo:block-container>
+			$CMS_IF(!medium.Description.isEmpty)$
+				<fo:block>
+					<fo:inline>$CMS_VALUE(medium.Description)$</fo:inline>
+				</fo:block>
+			$CMS_END_IF$
+			</fo:table-cell>
+			$CMS_IF((#for.index+1)%3 == 0 && !#for.isLast)$
+				</fo:table-row>
+				<fo:table-row height="5mm"><fo:table-cell><fo:block/></fo:table-cell><fo:table-cell><fo:block/></fo:table-cell><fo:table-cell><fo:block/></fo:table-cell></fo:table-row>
+				<fo:table-row>
+			$CMS_END_IF$
+			$CMS_IF(#for.isLast && (#for.index+1)%3 != 0)$
+				$CMS_FOR(count, [((#for.index+1)%3)+1..3])$
+				<fo:table-cell padding-left="1mm" padding-right="1mm">
+					<fo:block/>
+				</fo:table-cell>
+				$CMS_END_FOR$
+			$CMS_END_IF$
+		$CMS_END_FOR$
+			</fo:table-row>
+		</fo:table-body>
+	</fo:table>
+</fo:block>
+$CMS_END_IF$

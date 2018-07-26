@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_REFERENCE name="cs_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+    <FILTER>
+      <ALLOW type="picture"/>
+      <HIDE type="file"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+      <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="mediastore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Picture name" description="Insert the picture name."/>
+      <LANGINFO lang="DE" label="Name des Bildes" description="Tragen Sie den Namen des Bildes ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXTAREA name="cs_description" hFill="yes" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Description" description="Add a description."/>
+      <LANGINFO lang="DE" label="Bildbeschreibung" description="Fügen Sie eine Beschreibung des Bildes hinzu."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXTAREA>
+
+</CMS_MODULE>

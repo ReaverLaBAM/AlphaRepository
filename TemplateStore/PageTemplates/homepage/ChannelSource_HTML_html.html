@@ -1,0 +1,438 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="Navigation" resultname="pt_mainNavi">
+
+		<CMS_PARAM name="expansionVisibility" value="all"/>
+		<CMS_PARAM name="wholePathSelected" value="1"/>
+
+		<CMS_ARRAY_PARAM name="innerBeginHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[<ul>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="beginHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[<li$CMS_IF(!ps_navigationType)$ class="textnavi"$CMS_END_IF$>]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT><![CDATA[<li>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="unselectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[<a class="menu$CMS_VALUE(#nav.levelPos + 1)$$CMS_IF(!ps_navigationType)$ unselected$CMS_END_IF$" href="$CMS_REF(#nav.ref)$">$CMS_IF(ps_navigationType)$<img src="$CMS_REF(media:"alpha")$" width="108" height="28" alt="$CMS_VALUE(#nav.label.convert2)$" />$CMS_ELSE$$CMS_VALUE(#nav.label.convert2)$$CMS_END_IF$</a><br />]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT><![CDATA[<a href="$CMS_REF(#nav.ref)$">$CMS_VALUE(#nav.label.convert2)$</a>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="selectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[<a class="menu$CMS_VALUE(#nav.levelPos + 1)$$CMS_IF(!ps_navigationType)$ selected$CMS_END_IF$" href="$CMS_REF(#nav.ref)$">$CMS_IF(ps_navigationType)$<img src="$CMS_REF(media:"alpha")$" width="108" height="28" alt="$CMS_VALUE(#nav.label.convert2)$" />$CMS_ELSE$$CMS_VALUE(#nav.label.convert2)$$CMS_END_IF$</a><br />]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT><![CDATA[<a href="$CMS_REF(#nav.ref)$">$CMS_VALUE(#nav.label.convert2)$</a>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="endHTML">
+			<CMS_ARRAY_ELEMENT index="0..1"><![CDATA[</li>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="innerEndHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[</ul>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+	</CMS_FUNCTION>
+
+
+	<CMS_FUNCTION name="Navigation" resultname="pt_mainNaviHover">
+
+		<CMS_PARAM name="expansionVisibility" value="all"/>
+		<CMS_PARAM name="wholePathSelected" value="1"/>	
+
+		<CMS_ARRAY_PARAM name="unselectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[
+				.menu li a.menu$CMS_VALUE(#nav.levelPos + 1)$ {
+					background: $CMS_VALUE(if(ps_layout_color_menu.isEmpty, "#F0AC28", ps_layout_color_menu))$ url($CMS_REF(font(justify:"left", boxvalign:"center", color:if(ps_layout_color_menu_font.isEmpty, "#FFFFFF", ps_layout_color_menu_font), bounds:"image", font:"MithrasFontAlternate", filetype:"png", media:"bt_nav_neu", size:16, xoffset:11, text:#nav.label))$);
+				}
+				.menu li a.menu$CMS_VALUE(#nav.levelPos + 1)$:hover {
+					background: $CMS_VALUE(if(ps_layout_color_menu_hover.isEmpty, "#D06420", ps_layout_color_menu_hover))$ url($CMS_REF(font(justify:"left", boxvalign:"center", color:if(ps_layout_color_menu_font.isEmpty, "#FFFFFF", ps_layout_color_menu_font), bounds:"image", font:"MithrasFontAlternate",filetype:"png", media:"bt_nav_hover_neu", size:16, xoffset:11, text:#nav.label))$);
+				}
+			]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="selectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[
+				.menu li a.menu$CMS_VALUE(#nav.levelPos + 1)$ {
+					background: $CMS_VALUE(if(ps_layout_color_menu_hover.isEmpty, "#D06420", ps_layout_color_menu_hover))$ url($CMS_REF(font(justify:"left", boxvalign:"center", color:if(ps_layout_color_menu_font.isEmpty, "#FFFFFF", ps_layout_color_menu_font), bounds:"image", font:"MithrasFontAlternate", filetype:"png" ,media:"bt_nav_hover_neu", size:16, xoffset:11, text:#nav.label))$);
+				}
+			]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+	</CMS_FUNCTION>
+
+</CMS_HEADER>$--
+
+--$$CMS_SET(isWebEdit, #global.is("WEBEDIT"))$$--
+--$$CMS_SET(set_pt_linebreak, "")$$--
+--$$CMS_SET(#global.debugMode, ps_debugMode)$$--
+--$<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="$CMS_VALUE(#global.language.abbreviation.upperCase)$" xmlns="http://www.w3.org/1999/xhtml" xml:lang="$CMS_VALUE(#global.language.abbreviation.upperCase)$">
+	<head> 
+		<title>$--
+			--$$CMS_VALUE(ps_company_name)$$--
+
+			--$$CMS_IF(!pt_title.isEmpty)$$--
+				--$ | $CMS_VALUE(pt_title.convert2)$$--
+			--$$CMS_END_IF$$--
+		--$</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<meta name="keywords" content="$CMS_IF(!#global.node.keywords.isEmpty)$$--
+			--$$CMS_VALUE(#global.node.keywords.toString(", "))$$--
+		--$$CMS_END_IF$" />
+		<meta name="description" content="$CMS_IF(!pt_intro.isEmpty)$$--
+			--$$CMS_VALUE(pt_intro.toText(false))$$--
+		--$$CMS_ELSIF(!ps_description.isEmpty)$$--
+			--$$CMS_VALUE(ps_description)$$--
+		--$$CMS_END_IF$" />
+		<meta http-equiv="Content-Type" content="text/html; charset=$CMS_VALUE(#global.encoding)$" />
+		<meta name="Author" content="$CMS_IF(!#global.page.editor.realname.isEmpty)$$--
+			--$$CMS_VALUE(#global.page.editor.realname)$$--
+		--$$CMS_END_IF$" />
+		<meta name="Publisher" content="$CMS_IF(!ps_publisher.isEmpty)$$--
+			--$$CMS_VALUE(ps_publisher)$$--
+		--$$CMS_END_IF$" />
+		<meta name="Copyright" content="$CMS_IF(!#global.page.meta("md_copyright", "inherit").isEmpty)$$--
+			--$$CMS_VALUE(#global.page.meta("md_copyright", "inherit"))$$--
+		--$$CMS_ELSIF(!ps_copyright.isEmpty)$$--
+			--$$CMS_VALUE(ps_copyright)$$--
+		--$$CMS_END_IF$" />
+		<meta name="Revisit" content="$CMS_IF(!ps_revisit.isEmpty)$$--
+			--$$CMS_VALUE(ps_revisit)$$--
+		--$$CMS_ELSE$$--
+			--$After 14 Days$--
+		--$$CMS_END_IF$" />
+		<meta name="Abstract" content="$CMS_IF(!pt_intro.isEmpty)$$--
+			--$$CMS_VALUE(pt_intro.toText(false))$$--
+		--$$CMS_ELSIF(!ps_description.isEmpty)$$--
+			--$$CMS_VALUE(ps_description)$$--
+		--$$CMS_END_IF$" />
+		<meta name="page-topic" content="$CMS_IF(!#global.page.meta("md_content", "inherit").isEmpty)$$--
+			--$$CMS_VALUE(#global.page.meta("md_content", "inherit"))$$--
+		--$$CMS_END_IF$" />
+		<meta name="products" content="$CMS_IF(!#global.page.meta("md_product_categories", "inherit").isEmpty)$$--
+			--$$CMS_VALUE(#global.page.meta("md_product_categories", "inherit").map(x -> if(!x.cs_name.isEmpty, x.cs_name.convert2)).toString(", "))$$--
+		--$$CMS_END_IF$" />
+		<meta name="audience" content="all" />
+		<meta name="language" content="$CMS_VALUE(#global.language.abbreviation.lowerCase)$" />
+		<meta name="Robots" content="INDEX,FOLLOW" />
+		<meta http-equiv="content-language" content="$CMS_VALUE(#global.language.abbreviation.upperCase)$" />
+		<meta name="google-site-verification" content="pNg5qT8N83orA-FjlKDe-iF1d0iacnl_sdxBizE9VF4" />
+		<link rel="alternate" type="application/atom+xml" title="$CMS_VALUE(#global.gca("pressfeed"))$" href="$CMS_REF(ss_press_feed, templateSet:"RSS")$" />
+		<link rel="alternate" type="application/atom+xml" title="$CMS_VALUE(#global.gca("productfeed"))$" href="$CMS_REF(ss_product_feed, templateSet:"RSS")$" />
+		<link rel="stylesheet" type="text/css" href="$CMS_REF(media:"main")$" media="screen" />
+		<link rel="stylesheet" type="text/css" href="$CMS_REF(media:"print")$" media="print, embossed" />
+		<link rel="stylesheet" type="text/css" href="$CMS_REF(media:"floatbox")$" />
+		<script src="$CMS_REF(media:"formedit_js")$" type="text/javascript"></script>
+		<!--[if lte IE 6]>
+			<link rel="stylesheet" type="text/css" href="$CMS_REF(media:"ie")$" />
+			<style>
+				.logo { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='$CMS_REF(media:"logo")$'); }
+				.logoContent { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='$CMS_REF(media:"logoContent")$'); }
+				.content .module ul { list-style-image: url($CMS_REF(media:"bulletIE")$)!important; }
+				.toolTip { /*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='$CMS_REF(media:"layerTransp2")$');*/ }
+				.infoBlock { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='$CMS_REF(media:"bg_infoBlock")$'); }
+				#overlay { background-image: url($CMS_REF(media:"blank")$);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="$CMS_REF(media:"overlay")$", sizingMethod="scale"); }
+				.popUp .logoContent { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='$CMS_REF(media:"logoContent")$'); }
+			</style>
+		<![endif]-->
+
+		<style type="text/css">
+			$CMS_VALUE(pt_mainNaviHover)$
+		</style>
+		<script type="text/javascript">
+			document.documentElement.className = "js";
+		</script>
+		<script type="text/javascript" language="javascript">AC_FL_RunContent = 0;</script>
+		<script type="text/javascript" src="$CMS_REF(media:"AC_RunActiveContent")$" language="javascript"></script>
+	</head>
+	<body class="nojs">
+		$CMS_TRIM(level:1, char:"\r\n")$<div><a name="top" id="top"></a></div>
+
+		$-- typo --$
+		<div id="typo">
+
+			<h2 class="print">$CMS_VALUE(ps_company_name)$$CMS_IF(!pt_title.isEmpty)$$--
+				--$ | $CMS_VALUE(pt_title)$$--
+			--$$CMS_END_IF$</h2>
+
+			<ul class="ubar">
+				<li><a href="#mainmenu">Main Menu</a></li>
+				<li><a href="#content">Content Area</a></li>
+			</ul>
+
+			<hr class="ubar" />
+
+			$-- logo --$
+			$CMS_IF(!ps_homepage_header_text.isEmpty)$$--
+
+				--$<a href="$CMS_IF(!ps_homelink.isEmpty)$$--
+					--$$CMS_REF(ps_homelink)$$--
+				--$$CMS_ELSE$$--
+					--$#$--
+				--$$CMS_END_IF$" title="$CMS_VALUE(#global.gca("homepage"))$">$--
+					--$<span class="logo">$--
+						--$<img src="$CMS_REF(ps_homepage_header_text)$" alt="$CMS_VALUE(ps_company_name)$" width="252" />$--
+						--$<span class="ubar">$--
+							--$$CMS_VALUE(ps_company_name)$$--
+							--$<span>$--
+								--$$CMS_IF(!pt_title.isEmpty)$ | $CMS_VALUE(pt_title)$$CMS_END_IF$$--
+							--$</span>$--
+						--$</span>$--
+					--$</span>$--
+				--$</a>$--
+
+			--$$CMS_END_IF$
+			$-- /logo --$
+
+			$-- include global content area "gca_common_header" --$
+			$CMS_SET(set_pt_thisRef, #global.ref)$$--
+				--$$CMS_IF(#global.preview)$$--
+					--$<div$CMS_VALUE(editorId(element:#global.gca("gca_common_header")))$>$--
+				--$$CMS_END_IF$$--
+				--$$CMS_VALUE(#global.gca("gca_common_header"))$$--
+				--$$CMS_IF(#global.preview)$$--
+					--$</div>$--
+				--$$CMS_END_IF$$--
+			--$$CMS_SET(set_pt_thisRef, null)$
+			$-- /include global content area "gca_common_header" --$
+
+			$-- main navigation --$
+			<a name="mainmenu"></a>
+			<div class="clearfix menu">
+				<ul id="navigation">
+					$CMS_VALUE(pt_mainNavi)$
+				</ul>
+			</div>
+			$-- /main navigation --$
+
+			$CMS_IF(!ps_homepage_header_background.isEmpty)$
+				$-- headerimage, s6 --$
+				<img src="$CMS_REF(ps_homepage_header_background, resolution:"HeaderPicture")$" class="header" alt="" />
+				$-- /headerimage, s6 --$
+			$CMS_END_IF$
+
+			$-- contentArea --$
+			<div class="clearfix contentArea">
+
+				$-- leftcolumn --$
+				<div class="leftCol"$CMS_VALUE(editorId(element:#global.page.body("Content left")))$>$--
+					--$$CMS_VALUE(#global.page.body("Content left"))$$--
+
+					--$$CMS_IF(#global.preview && isWebEdit)$$--
+						--$<span$CMS_VALUE(
+							fsbutton(
+								editorName:"pt_createSection",
+								parameter:{
+									"page":#global.page.id,
+									"body":"Content left"
+								}
+							)
+						)$></span>$--
+					--$$CMS_END_IF$$--
+
+				--$</div>
+				$-- /leftcolumn --$
+
+				$-- content --$
+				<a name="content"></a>
+				<div class="content">
+					<div class="ContainerHead"$CMS_VALUE(editorId())$>
+
+						$-- headline --$
+						$CMS_IF(!pt_headline.isEmpty)$
+							<h1$CMS_VALUE(editorId(editorName:"pt_headline"))$>
+								$CMS_IF(pt_headlineType)$
+									$CMS_SET(set_pt_fontimage, font(color:if(ps_layout_color_headlines.isEmpty, "#CF6100", ps_layout_color_headlines), filetype:"png", media:"alpha", xspace:2, font:"MithrasFontAlternate", size:24, text:pt_headline))$
+									<!--[if lte IE 6]>
+										<style>
+											.ieFilter { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='$CMS_REF(set_pt_fontimage)$', sizingMethod='scale'); }
+										</style>
+									<![endif]-->
+									<img class="h1 ieFilter" src="$CMS_REF(media:"spacer")$" width="$CMS_VALUE(ref(set_pt_fontimage).width)$" height="$CMS_VALUE(ref(set_pt_fontimage).height)$" style="background:url($CMS_REF(set_pt_fontimage)$) no-repeat !important;background:none;" alt="$CMS_VALUE(pt_headline)$" />
+									<span class="headlines">$CMS_VALUE(pt_headline.convert2)$</span>
+								$CMS_ELSE$
+									<span style="font-size:22px;">$CMS_VALUE(pt_headline.convert2)$</span>
+								$CMS_END_IF$
+								$CMS_RENDER(template:"tooltip",
+								            infoLayer:pt_infoLayer,
+								            infoLink:pt_infoLink,
+								            infoPicture:pt_infoPicture,
+								            infoHeadline:pt_infoHeadline)$
+							</h1>
+						$CMS_END_IF$
+						$-- /headline --$
+
+						$-- subheadline --$
+						$CMS_IF(!pt_subheadline.isEmpty)$
+							<h2$CMS_VALUE(editorId(editorName:"pt_subheadline"))$>$--
+								--$$CMS_VALUE(pt_subheadline.convert2)$$--
+							--$</h2>
+						$CMS_END_IF$
+						$-- /subheadline --$
+
+						$-- introtext --$
+						$CMS_IF(!pt_intro.isEmpty)$$--
+
+							--$$CMS_IF(#global.preview)$$--
+								--$<div$CMS_VALUE(editorId(editorName:"pt_intro"))$>$--
+							--$$CMS_END_IF$$--
+
+							--$$CMS_VALUE(pt_intro)$$--
+
+							--$$CMS_IF(#global.preview)$$--
+								--$</div>$--
+							--$$CMS_END_IF$$--
+
+						--$$CMS_END_IF$
+						$-- /introtext --$
+
+					</div>
+
+					$CMS_IF(#global.preview)$$--
+						--$<div$CMS_VALUE(editorId(element:#global.page.body("Content center")))$>$--
+					--$$CMS_END_IF$$--
+
+					--$$CMS_VALUE(#global.page.body("Content center"))$$--
+
+					--$$CMS_IF(#global.preview)$$--
+
+						--$$CMS_IF(isWebEdit)$$--
+							--$<span$CMS_VALUE(
+								fsbutton(
+									editorName:"pt_createSection",
+									parameter:{
+										"page":#global.page.id,
+										"body":"Content center"
+									}
+								)
+							)$></span>$--
+						--$$CMS_END_IF$$--
+
+						--$</div>$--
+					--$$CMS_END_IF$
+
+				</div>
+				$-- /content --$
+
+				$-- right column --$
+				<div class="rightCol">
+
+					$CMS_IF(pt_productSwitch && !pt_product.isEmpty)$	
+
+						$-- Product Info --$
+						<div class="clearfix teaser producInfo" style="min-height:195px;">
+
+							$-- Headline --$
+							<h3>$--
+								--$$CMS_IF(!pt_product_headline.isEmpty)$$--
+									--$<div$CMS_VALUE(editorId(editorName:"pt_product_headline"))$>$--
+										--$$CMS_VALUE(pt_product_headline.convert2)$$--
+									--$</div>$--
+								--$$CMS_END_IF$$--
+
+								--$$CMS_IF(!pt_product_infoLayer.isEmpty)$$--
+									--$<!-- Infolayer -->$--
+									--$<a class="infoIcon" href="#top">$--
+										--$<img class="infoImgI" src="$CMS_REF(media:"icon_info")$" alt="I" />$--
+										--$<span class="infoLayer">$--
+											--$$CMS_VALUE(pt_product_infoLayer)$$--
+											--$$CMS_SET(set_pt_linebreak, "")$$--
+										--$</span>$--
+									--$</a>$--
+									--$<!-- /Infolayer -->$--
+								--$$CMS_END_IF$$--
+
+							--$</h3>
+							$-- /Headline --$
+
+							$-- infoBlock--$
+							<div class="infoBlock">
+								$CMS_IF(!pt_highlightText.isEmpty)$$--
+									--$<div$CMS_VALUE(editorId(editorName:"pt_highlightText"))$>$--
+										--$$CMS_VALUE(pt_highlightText)$$--
+									--$</div>$--
+								--$$CMS_END_IF$
+
+								<a href="$CMS_REF(ss_product_details, contentId:pt_product.dataset.entity.fs_id)$" class="infoLink">$--
+									--$<img src="$CMS_REF(media:"icon_InfoLink")$" alt="" />$--
+									--$$CMS_VALUE(#global.gca("moreinformationlink"))$$--
+								--$</a>
+
+								$CMS_IF(!pt_highlightPicture.isEmpty)$$--
+									--$<img class="InfoImg" src="$CMS_REF(pt_highlightPicture, resolution:"ProducthighlightSmall")$" alt=""$CMS_VALUE(editorId(editorName:"pt_highlightPicture", resolution:"ProducthighlightSmall"))$ />$--
+								--$$CMS_END_IF$
+							</div>
+							$-- /infoBlock --$
+						</div>
+						$-- /Product Info --$
+
+					$CMS_END_IF$
+
+					$CMS_IF(#global.preview)$$--
+						--$<div$CMS_VALUE(editorId(element:#global.page.body("Content right")))$>$--
+					--$$CMS_END_IF$$--
+					--$$CMS_VALUE(#global.page.body("Content right"))$$--
+					--$$CMS_IF(#global.preview)$$--
+
+						--$$CMS_IF(isWebEdit)$$--
+							--$<span$CMS_VALUE(
+								fsbutton(
+									editorName:"pt_createSection",
+									parameter:{
+										"page":#global.page.id,
+										"body":"Content right"
+									}
+								)
+							)$></span>$--
+						--$$CMS_END_IF$$--
+
+						--$</div>$--
+					--$$CMS_END_IF$
+
+				</div>
+				$-- /right column --$
+
+			</div>
+			$-- /contentArea --$
+
+			$-- footer --$
+			<div class="footer">
+				<ul>
+					<li>$--
+						--$<a href="#top"$CMS_VALUE(editorId(element:#global.gca("totop"), editorName:"pt_label"))$>$--
+							--$<img src="$CMS_REF(media:"icon_top")$" alt="" />$--
+							--$$CMS_VALUE(#global.gca("totop"))$$--
+						--$</a>$--
+					--$</li>
+					<li>$--
+						--$<a href="#top" onclick="self.print();return false;"$CMS_VALUE(editorId(element:#global.gca("print"), editorName:"pt_label"))$>$--
+							--$<img src="$CMS_REF(media:"icon_print")$" alt="" />$--
+							--$$CMS_VALUE(#global.gca("print"))$$--
+						--$</a>$--
+					--$</li>
+					<li>$--
+						--$<a href="$CMS_REF(#global.ref, templateSet:"pdf")$" target="_blank"$CMS_VALUE(editorId(element:#global.gca("pdf"), editorName:"pt_label"))$>$--
+							--$<img src="$CMS_REF(media:"icon_pdf_bw")$" alt="" />$--
+							--$$CMS_VALUE(#global.gca("pdf"))$$--
+						--$</a>$--
+					--$</li>
+				</ul>
+			</div>
+			$-- /footer --$
+
+		</div>
+		$-- /typo --$
+
+		<script type="text/javascript">$--
+			--$var initSelect = false;$--
+			--$var _languageBasePath = '$CMS_VALUE(ref(media:"de").url.substring(0, ref(media:"de").url.lastIndexOf("/")))$/';$--
+		--$</script>
+		<script type="text/javascript" src="$CMS_REF(media:"popup")$"></script>
+		$CMS_IF(isWebEdit)$
+			<script type="text/javascript" src="$CMS_REF(media:"framebox")$"></script>
+		$CMS_ELSE$
+			<script type="text/javascript" src="$CMS_REF(media:"floatbox_1")$"></script>
+		$CMS_END_IF$$CMS_END_TRIM$
+	</body>
+</html>

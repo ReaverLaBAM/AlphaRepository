@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="cs_lastname"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_lastname"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_salutation"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_salutation"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_firstname"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_firstname"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_lastname"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_lastname"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_phone"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_phone"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_mail"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_mail"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

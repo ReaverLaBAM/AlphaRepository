@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WORKFLOW alwaysActive="0" contextfree="0" description="eine Freigabe anfordern" id="7515019037359610332" name="Freigabe Anfordern" webedit="1" workflowid="-4410635414229746117">
+	<LANG displayname="Freigabe anfordern" language="DE"/>
+	<LANG displayname="Release request" language="EN"/>
+</WORKFLOW>

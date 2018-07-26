@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_headlines"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_headlines"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_menu"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_menu"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_menu_hover"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_menu_hover"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_menu_font"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_menu_font"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_submenu_font"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_submenu_font"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_submenu_hover"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_submenu_hover"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_breadcrumb"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_breadcrumb"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_layout_color_breadcrumb_font"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_layout_color_breadcrumb_font"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_color_teaser_type1"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_color_teaser_type1"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_headline_color_teaser_type1"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_headline_color_teaser_type1"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_gradient_color_teaser_type1"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_gradient_color_teaser_type1"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_color_teaser_type2"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_color_teaser_type2"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_headline_color_teaser_type2"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_headline_color_teaser_type2"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_gradient_color_teaser_type2"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_gradient_color_teaser_type2"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_tooltip_bg_color"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_tooltip_bg_color"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="ps_tooltip_text_color"/>
+					<NUMBER>7</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="ps_tooltip_text_color"/>
+				<MESSAGE lang="*" text="Only 7 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 7 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

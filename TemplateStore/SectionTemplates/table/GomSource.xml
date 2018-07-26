@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Table data" description="Fill the table components."/>
+        <LANGINFO lang="DE" label="Tabellendaten" description="Geben Sie ihre Tabelleninformationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_headline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert your headline for that section."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Überschrift des Absatzes."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TEXT name="st_tableheader" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Table header" description="Insert a table header."/>
+          <LANGINFO lang="DE" label="Kopfzeile" description="Fügen Sie eine Kopfzeile ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOMTABLE name="st_table" hFill="yes" height="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="table"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Table" description="Fill the table with your data."/>
+          <LANGINFO lang="DE" label="Tabelle" description="Befüllen Sie die Tabelle mit Daten."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOMTABLE>
+
+      <CMS_INPUT_DOM name="st_underline" hFill="yes" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="tableunderline"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Table caption" description="Insert your table caption."/>
+          <LANGINFO lang="DE" label="Legende unter der Tabelle" description="Legende unter der Tabelle."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Layout of table" description="Choose the layout of table."/>
+        <LANGINFO lang="DE" label="Tabellen-Layout" description="Wählen Sie das Tabellen-Layout."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TOGGLE name="st_sortable" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Table sortable?" description="Should the table be sortable?"/>
+          <LANGINFO lang="DE" label="Tabelle sortierbar?" description="Soll die Tabelle sortierbar sein?"/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TOGGLE name="st_topLine" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Highlight header?" description="Should the first line be highlighted?"/>
+          <LANGINFO lang="DE" label="Kopfzeile farblich hervorheben?" description="Soll die erste Zeile farblich hervorgehoben werden?"/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TOGGLE name="st_altRows" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Alternating row colours?" description="Alternating row colours?"/>
+          <LANGINFO lang="DE" label="Tabellenzeilen alternierend einfärben?" description="Tabellenzeilen alternierend einfärben?"/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+        <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Infolayer Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_infoHeadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="st_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="hometeaser"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <FS_REFERENCE name="st_infoPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bils aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="st_infoLink" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link" description="Choose an optional link."/>
+          <LANGINFO lang="DE" label="Verweis" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

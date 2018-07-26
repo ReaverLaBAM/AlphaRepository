@@ -1,0 +1,6 @@
+[self]
+uid=i
+gid=2f6eef5c-5c6d-4861-a20f-7fa3625da055
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+

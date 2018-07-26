@@ -1,0 +1,49 @@
+$CMS_IF(!#global.contentTemplate.isEmpty && #global.contentTemplate.uid == "Products.products" && #global.multiPageParams.entitiesPerPage == 1 && #global.pageParams.data.size > 0 && !#global.pageParams.data.get(0).ProductOffers.isEmpty)$
+	$-- Related Products --$
+	<div class="clearfix teasermodule imageTeaser blue"$CMS_VALUE(editorId())$>
+		<h3$CMS_VALUE(editorId(element:#global.gca("product_offers"), editorName:"pt_label"))$>$--
+			--$$CMS_VALUE(#global.gca("product_offers"))$$--
+			--$$CMS_RENDER(template:"tooltip",
+            	infoLayer:st_infoLayer,
+	            infoLink:st_infoLink,
+    	        infoPicture:st_infoPicture,
+        	    infoHeadline:st_infoHeadline)$$--
+		--$</h3>
+
+		$CMS_SET(_entity, #global.pageParams.data.get(0))$
+		$CMS_SET(_view, "products")$
+		$CMS_SET(_template, "Products.products")$
+		$CMS_IF(#global.preview)$$--
+			--$<div$CMS_VALUE(editorId(entity:_entity, view:_view, editorName:"cs_productOffers"))$>$--
+		--$$CMS_END_IF$
+	
+		$CMS_FOR(_product, _entity.ProductOffers.sort(x -> x.cs_name))$
+			<div class="clearfix text"$CMS_VALUE(editorId(entity:_product, view:_view))$>
+				<h4$CMS_VALUE(editorId(entity:_product, view:_view, editorName:"cs_name"))$>$--
+					--$$CMS_VALUE(_product.cs_name)$$--
+				--$</h4>
+	
+				<dl>
+					<dt class="floatLeft">
+						<a href="$CMS_REF(pagefolder:"products", contentId:_product.getId(), template:_template)$">$--
+							--$<img src="$CMS_REF(_product.cs_picture, resolution:"TeaserBox")$"$CMS_VALUE(editorId(entity:_product, view:_view, editorName:"cs_picture", resolution:"TeaserBox"))$ alt="" />$--
+						--$</a>
+					</dt>
+					<dd style="margin-left:80px;">
+						<a href="$CMS_REF(pagefolder:"products", contentId:_product.getId(), template:_template)$"$CMS_VALUE(editorId(element:#global.gca("product_offers_teasertext"), editorName:"pt_label"))$>$--
+							--$$CMS_VALUE(#global.gca("product_offers_teasertext"))$$--
+							--$&nbsp;$--
+							--$<img class="SignLink" src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+						--$</a>
+					</dd>
+				</dl>
+			</div>
+		$CMS_END_FOR$
+
+		$CMS_IF(#global.preview)$$--
+			--$</div>$--
+		--$$CMS_END_IF$
+	
+	</div>
+	$-- /Related Products --$
+$CMS_END_IF$

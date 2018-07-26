@@ -1,0 +1,17 @@
+[self]
+uid=glossarylink
+gid=9333280a-4597-4c71-a705-cc0656ab6f91
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=glossar
+gid=6c5c44ef-85b3-470b-acac-7e6e80add820
+uidType=CONTENTSTORE
+class=de.espirit.firstspirit.store.access.contentstore.Content2Impl
+
+uid=tipGif
+gid=4966cbd8-ba36-4d25-8104-6bbf158834ab
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+

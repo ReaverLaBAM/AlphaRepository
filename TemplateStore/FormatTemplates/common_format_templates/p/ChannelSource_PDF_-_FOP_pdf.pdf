@@ -1,0 +1,1 @@
+<fo:block>$CMS_VALUE(#content)$</fo:block>

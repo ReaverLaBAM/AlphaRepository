@@ -1,0 +1,1 @@
+<fo:inline text-decoration="underline">$CMS_VALUE(#content)$</fo:inline>

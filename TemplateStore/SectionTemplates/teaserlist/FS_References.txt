@@ -1,0 +1,17 @@
+[self]
+uid=teaserlist
+gid=25beec68-46cb-4aa8-9eaa-33831f7f4c65
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
+
+[optionalId]
+uid=presshomepage
+gid=c53e8821-70f0-418d-bd8e-71fb3e7373b5
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+
+uid=teaserlistelement
+gid=b8705653-f83f-4ad7-a457-37325fc7a84c
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
+

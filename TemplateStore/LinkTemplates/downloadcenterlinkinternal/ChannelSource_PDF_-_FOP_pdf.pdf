@@ -1,0 +1,26 @@
+$CMS_IF(!sitestoreref.getMedia().isEmpty())$
+	$CMS_SET(set_info)$
+		($CMS_VALUE(ref(sitestoreref).extension.toUpperCase())$, $CMS_SET(_size, ref(sitestoreref).size.humanReadable("KiB","###"))$$CMS_VALUE(if(_size == "0", "1", _size))$ KB)
+	$CMS_END_SET$
+	$CMS_SWITCH(ref(sitestoreref).extension)$
+		$CMS_SET(icon, "icon_defaultLink")$
+		$CMS_CASE("pdf")$$CMS_SET(icon, "icon_pdf")$
+		$CMS_CASE("doc")$$CMS_SET(icon, "icon_doc")$
+		$CMS_CASE("xls")$$CMS_SET(icon, "icon_excel")$
+		$CMS_CASE("jpg")$$CMS_SET(icon, "icon_jpg")$
+		$CMS_CASE("mp3")$$CMS_SET(icon, "icon_mp3")$
+		$CMS_CASE("ppt")$$CMS_SET(icon, "icon_ppt")$
+	$CMS_END_SWITCH$
+	$CMS_SET(set_icon)$<fo:external-graphic src="$CMS_REF(media:icon,abs:3)$" border-right="3mm solid #ffffff" content-height="3mm"/>$CMS_END_SET$
+$CMS_ELSE$
+	$CMS_SET(set_info,"")$$CMS_SET(set_icon,"")$
+$CMS_END_IF$
+
+<fo:block padding="1mm">
+	$CMS_VALUE(set_icon)$
+	$CMS_VALUE(if(!text.isEmpty, text, "Link"))$
+	$CMS_VALUE(set_info)$
+</fo:block>
+$CMS_IF(!comment.isEmpty)$
+	<fo:block padding-left="7mm" font-size="9pt" color="#666666">$CMS_VALUE(comment)$</fo:block>
+$CMS_END_IF$

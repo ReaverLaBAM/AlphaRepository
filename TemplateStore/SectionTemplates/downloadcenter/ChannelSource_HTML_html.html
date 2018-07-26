@@ -1,0 +1,14 @@
+$CMS_IF(!st_downloadareas.isEmpty)$
+	$-- Downloadcenter --$
+	<div class="clearfix module"$CMS_VALUE(editorId())$>
+		$-- List of Linklists that expand on click --$
+		<ul class="klapp">
+			$CMS_FOR(_area, st_downloadareas)$$--
+				--$$CMS_VALUE(_area)$$--
+			--$$CMS_END_FOR$
+		</ul>
+	</div>
+	$-- /Downloadcenter --$
+$CMS_ELSIF(#global.preview)$
+	<p style="font-weight:bold !important;color:red !important;">$CMS_VALUE(#global.gca("must_not_be_empty"))$</p>
+$CMS_END_IF$

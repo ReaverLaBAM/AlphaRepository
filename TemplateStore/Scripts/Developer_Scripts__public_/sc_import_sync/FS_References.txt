@@ -1,0 +1,6 @@
+[self]
+uid=sc_import_sync
+gid=01596a4d-fa22-4035-94e8-189f940d606d
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.ScriptImpl
+

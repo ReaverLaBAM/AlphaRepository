@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="-2669690647571660004" name="search">
+	<LANG displayname="Search" language="EN"/>
+	<LANG displayname="Suche" language="DE"/>
+	<style tag="search" view="marked">
+		<attr name="align" value="left"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

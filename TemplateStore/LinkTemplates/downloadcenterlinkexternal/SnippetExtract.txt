@@ -1,0 +1,16 @@
+if (
+    !ref.isEmpty,
+    "→" + ref +
+    if (
+        !comment.isEmpty,
+        " ("
+    )
+) +
+if (
+    !comment.isEmpty,
+    comment +
+    if (
+        !ref.isEmpty,
+        ")"
+    )
+)

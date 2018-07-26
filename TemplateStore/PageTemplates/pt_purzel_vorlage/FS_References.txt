@@ -1,0 +1,6 @@
+[self]
+uid=pt_purzel_vorlage
+gid=5e981e73-b805-44c7-b543-a0c6e05879e4
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARRAY type="de.espirit.firstspirit.access.store.templatestore.TableTemplate$Mapping">
+	<OBJECT class="de.espirit.firstspirit.access.store.templatestore.FieldMapping">
+		<FIELD name="_dbAttributeNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Salutation_DE</OBJECT>
+				</ARRAY>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Salutation_EN</OBJECT>
+				</ARRAY>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_dbReferenceName"><NULL/><!-- class java.lang.String --></FIELD>
+		<FIELD name="_displayNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<OBJECT class="java.lang.String">Anrede</OBJECT>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<OBJECT class="java.lang.String">Salutation</OBJECT>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_name">
+			<OBJECT class="java.lang.String">cs_salutation</OBJECT>
+		</FIELD>
+		<FIELD name="_valueListAttribute"><NULL/><!-- class [Ljava.lang.String; --></FIELD>
+		<FIELD name="_visible" type="boolean">true</FIELD>
+		<FIELD name="_width" type="int">120</FIELD>
+	</OBJECT>
+	<OBJECT class="de.espirit.firstspirit.access.store.templatestore.FieldMapping">
+		<FIELD name="_dbAttributeNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Firstname</OBJECT>
+				</ARRAY>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Firstname</OBJECT>
+				</ARRAY>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_dbReferenceName"><NULL/><!-- class java.lang.String --></FIELD>
+		<FIELD name="_displayNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<OBJECT class="java.lang.String">Vorname</OBJECT>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<OBJECT class="java.lang.String">First name</OBJECT>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_name">
+			<OBJECT class="java.lang.String">cs_firstname</OBJECT>
+		</FIELD>
+		<FIELD name="_valueListAttribute"><NULL/><!-- class [Ljava.lang.String; --></FIELD>
+		<FIELD name="_visible" type="boolean">true</FIELD>
+		<FIELD name="_width" type="int">120</FIELD>
+	</OBJECT>
+	<OBJECT class="de.espirit.firstspirit.access.store.templatestore.FieldMapping">
+		<FIELD name="_dbAttributeNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Lastname</OBJECT>
+				</ARRAY>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Lastname</OBJECT>
+				</ARRAY>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_dbReferenceName"><NULL/><!-- class java.lang.String --></FIELD>
+		<FIELD name="_displayNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<OBJECT class="java.lang.String">Nachname</OBJECT>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<OBJECT class="java.lang.String">Last name</OBJECT>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_name">
+			<OBJECT class="java.lang.String">cs_lastname</OBJECT>
+		</FIELD>
+		<FIELD name="_valueListAttribute"><NULL/><!-- class [Ljava.lang.String; --></FIELD>
+		<FIELD name="_visible" type="boolean">true</FIELD>
+		<FIELD name="_width" type="int">120</FIELD>
+	</OBJECT>
+	<OBJECT class="de.espirit.firstspirit.access.store.templatestore.FieldMapping">
+		<FIELD name="_dbAttributeNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Phone</OBJECT>
+				</ARRAY>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Phone</OBJECT>
+				</ARRAY>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_dbReferenceName"><NULL/><!-- class java.lang.String --></FIELD>
+		<FIELD name="_displayNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<OBJECT class="java.lang.String">Telefonnummer</OBJECT>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<OBJECT class="java.lang.String">Phone number</OBJECT>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_name">
+			<OBJECT class="java.lang.String">cs_phone</OBJECT>
+		</FIELD>
+		<FIELD name="_valueListAttribute"><NULL/><!-- class [Ljava.lang.String; --></FIELD>
+		<FIELD name="_visible" type="boolean">true</FIELD>
+		<FIELD name="_width" type="int">120</FIELD>
+	</OBJECT>
+	<OBJECT class="de.espirit.firstspirit.access.store.templatestore.FieldMapping">
+		<FIELD name="_dbAttributeNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Mail</OBJECT>
+				</ARRAY>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<ARRAY type="java.lang.String">
+					<OBJECT class="java.lang.String">Mail</OBJECT>
+				</ARRAY>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_dbReferenceName"><NULL/><!-- class java.lang.String --></FIELD>
+		<FIELD name="_displayNames">
+			<OBJECT class="java.util.HashMap">
+				<OBJECT class="java.lang.String">DE</OBJECT>
+				<OBJECT class="java.lang.String">E-Mail</OBJECT>
+				<OBJECT class="java.lang.String">EN</OBJECT>
+				<OBJECT class="java.lang.String">E-mail</OBJECT>
+			</OBJECT>
+		</FIELD>
+		<FIELD name="_name">
+			<OBJECT class="java.lang.String">cs_mail</OBJECT>
+		</FIELD>
+		<FIELD name="_valueListAttribute"><NULL/><!-- class [Ljava.lang.String; --></FIELD>
+		<FIELD name="_visible" type="boolean">true</FIELD>
+		<FIELD name="_width" type="int">120</FIELD>
+	</OBJECT>
+</ARRAY>

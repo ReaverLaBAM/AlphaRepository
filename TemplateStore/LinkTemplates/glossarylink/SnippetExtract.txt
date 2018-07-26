@@ -1,0 +1,4 @@
+if (
+    !content.isEmpty && !content.dataset.formData.cs_description.isEmpty,
+    truncate(content.dataset.formData.cs_description, 250)
+)

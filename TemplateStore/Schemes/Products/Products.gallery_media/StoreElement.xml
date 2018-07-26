@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.gallery_media" filename="Gallery_Media" height="5" id="7581451838683097274" previewPageRefUid="gallery_2" templateid="3567190941539451408" type="content">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Galeriemedien" language="DE"/>
+	<LANG displayname="Gallery media" language="EN"/>
+</TABLE>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Teaser information" description="Fill the teaser components."/>
+        <LANGINFO lang="DE" label="Teaser-Informationen" description="Geben Sie Teaser-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_headline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert a headline for the teaser."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Überschrift des Teasers."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <FS_REFERENCE name="st_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <CMS_INPUT_DOM name="st_text" hFill="yes" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="teaserboxtext"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert teaser text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie den Text des Teasers ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <CMS_INPUT_TOGGLE name="st_teaser_colour" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Teaser colour" description="Choose the colour of the teaser box."/>
+          <LANGINFO lang="DE" label="Farbe der Teaser-Box" description="Wählen Sie die Farbe der Teaser-Box."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="Alternative 2"/>
+          <LANGINFO lang="DE" label="Variante 2"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Alternative 1"/>
+          <LANGINFO lang="DE" label="Variante 1"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <FS_REFERENCE name="st_link" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link for text" description="Choose an optional Link."/>
+          <LANGINFO lang="DE" label="Verweis für den Text" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <CMS_INPUT_TOGGLE name="st_linkType" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Type of link" description="Choose a type for the link."/>
+          <LANGINFO lang="DE" label="Verweistype" description="Wählen Sie einen Verweistyp aus."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="Whole text as link"/>
+          <LANGINFO lang="DE" label="Gesamter Text als Verweis"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Separate link"/>
+          <LANGINFO lang="DE" label="Separater Verweis"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TEXT name="st_link_text" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text for the separate link" description="Insert the text for the link."/>
+          <LANGINFO lang="DE" label="Text für den separaten Verweise" description="Geben Sie den Verweistext ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+        <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Info-Layer-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_infoHeadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="st_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="hometeaser"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <FS_REFERENCE name="st_infoPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="st_infoLink" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link" description="Choose an optional Link."/>
+          <LANGINFO lang="DE" label="Verweis" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

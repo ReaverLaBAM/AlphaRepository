@@ -1,0 +1,1 @@
+if(!st_links.isEmpty, st_links.map(x -> if(!x.text.isEmpty, x.text)).toString(", "))

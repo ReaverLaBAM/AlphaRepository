@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="st_description" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Area description" description="Add a description."/>
+      <LANGINFO lang="DE" label="Bereichsbeschreibung" description="Fügen Sie eine Beschreibung des Bereichs hinzu."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <FS_LIST name="st_linklist" hFill="yes">
+    <DATASOURCE type="inline" useLanguages="yes">
+      <LABELS>
+        <LABEL lang="*">#item.text</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD"/>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="stackedview" constraint="hide"/>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="center"/>
+      </LAYOUT>
+      <TEMPLATES source="linktemplates">
+        <TEMPLATE uid="downloadcenterlinkinternal"/>
+        <TEMPLATE uid="downloadcenterlinkexternal"/>
+      </TEMPLATES>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Links" description="Choose your Links."/>
+      <LANGINFO lang="DE" label="Verweise" description="Wählen Sie ihre Verweise aus."/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

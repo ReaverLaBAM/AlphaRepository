@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_REFERENCE name="sitestoreref" hFill="yes" sections="no" useLanguages="no">
+    <FILTER>
+      <ALLOW type="pageref"/>
+      <ALLOW type="pagereffolder"/>
+      <ALLOW type="documentgroup"/>
+      <ALLOW type="file"/>
+      <ALLOW type="picture"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Target"/>
+      <LANGINFO lang="DE" label="Ziel"/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="sitestore"/>
+          <FOLDER name="root" store="mediastore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+  <CMS_INPUT_TEXT name="text" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Link text"/>
+      <LANGINFO lang="DE" label="Verweistext"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="comment" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Comment"/>
+      <LANGINFO lang="DE" label="Kommentar"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

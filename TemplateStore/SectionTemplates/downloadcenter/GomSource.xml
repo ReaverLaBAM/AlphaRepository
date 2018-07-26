@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_LIST name="st_downloadareas" hFill="yes" rows="100">
+    <DATASOURCE type="inline" maxEntries="6" useLanguages="no">
+      <LABELS>
+        <LABEL lang="*">#item.st_description</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD">
+          <PARAM name="select-ui">dialog</PARAM>
+        </ACTION>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+        <COLUMN show="yes" width="500">#text</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="hide"/>
+        <ADD component="stackedview" constraint="bottom"/>
+      </LAYOUT>
+      <TEMPLATES source="sectiontemplates">
+        <TEMPLATE uid="downloadcenterarea"/>
+      </TEMPLATES>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Download areas" description="Add the download areas."/>
+      <LANGINFO lang="DE" label="Download-Bereiche" description="Fügen Sie Download-Bereiche hinzu."/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FIELDS>
+	<FIELD name='ps_debugMode'><STATE>false</STATE></FIELD>
+	<FIELD name='ps_layout_more_arrow'><UID>icon_SignLink</UID><UIDTYPE>MEDIASTORE_LEAF</UIDTYPE><REMOTE/></FIELD>
+</FIELDS>

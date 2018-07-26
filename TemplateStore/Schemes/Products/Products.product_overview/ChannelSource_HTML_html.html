@@ -1,0 +1,95 @@
+$CMS_SET(_teasersPerRow, 4)$
+
+$-- First element of row --$
+$CMS_IF((#cs.currentRowNumber % _teasersPerRow) == 0)$
+	$-- One Row of Product-Teaser --$
+	<div class="clearfix module">
+$CMS_END_IF$
+$-- /First element of row --$
+
+$-- Product Teaser --$
+<div class="smallTeaserXS$--
+	--$$CMS_IF((#cs.currentRowNumber % _teasersPerRow) == 0)$$--
+		--$ first$--
+	--$$CMS_END_IF$$--
+--$">
+	$CMS_SET(_view, "products")$
+	$CMS_SET(_template, "Products.product_overview")$
+	$CMS_IF(#global.preview)$
+		<div style="padding:1px;margin:1px;"$CMS_VALUE(editorId(view:_view, template:_template))$>
+	$CMS_END_IF$
+	<dl>
+		$CMS_IF(!#row.Picture.isEmpty)$
+			$CMS_IF(#global.preview)$
+				$CMS_SET(_width, ref(#row.Picture, resolution:"Produktteaser").width - 4)$
+			$CMS_ELSE$
+				$CMS_SET(_width, ref(#row.Picture, resolution:"Produktteaser").width)$
+			$CMS_END_IF$
+			<dt>
+				<a href="$CMS_REF(ss_product_details, contentId:#row.getId())$">$--
+					--$<img $CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_picture", resolution:"Produktteaser"))$ src="$CMS_REF(#row.Picture, resolution:"Produktteaser")$" width="$CMS_VALUE(_width)$" alt=""/>$--
+					--$<span class="linkBlock"></span>$--
+				--$</a>
+			</dt>
+		$CMS_END_IF$
+		<dd>
+			<h4$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_name"))$>$--
+				--$$CMS_IF(!#row.Name.isEmpty)$$--
+					--$$CMS_VALUE(#row.Name.convert2)$$--
+				--$$CMS_END_IF$$--
+			--$</h4>
+			$CMS_IF(!#row.PropertiesList.isEmpty)$
+
+				$CMS_IF(#global.preview)$
+					<div$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_properties"))$>
+				$CMS_END_IF$
+
+				$CMS_FOR(_property, #row.PropertiesList.sort(x -> if(!x.product_Properties_Type.Order_Index.isEmpty, x.product_Properties_Type.Order_Index, "")))$
+					<h5>$--
+						--$$CMS_IF(!_property.product_Properties_Type.Name.isEmpty)$$--
+							--$$CMS_VALUE(_property.product_Properties_Type.Name)$$--
+						--$$CMS_END_IF$$--
+					--$</h5>
+					<p>$--
+						--$$CMS_IF(!_property.Value.isEmpty)$$--
+							--$$CMS_VALUE(_property.Value)$$--
+						--$$CMS_END_IF$$--
+						--$$CMS_IF(!_property.product_Properties_Type.Unit.isEmpty)$$--
+							--$ $CMS_VALUE(_property.product_Properties_Type.Unit)$$--
+						--$$CMS_END_IF$$--
+					--$</p>
+				$CMS_END_FOR$
+
+				$CMS_IF(#global.preview)$
+					</div>
+				$CMS_END_IF$
+
+			$CMS_END_IF$
+
+			<a href="$CMS_REF(ss_product_details, contentId:#row.getId())$"><span class="mehr">$CMS_VALUE(#global.gca("moreinformationlink"))$&nbsp;<img src="$CMS_REF(ps_layout_more_arrow)$" alt="" /></span></a>
+
+		</dd>
+	</dl>
+	$CMS_IF(#global.preview)$
+		</div>
+	$CMS_END_IF$
+</div>
+$-- /Product Teaser --$
+
+$-- Last element of row or last element of page --$
+$CMS_IF(((#cs.currentRowNumber % _teasersPerRow) == (_teasersPerRow - 1)) || #cs.isLastContentRow)$
+		$-- Border for One Row of Product-Teaser --$
+		<div class="borderBottom">
+			<div class="smallTeaserXS first"></div>
+			$CMS_IF((#cs.currentRowNumber % _teasersPerRow) > 0)$
+				$CMS_FOR(_void, [1..(#cs.currentRowNumber % _teasersPerRow)])$
+					<div class="smallTeaserXS"></div>
+				$CMS_END_FOR$
+			$CMS_END_IF$
+		</div>
+		$-- /Border for One Row of Product-Teaser --$
+	
+	</div>
+	$-- /One Row of Product-Teaser --$
+$CMS_END_IF$
+$-- /Last element of row or last element of page --$

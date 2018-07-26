@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_REFERENCE name="sitestoreref" hFill="yes" imagePreview="no" sections="no" useLanguages="no">
+    <FILTER>
+      <ALLOW type="pageref"/>
+      <ALLOW type="pagereffolder"/>
+      <ALLOW type="documentgroup"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Target"/>
+      <LANGINFO lang="DE" label="Ziel"/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="sitestore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+  <CMS_INPUT_TEXT name="text" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Link text"/>
+      <LANGINFO lang="DE" label="Verweistext"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_NUMBER name="size" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Size (1-4)"/>
+      <LANGINFO lang="DE" label="Größe (1-4)"/>
+    </LANGINFOS>
+  </CMS_INPUT_NUMBER>
+
+</CMS_MODULE>

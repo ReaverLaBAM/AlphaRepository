@@ -1,0 +1,17 @@
+[self]
+uid=Products.product_offers
+gid=5e607b69-b4ae-41a3-9916-c2135378cc3b
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+
+[optionalId]
+uid=root
+gid=28b8f1dc-6eb1-4986-a366-607637fbc167
+uidType=MEDIASTORE_FOLDER
+class=de.espirit.firstspirit.store.access.mediastore.MediaStoreRootImpl
+
+uid=produkteeinzelseite_1
+gid=e6bd1a51-e048-41bf-8b2e-8d9abea9ddd0
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+

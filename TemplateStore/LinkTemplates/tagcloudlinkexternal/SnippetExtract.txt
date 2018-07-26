@@ -1,0 +1,4 @@
+if (
+    !ref.isEmpty,
+    "→" + ref
+)

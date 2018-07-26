@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.product_categories" filename="Product_Categories" height="4" id="3816176874952521592" previewPageRefUid="productcategories" templateid="-158384459179323486" type="content">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Product categories" language="EN"/>
+	<LANG displayname="Produktkategorien" language="DE"/>
+</TABLE>

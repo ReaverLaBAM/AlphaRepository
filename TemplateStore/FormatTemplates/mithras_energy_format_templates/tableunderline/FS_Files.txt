@@ -1,0 +1,7 @@
+# mimeType        name
+text/plain;UTF-8  FS_Info.txt
+text/plain;UTF-8  FS_References.txt
+text/html;UTF-8   ChannelSource_HTML_html.html
+application/pdf;UTF-8  ChannelSource_PDF_-_FOP_pdf.pdf
+application/xml;UTF-8  ChannelSource_XML_RSS.xml
+text/xml;UTF-8    StoreElement.xml

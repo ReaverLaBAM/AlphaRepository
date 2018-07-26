@@ -1,0 +1,5 @@
+if(!st_contact.isEmpty,
+	if(!st_contact.dataset.formData.cs_lastname.isEmpty, st_contact.dataset.formData.cs_lastname) +
+	if(!st_contact.dataset.formData.cs_lastname.isEmpty && !st_contact.dataset.formData.cs_firstname.isEmpty, ", ") +
+	if(!st_contact.dataset.formData.cs_firstname.isEmpty, st_contact.dataset.formData.cs_firstname)
+)

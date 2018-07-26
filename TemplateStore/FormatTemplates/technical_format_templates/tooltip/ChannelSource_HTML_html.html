@@ -1,0 +1,40 @@
+$CMS_IF(!#global.preview)$$--
+
+	--$$CMS_IF(!infoLayer.isEmpty)$$--
+		--$<!-- Tooltip -->$--
+		--$<span class="tip">$--
+			--$$CMS_SET(_infoLink, if(!infoLink.isEmpty, ref(infoLink).url, "#top"))$$--
+			--$<a class="infoIcon" href="$CMS_VALUE(_infoLink)$">$--
+				--$<img class="infoImgI" src="$CMS_REF(media:"icon_info")$" alt="I" />$--
+			--$</a>$--
+			--$<span class="clearfix toolTip">$--
+				--$<span class="innerTip">$--
+					--$$CMS_IF(!infoPicture.isEmpty)$$--
+						--$$CMS_SET(_infoPictureWidth, ref(infoPicture, resolution:"TeaserBox").width)$$--
+						--$<img class="tipImg" src="$CMS_REF(infoPicture, resolution:"TeaserBox")$" width="$CMS_VALUE(_infoPictureWidth)$" />$--
+					--$$CMS_ELSE$$--
+						--$$CMS_SET(_infoPictureWidth, 0)$$--
+					--$$CMS_END_IF$$--
+					--$<a class="tipLink" href="$CMS_VALUE(_infoLink)$" style="margin-left: $CMS_VALUE(_infoPictureWidth + 10)$px;">$--
+						--$$CMS_IF(!infoHeadline.isEmpty)$$--
+							--$<strong>$--
+								--$$CMS_VALUE(infoHeadline)$$--
+							--$</strong>$--
+							--$<br />$--
+						--$$CMS_END_IF$$--
+						--$$CMS_VALUE(infoLayer)$$--
+						--$$CMS_SET(set_pt_linebreak, "")$$--
+						--$$CMS_IF(!infoLink.isEmpty)$$--
+							--$<span class="more">$--
+								--$$CMS_VALUE(#global.gca("more"))$$--
+							--$</span>$--
+						--$$CMS_END_IF$$--
+					--$</a>$--
+				--$</span>$--
+				--$<img class="tipGif" src="$CMS_REF(media:"tipGif")$" alt="" />$--
+			--$</span>$--
+		--$</span>$--
+		--$<!--/Tooltip-->$--
+	--$$CMS_END_IF$$--
+
+--$$CMS_END_IF$

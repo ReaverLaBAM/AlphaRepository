@@ -1,0 +1,84 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="Navigation" resultname="st_sitemap">
+
+		<CMS_PARAM name="expansionVisibility" value="all"/>
+		<CMS_PARAM name="siteMap" value="1" />
+
+	    <CMS_ARRAY_PARAM name="innerBeginHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[<ul class="subNavigation">]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT><![CDATA[$--
+				--$<li class="ohne">$--
+					--$<ul>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="beginHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[$--
+				--$$CMS_IF((#nav.levelPos + 1) % 2 == 0)$$--
+					--$<div class="spalteRechts">$--
+				--$$CMS_ELSE$$--
+					--$$CMS_IF(#nav.levelPos > 0)$$--
+						--$</div>$--
+					--$$CMS_END_IF$$--
+					--$<div class="clearfix module sitemap">$--
+						--$<div class="spalteLinks">$--
+				--$$CMS_END_IF$$--
+			--$]]></CMS_ARRAY_ELEMENT>
+	    </CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="unselectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[$--
+				--$<h2>$--
+					--$<a href="$CMS_REF(#nav.ref)$">$--
+						--$$CMS_VALUE(#nav.label)$$--
+					--$</a>$--
+				--$</h2>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT index="1..2"><![CDATA[$--
+				--$<li>$--
+					--$<a href="$CMS_REF(#nav.ref)$">$--
+						--$$CMS_VALUE(#nav.label)$$--
+					--$</a>$--
+				--$</li>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+	    </CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="selectedHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[$--
+				--$<h2>$--
+					--$<a href="$CMS_REF(#nav.ref)$">$--
+						--$$CMS_VALUE(#nav.label)$$--
+					--$</a>$--
+				--$</h2>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT index="1..2"><![CDATA[$--
+				--$<li>$--
+					--$<a href="$CMS_REF(#nav.ref)$">$--
+						--$$CMS_VALUE(#nav.label)$$--
+					--$</a>$--
+				--$</li>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="endHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[</div>]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+		<CMS_ARRAY_PARAM name="innerEndHTML">
+			<CMS_ARRAY_ELEMENT><![CDATA[</ul>]]></CMS_ARRAY_ELEMENT>
+			<CMS_ARRAY_ELEMENT><![CDATA[$--
+					--$</ul>$--
+				--$</li>$--
+			--$]]></CMS_ARRAY_ELEMENT>
+		</CMS_ARRAY_PARAM>
+
+	</CMS_FUNCTION>
+
+</CMS_HEADER>
+
+$-- Sitemap module --$
+$--
+	--$$CMS_VALUE(st_sitemap)$$--
+--$</div>
+$-- /Sitemap module --$

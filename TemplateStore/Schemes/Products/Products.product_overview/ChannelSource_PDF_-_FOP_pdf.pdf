@@ -1,0 +1,53 @@
+<CMS_HEADER>
+</CMS_HEADER>
+$CMS_IF(#cs.isFirstContentRow)$
+	$CMS_SET(currentTeaserInRow,0)$
+	<fo:block>
+		<fo:table table-layout="fixed" width="100%">
+			<fo:table-column column-width="41mm"/>
+			<fo:table-column column-width="41mm"/>
+			<fo:table-column column-width="41mm"/>
+			<fo:table-column column-width="40mm"/>
+			<fo:table-body>
+$CMS_END_IF$
+		$CMS_IF(currentTeaserInRow==0)$
+			<fo:table-row>
+		$CMS_END_IF$		
+				<fo:table-cell padding-left="1mm" padding-right="1mm">
+					<fo:block border-bottom-width="4pt" border-bottom-color="#C0C0C0" border-bottom-style="solid"></fo:block>
+					$CMS_IF(!#row.Picture.isEmpty)$
+						<fo:block>
+							<fo:external-graphic src="$CMS_REF(#row.Picture,abs:3)$" width="100%" content-width="scale-to-fit" scaling="uniform"/>
+						</fo:block>
+					$CMS_END_IF$
+					$CMS_IF(!#row.Name.isEmpty)$
+					<fo:block space-before="1mm" space-after="1mm"><fo:inline font-weight="bold">$CMS_VALUE(#row.Name)$</fo:inline></fo:block>
+					$CMS_END_IF$
+					<fo:block>
+					$CMS_IF(!#row.PropertiesList.isEmpty && #row.PropertiesList.size>0)$
+						$CMS_FOR(property, #row.PropertiesList.sort(x -> if(!x.product_Properties_Type.Order_Index.isNull, x.product_Properties_Type.Order_Index, "")))$
+							<fo:block font-size="6pt" color="#858585">$CMS_IF(!property.product_Properties_Type.Name.isEmpty)$$CMS_VALUE(property.product_Properties_Type.Name)$$CMS_END_IF$</fo:block>
+							<fo:block font-size="8pt">$CMS_IF(!property.Value.isEmpty)$$CMS_VALUE(property.Value)$$CMS_END_IF$$CMS_IF(!property.product_Properties_Type.Unit.isEmpty)$ $CMS_VALUE(property.product_Properties_Type.Unit)$$CMS_END_IF$</fo:block>
+						$CMS_END_FOR$
+					$CMS_END_IF$
+					</fo:block>
+				</fo:table-cell>			
+		$CMS_IF(#cs.isLastContentRow && currentTeaserInRow<3)$
+			$CMS_FOR(count, [currentTeaserInRow+1..3])$
+				<fo:table-cell padding-left="1mm" padding-right="1mm">
+					<fo:block/>
+				</fo:table-cell>
+			$CMS_END_FOR$
+			</fo:table-row>
+		$CMS_END_IF$			
+		$CMS_IF(currentTeaserInRow==3)$			
+			</fo:table-row>
+			$CMS_SET(currentTeaserInRow,0)$
+		$CMS_ELSE$
+			$CMS_SET(currentTeaserInRow,currentTeaserInRow+1)$
+		$CMS_END_IF$		
+$CMS_IF(#cs.isLastContentRow)$
+			</fo:table-body>
+		</fo:table>
+	</fo:block>
+$CMS_END_IF$

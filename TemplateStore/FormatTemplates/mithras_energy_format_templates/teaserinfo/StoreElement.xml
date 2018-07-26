@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="-3554978925836219437" name="teaserinfo">
+	<LANG displayname="Teaser info" language="EN"/>
+	<LANG displayname="Teaser-Info" language="DE"/>
+	<style cdata="1" tag="teaserinfo" view="flow">
+		<attr name="align" value="LEFT"/>
+		<attr name="name" value="teaserinfo"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

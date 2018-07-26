@@ -1,0 +1,55 @@
+$CMS_IF(!sitestoreref.media.isEmpty)$$--
+
+	--$$CMS_SET(_fileSize, ref(sitestoreref).size.humanReadable("KiB", "#,##0"))$$--
+	--$$CMS_SET(_fileInfo, " (" + ref(sitestoreref).extension.upperCase + ", " + if(_fileSize == "0", "1", _fileSize) + " KB)")$$--
+
+	--$$CMS_SET(_fileExtensions, {
+		"doc",
+		"jpg",
+		"mp3",
+		"pdf",
+		"ppt",
+		"video"
+	})$$--
+	--$$CMS_SET(_fileIcon, "<img src=\"" + ref(media:"icon_" +
+		if(
+			ref(sitestoreref).extension.lowerCase == "xls",
+			"excel",
+			if (
+				_fileExtensions.contains(ref(sitestoreref).extension.lowerCase),
+				ref(sitestoreref).extension.lowerCase,
+				"defaultLink"
+			)
+		)) + "\" alt=\"\" /")$$--
+
+--$$CMS_ELSE$$--
+
+	--$$CMS_SET(_fileInfo, "")$$--
+	--$$CMS_SET(_fileIcon, "")$$--
+
+--$$CMS_END_IF$$--
+
+--$<!-- Listentry -->
+<div class="clearfix module presseListe">
+	<h2>
+		$CMS_VALUE(_fileIcon)$
+
+		$CMS_IF(!text.isEmpty)$$--
+			--$$CMS_VALUE(text)$$--
+		--$$CMS_END_IF$
+
+		$CMS_VALUE(_fileInfo)$
+	</h2>
+	<p>
+		<a href="$CMS_REF(sitestoreref)$">$--
+			--$$CMS_IF(!comment.isEmpty)$$--
+				--$$CMS_VALUE(comment)$$--
+			--$$CMS_END_IF$$--
+			--$<span class="mehr">$--
+				--$&nbsp;$--
+				--$<img src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+			--$</span>$--
+		--$</a>
+	</p>
+</div>
+<!-- /Listentry -->

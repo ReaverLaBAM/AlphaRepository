@@ -1,0 +1,6 @@
+[self]
+uid=Products.query_press_archive
+gid=f3966f07-454a-46b8-81ad-45aff690fa9a
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.QueryImpl
+

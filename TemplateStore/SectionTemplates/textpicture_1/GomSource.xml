@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Text" description="Fill the product information."/>
+        <LANGINFO lang="DE" label="Text" description="Geben Sie die Produktinformationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_headline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM
+        name="st_text"
+        hFill="yes"
+        listConfig="style:Listenart[0:Bullet Points|2:Numbers]"
+        rows="10"
+        table="yes"
+        useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="p"/>
+          <TEMPLATE name="h4"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkinternal"/>
+          <LINKEDITOR name="textlinkexternal"/>
+          <LINKEDITOR name="glossarylink"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Picture" description="Insert a picture."/>
+        <LANGINFO lang="DE" label="Bildauswahl" description="Wählen Sie hier ein Bild aus."/>
+      </LANGINFOS>
+
+      <FS_REFERENCE name="st_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <CMS_INPUT_TEXT name="st_picture_description" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture description" description="Insert a picture description."/>
+          <LANGINFO lang="DE" label="Bildbeschreibung" description="Tragen Sie eine Beschreibung des Bildes ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TOGGLE name="st_picture_position" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture position" description="Choose the position of this picture."/>
+          <LANGINFO lang="DE" label="Ausrichtung des Bildes" description="Wählen Sie die Ausrichtung des Bildes."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="Right"/>
+          <LANGINFO lang="DE" label="Rechts"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Left"/>
+          <LANGINFO lang="DE" label="Links"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TOGGLE name="st_picture_zoomable" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Zoom picture" description="Choose if the picture can be zoomed."/>
+          <LANGINFO lang="DE" label="Bild vergrößern" description="Wählen Sie ob das Bild vergrößert werden kann."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

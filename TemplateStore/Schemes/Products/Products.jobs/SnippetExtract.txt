@@ -1,0 +1,3 @@
+if(!cs_description.isEmpty, truncate(cs_description, 250)) +
+if(!cs_task.isEmpty, truncate(cs_task, 250)) + 
+if(!cs_profil.isEmpty, truncate(cs_profil, 250))

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="1235519969016441874" name="deleted">
+	<LANG displayname="Deleted" language="EN"/>
+	<LANG displayname="Gelöscht" language="DE"/>
+	<style system="1" tag="deleted" view="inline" visible="0">
+		<attr name="align" value="LEFT"/>
+		<attr name="color" value="#aa1e5d"/>
+		<attr name="font-style" value="strikeout"/>
+		<attr name="font" value="sansserif"/>
+		<attr name="name" value="deleted"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

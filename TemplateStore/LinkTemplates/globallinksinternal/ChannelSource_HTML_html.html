@@ -1,0 +1,14 @@
+<li>$--
+	--$<a href="$--
+		--$$CMS_IF(!sitestoreref.isEmpty)$$--
+			--$$CMS_REF(sitestoreref)$$--
+		--$$CMS_ELSE$$--
+			--$$CMS_VALUE(#global.logError("no reference selected!"))$$--
+		--$$CMS_END_IF$$--
+	--$">$--
+		--$$CMS_IF(!mediaref.isEmpty)$$--
+			--$<img src="$CMS_REF(mediaref)$" alt="" />$--
+		--$$CMS_END_IF$$--
+		--$$CMS_VALUE(if(!text.isEmpty, text))$$--
+	--$</a>$--
+--$</li>

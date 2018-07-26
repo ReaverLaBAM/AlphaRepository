@@ -1,0 +1,77 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="contentSelect" resultname="cs_press_releases">
+
+		<CMS_PARAM name="schema" value="Products" />
+
+		<QUERY entityType="Press_Releases">
+			<ORDERCRITERIA attribute="Date" descending="1" />
+		</QUERY>
+
+	</CMS_FUNCTION>
+
+</CMS_HEADER>
+$CMS_IF(!cs_press_releases.isEmpty)$
+	$-- Press Release Teaser --$
+	<div class="clearfix teasermodule $--
+		--$$CMS_IF(!st_teaser_colour)$$--
+			--$info$--
+		--$$CMS_END_IF$$--
+	--$"$CMS_VALUE(editorId())$>
+
+		<h3$--
+			--$$CMS_IF(!st_teaser_colour)$$--
+				--$ class="h3back"$--
+			--$$CMS_END_IF$$--
+			--$$CMS_VALUE(editorId(editorName:"st_headline"))$$--
+		--$>$--
+			--$$CMS_IF(!st_headline.isEmpty)$$--
+				--$$CMS_VALUE(st_headline.convert2)$$--
+			--$$CMS_END_IF$$--
+			--$$CMS_RENDER(template:"tooltip",
+			      infoLayer:st_infoLayer,
+			      infoLink:st_infoLink,
+			      infoPicture:st_infoPicture,
+			      infoHeadline:st_infoHeadline)$$--
+		--$</h3>
+		$CMS_SET(_listSize, cs_press_releases.size)$
+		$CMS_IF(!st_rows.isEmpty)$
+			$CMS_SET(_maxListIndex, if(st_rows > _listSize, _listSize, st_rows))$
+		$CMS_ELSIF(_listSize > 2)$
+			$CMS_SET(_maxListIndex, 2)$
+		$CMS_ELSE$
+			$CMS_SET(_maxListIndex, _listSize)$
+		$CMS_END_IF$
+		<div class="clearfix text">
+			<ul class="linkList">
+				$CMS_IF(_maxListIndex > 0)$$--
+					--$$CMS_FOR(_entity, cs_press_releases.subList(0, _maxListIndex))$
+						<li$CMS_VALUE(editorId(entity:_entity, view:"pressreleases"))$>
+							<a href="$CMS_REF(ss_press_releases_details, contentId:_entity.getId())$">$--
+								--$$CMS_IF(st_teaser_text)$$--
+									--$<strong class="h5">$--
+								--$$CMS_END_IF$$--
+								--$$CMS_IF(!_entity.Date.isEmpty)$$--
+									--$$CMS_VALUE(_entity.Date)$$--
+								--$$CMS_END_IF$$--
+								--$<br />$--
+								--$$CMS_IF(!st_teaser_text)$$--
+									--$<strong class="h5">$--
+								--$$CMS_END_IF$$--
+								--$$CMS_IF(!_entity.Headline.isEmpty)$$--
+									--$$CMS_VALUE(_entity.Headline)$$--
+								--$$CMS_END_IF$$--
+								--$</strong>$--
+								--$$CMS_IF(!_entity.Teaser.isEmpty && st_teaser_text)$$--
+									--$$CMS_VALUE(_entity.Teaser)$$--
+								--$$CMS_END_IF$$--
+							--$</a>
+						</li>
+					$CMS_END_FOR$
+				$CMS_END_IF$
+			</ul>
+		</div>
+
+	</div>
+	$-- /Press Release Teaser --$
+$CMS_END_IF$

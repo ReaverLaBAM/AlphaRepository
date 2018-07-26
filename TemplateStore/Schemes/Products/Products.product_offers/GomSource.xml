@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Product name" description="Insert the product name."/>
+      <LANGINFO lang="DE" label="Produktname" description="Tragen Sie den Produktnamen ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Product description" description="Add a product Description."/>
+      <LANGINFO lang="DE" label="Produktbeschreibung" description="Fügen Sie eine Produktbeschreibung hinzu."/>
+    </LANGINFOS>
+  </CMS_INPUT_DOM>
+
+  <FS_REFERENCE name="cs_picture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+    <FILTER>
+      <ALLOW type="picture"/>
+      <HIDE type="file"/>
+    </FILTER>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Picture" description="Insert a picture."/>
+      <LANGINFO lang="DE" label="Bildauswahl" description="Wählen Sie hier ein Bild aus."/>
+    </LANGINFOS>
+    <PROJECTS>
+      <LOCAL name=".">
+        <SOURCES>
+          <FOLDER name="root" store="mediastore"/>
+        </SOURCES>
+      </LOCAL>
+    </PROJECTS>
+  </FS_REFERENCE>
+
+</CMS_MODULE>

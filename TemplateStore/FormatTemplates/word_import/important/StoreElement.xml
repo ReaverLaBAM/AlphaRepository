@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="-1694658250736170580" name="important">
+	<LANG displayname="Important" language="EN"/>
+	<LANG displayname="Wichtig" language="DE"/>
+	<style tag="important" view="marked">
+		<attr name="align" value="LEFT"/>
+		<attr name="color" value="#FF0000"/>
+		<attr name="font-style" value="bold"/>
+		<attr name="name" value="important"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

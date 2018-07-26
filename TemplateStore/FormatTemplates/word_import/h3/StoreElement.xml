@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="7614797005148048833" name="h3">
+	<LANG displayname="H3" language="DE"/>
+	<LANG displayname="H3" language="EN"/>
+	<style tag="h3" view="flow">
+		<attr name="align" value="LEFT"/>
+		<attr name="font-size" value="16"/>
+		<attr name="font-style" value="bold"/>
+		<attr name="font" value="Arial"/>
+		<attr name="name" value="h3"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

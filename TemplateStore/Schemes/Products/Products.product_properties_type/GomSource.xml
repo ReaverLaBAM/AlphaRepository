@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Name of type" description="Insert the name of type."/>
+      <LANGINFO lang="DE" label="Name des Typs" description="Tragen Sie den Namen des Typs ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_unit" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Unit" description="Insert the unit."/>
+      <LANGINFO lang="DE" label="Einheit" description="Tragen Sie die Einheit ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

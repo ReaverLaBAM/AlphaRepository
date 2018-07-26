@@ -1,0 +1,13 @@
+<span class="fontSize$CMS_VALUE(size)$">$--
+	--$<a href="$--
+		--$$CMS_IF(!sitestoreref.isEmpty)$$--
+			--$$CMS_REF(sitestoreref)$$--
+		--$$CMS_END_IF$$--
+	--$"$--
+		--$$CMS_IF(!text.isEmpty)$$--
+			--$ title="$CMS_VALUE(text)$"$--
+		--$$CMS_END_IF$$--
+	--$>$--
+		--$$CMS_VALUE(if(!text.isEmpty, text, "Link"))$$--
+	--$</a>$--
+--$</span>

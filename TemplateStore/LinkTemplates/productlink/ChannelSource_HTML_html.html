@@ -1,0 +1,25 @@
+<!-- Tooltip -->
+<span class="tip">
+	<a class="produktLink" href="#top">$--
+		--$$CMS_VALUE(lnk_text)$$--
+	--$</a>
+	<span class="clearfix toolTip">
+		<span class="innerTip">
+			$CMS_SET(_formData, lnk_product.dataset.formData)$
+			$CMS_IF(!_formData.cs_picture.isEmpty)$$--
+				--$$CMS_SET(_pictureWidth, ref(_formData.cs_picture, resolution:"TeaserBox").width)$$--
+				--$<!-- Imagebreite ermitteln und im Link ausgeben -->
+				<img class="tipImg" src="$CMS_REF(_formData.cs_picture, resolution:"TeaserBox")$" width="$CMS_VALUE(_pictureWidth)$" />$--
+			--$$CMS_ELSE$$--
+				--$$CMS_SET(_pictureWidth, -10)$$--
+			--$$CMS_END_IF$
+			<a class="tipLink" href="$CMS_REF(ss_product_details, contentId:lnk_product.dataset.entity.getId())$" style="margin-left: $CMS_VALUE(_pictureWidth + 10)$px;">$--
+				--$<strong>$--
+					--$$CMS_VALUE(_formData.cs_name)$$--
+				--$</strong>$--
+			--$</a>
+		</span>	
+		<img class="tipGif" src="$CMS_REF(media:"tipGif")$" alt="" />
+	</span>
+</span>
+<!--/Tooltip-->	

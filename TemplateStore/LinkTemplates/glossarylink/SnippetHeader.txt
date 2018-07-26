@@ -1,0 +1,4 @@
+if (
+    !content.isEmpty && !content.dataset.formData.cs_term.isEmpty,
+    content.dataset.formData.cs_term
+)

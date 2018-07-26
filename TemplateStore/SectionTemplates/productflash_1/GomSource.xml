@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Flash information" description="Fill the Flash components."/>
+        <LANGINFO lang="DE" label="Flash-Informationen" description="Geben Sie die Flash-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_headline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <FS_REFERENCE name="st_product_flash_xml" hFill="yes" imagePreview="no" sections="no" useLanguages="no">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="XML Flash file for producth" description="Select the XML-Flash file for product."/>
+          <LANGINFO lang="DE" label="XML-Datei für Produkt" description="Wählen Sie eine XML-Datei für das Produkt aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+        <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Info-Layer-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="st_infoHeadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="st_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="hometeaser"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <FS_REFERENCE name="st_infoPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="st_infoLink" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link" description="Choose and optional link."/>
+          <LANGINFO lang="DE" label="Verweis" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+</CMS_MODULE>

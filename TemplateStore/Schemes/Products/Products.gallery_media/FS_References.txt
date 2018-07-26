@@ -1,0 +1,17 @@
+[self]
+uid=Products.gallery_media
+gid=8fd5ffd3-91bb-48a5-a068-155e2b769fe3
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+
+[optionalId]
+uid=root
+gid=28b8f1dc-6eb1-4986-a366-607637fbc167
+uidType=MEDIASTORE_FOLDER
+class=de.espirit.firstspirit.store.access.mediastore.MediaStoreRootImpl
+
+uid=gallery_2
+gid=a7c80f59-f685-4ad0-819f-cb6e49b7eaac
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+

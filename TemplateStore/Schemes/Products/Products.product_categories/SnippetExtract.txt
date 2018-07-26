@@ -1,0 +1,1 @@
+truncate(cs_description, 250)

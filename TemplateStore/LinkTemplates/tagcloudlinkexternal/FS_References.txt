@@ -1,0 +1,6 @@
+[self]
+uid=tagcloudlinkexternal
+gid=e514dde9-9421-4c17-bab4-5477cf50f5c5
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+

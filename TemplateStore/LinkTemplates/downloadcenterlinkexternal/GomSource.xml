@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="ref" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Target URL"/>
+      <LANGINFO lang="DE" label="Zieladresse"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="text" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Link text"/>
+      <LANGINFO lang="DE" label="Verweistext"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="comment" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Comment"/>
+      <LANGINFO lang="DE" label="Kommentar"/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_COMBOBOX name="linktemplate" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+    <ENTRIES>
+      <ENTRY value="downloadcenterlinkexternal.standard">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="HTTP link"/>
+          <LANGINFO lang="DE" label="HTTP-Verweis"/>
+        </LANGINFOS>
+      </ENTRY>
+      <ENTRY value="downloadcenterlinkexternal.mail">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Mail link"/>
+          <LANGINFO lang="DE" label="E-Mail-Verweis"/>
+        </LANGINFOS>
+      </ENTRY>
+    </ENTRIES>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Reference template"/>
+      <LANGINFO lang="DE" label="Verweisvorlage"/>
+    </LANGINFOS>
+  </CMS_INPUT_COMBOBOX>
+
+</CMS_MODULE>

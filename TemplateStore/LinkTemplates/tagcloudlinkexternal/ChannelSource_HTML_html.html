@@ -1,0 +1,38 @@
+$CMS_IF(linktemplate.key != "tagcloudlinkexternal.standard" && linktemplate.key ==  "tagcloudlinkexternal.mail")$$--
+
+	early escape on invalid link template
+	--$$CMS_VALUE(#global.logError("invalid value for attribute 'linktemplate': '" + linktemplate + "'"))$$--
+
+--$$CMS_ELSIF(ref.isEmpty)$$--
+
+	early escape on empty external URL
+	--$$CMS_VALUE(#global.logError("no external URL specified!"))$$--
+
+--$$CMS_ELSE$$--
+
+	--$$CMS_IF(linktemplate.key == "tagcloudlinkexternal.standard")$$--
+
+		ensure HTTP protocol prefix
+		--$$CMS_IF(!ref.startsWith("http://") && !ref.startsWith("https://"))$$--
+			--$$CMS_SET(ref, "http://" + ref)$$--
+		--$$CMS_END_IF$$--
+
+	--$$CMS_ELSE$$--
+
+		ensure mailto URL prefix
+		--$$CMS_IF(!ref.startsWith("mailto:"))$$--
+			--$$CMS_SET(ref, "mailto:" + ref)$$--
+		--$$CMS_END_IF$$--
+
+	--$$CMS_END_IF$$--
+
+	--$<span class="fontSize$CMS_VALUE(size)$">$--
+		--$<a href="$CMS_VALUE(ref)$" target="_blank"$--
+			--$$CMS_IF(!text.isEmpty)$$--
+				--$ title="$CMS_VALUE(text)$"$--
+			--$$CMS_END_IF$$--
+		--$>$--
+			--$$CMS_VALUE(if(!text.isEmpty, text, "Link"))$$--
+		--$</a>$--
+	--$</span>$--
+--$$CMS_END_IF$

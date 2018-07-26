@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="5482369248841661270" name="h4">
+	<LANG displayname="H4" language="DE"/>
+	<LANG displayname="H4" language="EN"/>
+	<style tag="h4" view="flow">
+		<attr name="align" value="LEFT"/>
+		<attr name="name" value="h4"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

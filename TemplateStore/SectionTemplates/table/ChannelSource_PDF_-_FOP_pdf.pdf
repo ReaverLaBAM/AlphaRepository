@@ -1,0 +1,22 @@
+<CMS_HEADER>
+<CMS_FUNCTION name="Table" resultname="fr_st_table">
+  <CMS_PARAM name="tableData" value="st_table" />
+  <CMS_NODE_PARAM name="tableFormat">
+    <HEADERSPEC><![CDATA[<fo:table table-layout="fixed" width="100%">$CMS_FOR(cols, [1..#table.cols])$<fo:table-column column-width="$CMS_VALUE(168/#table.cols)$mm"/>$CMS_END_FOR$<fo:table-body>$CMS_VALUE(#content)$</fo:table-body></fo:table>]]></HEADERSPEC>
+    <ROW number="ALL"><![CDATA[<fo:table-row>$CMS_VALUE(#content)$</fo:table-row>]]></ROW>
+    <CELL row="0" col="ALL"><![CDATA[<fo:table-cell$CMS_IF(!#cell.colspan.isEmpty && #cell.colspan > 0)$ number-columns-spanned="$CMS_VALUE(#cell.colspan)$"$CMS_END_IF$ border-width="1mm" border-style="solid" border-color="#FFFFFF" background-color="#E5E7EC"><fo:block-container$CMS_IF(st_topLine)$ font-weight="bold"$CMS_END_IF$ padding="1mm" margin="1mm" overflow="hidden"><fo:block>$CMS_VALUE(#content)$</fo:block></fo:block-container></fo:table-cell>]]></CELL>
+    <CELL row="ODD" col="ALL"><![CDATA[<fo:table-cell$CMS_IF(!#cell.colspan.isEmpty && #cell.colspan > 0)$ number-columns-spanned="$CMS_VALUE(#cell.colspan)$"$CMS_END_IF$ border-width="1mm" border-style="solid" border-color="#FFFFFF" background-color="$CMS_IF(st_altRows)$#DCDCDC$CMS_ELSE$#EDEFF2$CMS_END_IF$"><fo:block padding="1mm" margin="1mm">$CMS_VALUE(#content)$</fo:block></fo:table-cell>]]></CELL>
+    <CELL row="ALL" col="ALL"><![CDATA[<fo:table-cell$CMS_IF(!#cell.colspan.isEmpty && #cell.colspan > 0)$ number-columns-spanned="$CMS_VALUE(#cell.colspan)$"$CMS_END_IF$ border-width="1mm" border-style="solid" border-color="#FFFFFF" background-color="#EDEFF2"><fo:block padding="1mm" margin="1mm">$CMS_VALUE(#content)$</fo:block></fo:table-cell>]]></CELL>
+	</CMS_NODE_PARAM>
+</CMS_FUNCTION>
+</CMS_HEADER> 
+
+<fo:block space-after="3mm" space-before="3mm">
+	$CMS_IF(!st_headline.isEmpty)$
+	<fo:block space-after="2mm">
+		<fo:inline font-size="11pt" font-weight="bold" color="#CF6100">$CMS_VALUE(st_headline.convert)$</fo:inline>
+	</fo:block>
+	$CMS_END_IF$
+	$CMS_VALUE(fr_st_table)$
+	$CMS_IF(!st_underline.isEmpty)$$CMS_VALUE(st_underline)$$CMS_END_IF$
+</fo:block>

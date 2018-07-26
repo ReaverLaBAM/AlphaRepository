@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Homepage information" description="Fill the homepage components."/>
+        <LANGINFO lang="DE" label="Homepage-Informationen" description="Geben Sie ihre Homepage-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_headline" hFill="yes" noBreak="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert your headline for that page."/>
+          <LANGINFO lang="DE" label="Überschrift" description="Überschrift der Seite."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TOGGLE name="pt_headlineType" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Create graphical headline" description="Choose your type of headline (Image/Text)."/>
+          <LANGINFO lang="DE" label="Überschrift als Grafik erzeugen" description="Wählen Sie die Art der Überschrift (Grafik/Text)."/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TEXT name="pt_subheadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Subheadline" description="Insert your subheadline for that page."/>
+          <LANGINFO lang="DE" label="Zusatzüberschrift" description="Zusatzüberschrift der Seite."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="pt_intro" hFill="yes" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="p"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Introduction text" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Einleitungstext" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name="textlinkexternal"/>
+          <LINKEDITOR name="textlinkinternal"/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Product highlight" description="Fill the product highlight components."/>
+        <LANGINFO lang="DE" label="Produkt-Highlight" description="Tragen Sie die Produkt-Highlight-Daten ein."/>
+      </LANGINFOS>
+
+      <CMS_GROUP tabs="top">
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Information" description="Fill the product highlight components."/>
+            <LANGINFO lang="DE" label="Informationen" description="Tragen Sie die Produkt-Highlight-Daten ein."/>
+          </LANGINFOS>
+
+          <CMS_INPUT_TOGGLE
+            name="pt_productSwitch"
+            type="radio"
+            hFill="yes"
+            preset="copy"
+            singleLine="no"
+            useLanguages="yes">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Show product highlight?" description="Show product highlight?"/>
+              <LANGINFO lang="DE" label="Produkt-Highlight anzeigen?" description="Produkt-Highlight anzeigen?"/>
+            </LANGINFOS>
+            <OFF>
+              <LANGINFO lang="*" label="No"/>
+              <LANGINFO lang="DE" label="Nein"/>
+            </OFF>
+            <ON>
+              <LANGINFO lang="*" label="Yes"/>
+              <LANGINFO lang="DE" label="Ja"/>
+            </ON>
+          </CMS_INPUT_TOGGLE>
+
+          <CMS_INPUT_TEXT name="pt_product_headline" hFill="yes" singleLine="no" useLanguages="yes">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Product highlight headline" description="Insert your headline for the product highlight."/>
+              <LANGINFO lang="DE" label="Überschrift für das Produkt-Highlight" description="Überschrift für das Produkt-Highlight."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_DOM name="pt_highlightText" hFill="yes" rows="5" useLanguages="yes">
+            <FORMATS>
+              <TEMPLATE name="p"/>
+            </FORMATS>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Product highlight text" description="Insert your product highlight specific text."/>
+              <LANGINFO lang="DE" label="Produkt-Highlight-Text" description="Geben Sie hier ihren Produkt-Highlight-Text ein."/>
+            </LANGINFOS>
+            <LINKEDITORS>
+              <LINKEDITOR name=""/>
+            </LINKEDITORS>
+          </CMS_INPUT_DOM>
+
+          <FS_REFERENCE name="pt_highlightPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Product highlight picture" description="Insert your picture."/>
+              <LANGINFO lang="DE" label="Produkt-Highlight-Bild" description="Wählen Sie hier ihr Bild aus."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Choose Product" description="Choose the product."/>
+            <LANGINFO lang="DE" label="Produktauswahl" description="Wählen Sie das Produkt aus."/>
+          </LANGINFOS>
+
+          <FS_DATASET name="pt_product" allowDelete="no" allowNew="no" hFill="yes" mode="combobox">
+            <LANGINFOS>
+              <LANGINFO
+                lang="*"
+                label="Product highlight"
+                description="Choose your product highlight."
+                expression="#item.Name_EN"/>
+              <LANGINFO
+                lang="DE"
+                label="Produkt-Highlight"
+                description="Wählen Sie ihr Produkt-Highlight."
+                expression="#item.Name_DE"/>
+            </LANGINFOS>
+            <SOURCES>
+              <CONTENT name="product_offers"/>
+            </SOURCES>
+          </FS_DATASET>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+            <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Info-Layer-Informationen ein."/>
+          </LANGINFOS>
+
+          <CMS_INPUT_DOM
+            name="pt_product_infoLayer"
+            bold="no"
+            hFill="yes"
+            italic="no"
+            list="no"
+            rows="10"
+            useLanguages="yes">
+            <FORMATS>
+              <TEMPLATE name="hometeaser"/>
+            </FORMATS>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Info layer text" description="Insert your language specific text."/>
+              <LANGINFO lang="DE" label="Info-Layer-Text" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+            </LANGINFOS>
+            <LINKEDITORS>
+              <LINKEDITOR name=""/>
+            </LINKEDITORS>
+          </CMS_INPUT_DOM>
+
+        </CMS_GROUP>
+
+      </CMS_GROUP>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Info box" description="Fill the info layer components."/>
+        <LANGINFO lang="DE" label="Info-Box" description="Geben Sie hier die Info-Layer-Informationen ein."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_infoHeadline" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Headline" description="Insert your language specific text"/>
+          <LANGINFO lang="DE" label="Überschrift" description="Geben Sie hier ihren sprachspezifischen Text ein"/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_DOM name="pt_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+        <FORMATS>
+          <TEMPLATE name="hometeaser"/>
+        </FORMATS>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Text" description="Insert your language specific text."/>
+          <LANGINFO lang="DE" label="Text" description="Geben Sie hier ihren sprachspezifischen Text ein."/>
+        </LANGINFOS>
+        <LINKEDITORS>
+          <LINKEDITOR name=""/>
+        </LINKEDITORS>
+      </CMS_INPUT_DOM>
+
+      <FS_REFERENCE name="pt_infoPicture" hFill="yes" imagePreview="yes" upload="yes" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="picture"/>
+          <HIDE type="file"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Picture" description="Choose the desired picture."/>
+          <LANGINFO lang="DE" label="Bild" description="Wählen Sie das gewünschte Bild aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="mediastore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="pt_infoLink" hFill="yes" imagePreview="no" sections="no" useLanguages="yes">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link" description="Choose your optional link."/>
+          <LANGINFO lang="DE" label="Verweis" description="Wählen Sie einen Verweis aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Browser title" description="Insert your title for that page."/>
+        <LANGINFO lang="DE" label="Browser-Titelzeile" description="Titel der Seite für die Anzeige im Browser-Fenster."/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="pt_title" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Browser title" description="Insert your title for that page."/>
+          <LANGINFO lang="DE" label="Browser-Titelzeile" description="Titel der Seite für die Anzeige im Browser-Fenster."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
+  <FS_BUTTON
+    name="pt_createSection"
+    hidden="yes"
+    icon="fs:new"
+    onClick="class:NewSection"
+    style="firstspirit"
+    useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Create section"/>
+      <LANGINFO lang="DE" label="Absatz anlegen"/>
+    </LANGINFOS>
+  </FS_BUTTON>
+
+</CMS_MODULE>

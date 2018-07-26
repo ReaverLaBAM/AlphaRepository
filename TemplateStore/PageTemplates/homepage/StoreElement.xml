@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE comment="" filename="homepage" id="-2050396187038305282" previewPageRefUid="mithras_home" templateid="4762908290707537453" type="page">
+	<ALLOWED description="hometextimageteaser" enabled="Content center" templateid="6777575965320944698"/>
+	<ALLOWED description="tagcloud" enabled="Content left,Content right" templateid="-348782775181286941"/>
+	<ALLOWED description="textbildteaser" enabled="Content left,Content right" templateid="1329425439197896374"/>
+	<ALLOWED enabled="Content center" templateid="5817012190036346271"/>
+	<ALLOWED enabled="Content left,Content right" templateid="-341542702317119352"/>
+	<ALLOWED enabled="Content right,Content left" templateid="-1860405258669749714"/>
+	<EXTENSION file="html" link="html" replaceable="false" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" replaceable="false" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" replaceable="false" templateSet="7035998204614812097"/>
+	<LANG displayname="Homepage" language="DE"/>
+	<LANG displayname="Homepage" language="EN"/>
+	<TEMPLATEBODY name="Content left">
+		<LANG description="" displayname="Content left" language="EN"/>
+		<LANG description="" displayname="linker Bereich" language="DE"/>
+	</TEMPLATEBODY>
+	<TEMPLATEBODY name="Content center">
+		<LANG description="" displayname="Content center" language="EN"/>
+		<LANG description="" displayname="mittlerer Bereich" language="DE"/>
+	</TEMPLATEBODY>
+	<TEMPLATEBODY name="Content right">
+		<LANG description="" displayname="Content right" language="EN"/>
+		<LANG description="" displayname="rechter Bereich" language="DE"/>
+	</TEMPLATEBODY>
+</TEMPLATE>

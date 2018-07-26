@@ -1,0 +1,7 @@
+[self]
+uid=/word_import
+gid=e605fe87-fc84-47e1-8c76-b85594eb24cc
+store=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateFolderImpl
+root=de.espirit.firstspirit.store.access.templatestore.FormatTemplatesImpl
+

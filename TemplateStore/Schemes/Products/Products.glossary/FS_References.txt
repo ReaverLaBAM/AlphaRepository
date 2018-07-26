@@ -1,0 +1,12 @@
+[self]
+uid=Products.glossary
+gid=24c9531f-d9d4-4b90-ad65-5ccb35a21275
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+
+[optionalId]
+uid=aboutus_2
+gid=08c362a2-f87e-425d-aa01-a8d9644c42d1
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+

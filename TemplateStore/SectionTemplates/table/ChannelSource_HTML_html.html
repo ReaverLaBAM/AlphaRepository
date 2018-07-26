@@ -1,0 +1,188 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="Table" resultname="fr_st_table">
+
+		<CMS_PARAM name="tableData" value="st_table" />
+
+		<CMS_NODE_PARAM name="tableFormat">
+
+			<HEADERSPEC><![CDATA[
+				$-- Define the table (optional caption and footer) --$
+				<table id="table_$CMS_VALUE(#global.section.id)$"$--
+					--$$CMS_IF(st_sortable)$$--
+						--$ class="tablesorter"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#global.preview)$$--
+						--$ style="width:99%;"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_VALUE(editorId(editorName:"st_table"))$$--
+				--$>
+					$CMS_IF(!st_tableheader.isEmpty)$$--
+						--$<caption>$--
+							--$$CMS_VALUE(st_tableheader.convert2)$$--
+						--$</caption>$--
+					--$$CMS_END_IF$
+					$CMS_IF(!st_underline.isEmpty)$$--
+						--$<tfoot>
+							<tr>
+								<td$--
+									--$$CMS_IF(#table.cols > 1)$$--
+										--$ colspan="$CMS_VALUE(#table.cols)$"$--
+									--$$CMS_END_IF$$--
+								--$>$--
+									--$$CMS_VALUE(st_underline)$$--
+								--$</td>
+							</tr>
+						</tfoot>$--
+					--$$CMS_END_IF$
+					$CMS_VALUE(#content)$
+				</table>
+			]]></HEADERSPEC>
+
+			<ROW number="0"><![CDATA[
+				$-- Define the first row (optional headrow) --$
+				$CMS_IF(st_sortable || st_topLine)$$--
+					--$<thead>
+						<tr>
+							$CMS_VALUE(#content)$
+						</tr>
+					</thead>$--
+				--$$CMS_ELSE$$--
+					--$<tr>
+						$CMS_VALUE(#content)$
+					</tr>$--
+				--$$CMS_END_IF$
+			]]></ROW>
+
+			<ROW number="ALL"><![CDATA[$-- Define the standard row --$
+				<tr>
+					$CMS_VALUE(#content)$
+				</tr>
+			]]></ROW>
+
+			<CELL row="0" col="ALL"><![CDATA[
+				$-- Define all cells in first row (optional headrow) --$
+				<$--
+					--$$CMS_IF(st_sortable || st_topLine)$$--
+						--$th$--
+					--$$CMS_ELSE$$--
+						--$td$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.rowspan > 1)$$--
+						--$ rowspan="$CMS_VALUE(#cell.rowspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.colspan > 1)$$--
+						--$ colspan="$CMS_VALUE(#cell.colspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(!#cell.align.isEmpty)$$--
+						--$ align="$CMS_VALUE(#cell.align)$"$--
+					--$$CMS_END_IF$$--
+				--$>$--
+
+					--$$CMS_IF(!#content.isEmpty)$$--
+						--$$CMS_VALUE(#content)$$--
+					--$$CMS_ELSE$$--
+						--$&nbsp;$--
+					--$$CMS_END_IF$$--
+
+				--$</$--
+					--$$CMS_IF(st_sortable || st_topLine)$$--
+						--$th$--
+					--$$CMS_ELSE$$--
+						--$td$--
+					--$$CMS_END_IF$$--
+				--$>
+			]]></CELL>
+
+			<CELL row="ODD" col="ALL"><![CDATA[
+				$-- Define all odd rows cells (optional alternating of rows) --$
+				<td$--
+					--$$CMS_IF(st_altRows && !st_sortable)$$--
+						--$ style="background-color:#DCDCDC;"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.rowspan > 1)$$--
+						--$ rowspan="$CMS_VALUE(#cell.rowspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.colspan > 1)$$--
+						--$ colspan="$CMS_VALUE(#cell.colspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(!#cell.align.isEmpty)$$--
+						--$ align="$CMS_VALUE(#cell.align)$"$--
+					--$$CMS_END_IF$$--
+				--$>$--
+
+					--$$CMS_IF(!#content.isEmpty)$$--
+						--$$CMS_VALUE(#content)$$--
+					--$$CMS_ELSE$$--
+						--$&nbsp;$--
+					--$$CMS_END_IF$$--
+
+				--$</td>
+			]]></CELL>
+		
+			<CELL row="ALL" col="ALL"><![CDATA[
+				$-- Define all cells --$
+				<$--
+					--$$CMS_IF((st_sortable || st_topLine) && #cell.firstRow)$$--
+						--$th$--
+					--$$CMS_ELSE$$--
+						--$td$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.rowspan > 1)$$--
+						--$ rowspan="$CMS_VALUE(#cell.rowspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(#cell.colspan > 1)$$--
+						--$ colspan="$CMS_VALUE(#cell.colspan)$"$--
+					--$$CMS_END_IF$$--
+					--$$CMS_IF(!#cell.align.isEmpty)$$--
+						--$ align="$CMS_VALUE(#cell.align)$"$--
+					--$$CMS_END_IF$$--
+				--$>$--
+
+					--$$CMS_IF(!#content.isEmpty)$$--
+						--$$CMS_VALUE(#content)$$--
+					--$$CMS_ELSE$$--
+						--$&nbsp;$--
+					--$$CMS_END_IF$$--
+
+				--$</$--
+					--$$CMS_IF((st_sortable || st_topLine) && #cell.firstRow)$$--
+						--$th$--
+					--$$CMS_ELSE$$--
+						--$td$--
+					--$$CMS_END_IF$$--
+				--$>
+			]]></CELL>
+
+		</CMS_NODE_PARAM>
+
+	</CMS_FUNCTION>
+
+</CMS_HEADER> 
+
+$-- Table module  --$
+<div class="clearfix module"$CMS_VALUE(editorId())$>
+	$CMS_IF(!st_headline.isEmpty)$
+		<h3$CMS_VALUE(editorId(editorName:"st_headline"))$>
+			$CMS_VALUE(st_headline.convert2)$
+			$CMS_RENDER(template:"tooltip",
+			            infoLayer:st_infoLayer,
+			            infoLink:st_infoLink,
+			            infoPicture:st_infoPicture,
+			            infoHeadline:st_infoHeadline)$
+		</h3>
+	$CMS_END_IF$
+	$CMS_VALUE(fr_st_table)$
+</div>
+
+$CMS_IF(st_sortable)$
+	<script>
+		jQuery.noConflict();
+		jQuery(document).ready(function() 
+		    { 
+		        jQuery("#table_$CMS_VALUE(#global.section.id)$").tablesorter( { cssHeader: "sortedTableHeader"$CMS_IF(st_altRows)$, widgets: ['zebra']$CMS_END_IF$} ); 
+		    } 
+		);
+	</script>
+$CMS_END_IF$
+$-- /Table module --$

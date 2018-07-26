@@ -1,0 +1,33 @@
+<CMS_HEADER>
+  <CMS_FUNCTION name="Navigation" resultname="st_sitemap">
+    <CMS_PARAM name="expansionVisibility" value="all"/>
+     <CMS_PARAM name="siteMap" value="1" />
+    <CMS_ARRAY_PARAM name="beginHTML">
+      <CMS_ARRAY_ELEMENT index="0"><![CDATA[$CMS_IF((#nav.levelPos)%2==0)$$CMS_IF(#nav.levelPos!=0)$</fo:table-row><fo:table-row height="5mm"><fo:table-cell><fo:block/></fo:table-cell><fo:table-cell><fo:block/></fo:table-cell></fo:table-row>$CMS_END_IF$<fo:table-row>$CMS_END_IF$<fo:table-cell>]]></CMS_ARRAY_ELEMENT>
+    </CMS_ARRAY_PARAM>
+    <CMS_ARRAY_PARAM name="unselectedHTML">
+      <CMS_ARRAY_ELEMENT index="0"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:inline color="#CF6100" font-size="13pt" font-weight="bold">$CMS_VALUE(#nav.label)$</fo:inline></fo:block>]]></CMS_ARRAY_ELEMENT>
+      <CMS_ARRAY_ELEMENT index="1"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:block margin-left="1.5mm"><fo:inline color="#CF6100" font-weight="bold">- $CMS_VALUE(#nav.label)$</fo:inline></fo:block></fo:block>]]></CMS_ARRAY_ELEMENT>
+      <CMS_ARRAY_ELEMENT index="2"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:block margin-left="3mm"><fo:inline>- $CMS_VALUE(#nav.label)$</fo:inline></fo:block></fo:block>]]></CMS_ARRAY_ELEMENT>
+    </CMS_ARRAY_PARAM>
+    <CMS_ARRAY_PARAM name="selectedHTML">
+      <CMS_ARRAY_ELEMENT index="0"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:inline color="#CF6100" font-size="13pt" font-weight="bold">$CMS_VALUE(#nav.label)$</fo:inline></fo:block>]]></CMS_ARRAY_ELEMENT>
+      <CMS_ARRAY_ELEMENT index="1"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:block margin-left="1.5mm"><fo:inline color="#CF6100" font-weight="bold">- $CMS_VALUE(#nav.label)$</fo:inline></fo:block></fo:block>]]></CMS_ARRAY_ELEMENT>
+      <CMS_ARRAY_ELEMENT index="2"><![CDATA[<fo:block border-bottom-width="1.0pt" border-bottom-color="#C0C0C0" border-bottom-style="solid" space-before="2mm"><fo:block margin-left="3mm"><fo:inline>- $CMS_VALUE(#nav.label)$</fo:inline></fo:block></fo:block>]]></CMS_ARRAY_ELEMENT>
+    </CMS_ARRAY_PARAM>
+    <CMS_ARRAY_PARAM name="endHTML">
+      <CMS_ARRAY_ELEMENT index="0"><![CDATA[</fo:table-cell>]]></CMS_ARRAY_ELEMENT>
+    </CMS_ARRAY_PARAM>
+  </CMS_FUNCTION>
+</CMS_HEADER>
+
+<fo:block>
+	<fo:table table-layout="fixed" width="100%">
+		<fo:table-column column-width="82mm" border-right-width="2mm" border-right-color="#FFFFFF" border-right-style="solid"/>
+		<fo:table-column column-width="83mm" border-left-width="3mm" border-left-color="#FFFFFF" border-left-style="solid"/>
+		<fo:table-body>
+			$CMS_VALUE(st_sitemap)$
+			</fo:table-row>
+		</fo:table-body>
+	</fo:table>
+</fo:block>

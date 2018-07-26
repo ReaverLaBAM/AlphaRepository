@@ -1,0 +1,17 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block>
+$CMS_IF(!st_headline.isEmpty)$
+<fo:block space-before="5mm">
+	<fo:inline font-size="11pt" font-weight="bold" color="#CF6100">$CMS_VALUE(st_headline.convert)$</fo:inline>
+</fo:block>
+$CMS_END_IF$
+$CMS_IF(!st_picture.isEmpty)$
+<fo:block space-before="1mm">
+	<fo:external-graphic src="$CMS_REF(st_picture,res:"TextBildTeaser",abs:3)$"/>
+</fo:block>
+$CMS_END_IF$
+<fo:block space-before="2mm">
+$CMS_IF(!st_text.isEmpty)$$CMS_VALUE(st_text)$$CMS_END_IF$
+</fo:block>
+</fo:block>
