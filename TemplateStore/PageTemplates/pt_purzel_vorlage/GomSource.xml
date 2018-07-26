@@ -1,3 +1,464 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMS_MODULE>
+
+  <CMS_GROUP tabs="top">
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Global"/>
+        <LANGINFO lang="DE" label="Allgemeines"/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TOGGLE name="ps_debugMode" type="radio" hFill="yes" preset="copy" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Use debug mode"/>
+          <LANGINFO lang="DE" label="Debug-Modus verwenden"/>
+        </LANGINFOS>
+        <OFF>
+          <LANGINFO lang="*" label="No"/>
+          <LANGINFO lang="DE" label="Nein"/>
+        </OFF>
+        <ON>
+          <LANGINFO lang="*" label="Yes"/>
+          <LANGINFO lang="DE" label="Ja"/>
+        </ON>
+      </CMS_INPUT_TOGGLE>
+
+      <CMS_INPUT_TEXT name="ps_company_name" hFill="yes" singleLine="no" useLanguages="no">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Company name" description="Please insert the company name."/>
+          <LANGINFO lang="DE" label="Firmenname" description="Bitte geben Sie den Firmenname an."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <FS_REFERENCE name="ps_homelink" hFill="yes" imagePreview="no" sections="no" useLanguages="no">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Link to homepage" description="Select the homepage."/>
+          <LANGINFO lang="DE" label="Verweis zur Startseite" description="Wählen Sie die Startseite aus."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+      <FS_REFERENCE name="ps_searchdummy" hFill="yes" imagePreview="no" sections="no" useLanguages="no">
+        <FILTER>
+          <ALLOW type="pageref"/>
+          <HIDE type="documentgroup"/>
+        </FILTER>
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Statical page for search results" description="Select a page which display statical search results."/>
+          <LANGINFO lang="DE" label="Statische Suchergebnisseite" description="Wählen Sie eine Seite aus, die statische Suchergebnisse darstellt."/>
+        </LANGINFOS>
+        <PROJECTS>
+          <LOCAL name=".">
+            <SOURCES>
+              <FOLDER name="root" store="sitestore"/>
+            </SOURCES>
+          </LOCAL>
+        </PROJECTS>
+      </FS_REFERENCE>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Layout properties"/>
+        <LANGINFO lang="DE" label="Layout-Einstellungen"/>
+      </LANGINFOS>
+
+      <CMS_GROUP tabs="top">
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Global color settings"/>
+            <LANGINFO lang="DE" label="Globale Farbeinstellungen"/>
+          </LANGINFOS>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_headlines" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Color of headlines" description="Insert a color for the headline in the content area (hexcode)."/>
+              <LANGINFO lang="DE" label="Farbe von Überschriften" description="Geben Sie einen Farbwert für die Überschriften im Inhaltsbereich ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_menu" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Background color of the menu" description="Insert a background color for the menu (hexcode)."/>
+              <LANGINFO lang="DE" label="Hintergrundfarbe des Menüs" description="Geben Sie eine Hintergrundfarbe für das Menü ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_menu_hover" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Active background color of the menu" description="Insert a background color for active elements of the menu (hexcode)."/>
+              <LANGINFO lang="DE" label="Aktive Hintergrundfarbe des Menüs" description="Geben Sie eine Hintergrundfarbe für aktive Elemente des Menüs ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_menu_font" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Font color of the menu" description="Insert a text color for the menu items (hexcode)."/>
+              <LANGINFO lang="DE" label="Textfarbe des Menüs" description="Geben Sie einen Farbwert für die Texte der Menüelemente ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_submenu_font" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Font color of the submenu" description="Insert a text color for the submenu items (hexcode)."/>
+              <LANGINFO lang="DE" label="Textfarbe des Untermenüs" description="Geben Sie einen Farbwert für die Texte der Untermenüelemente ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_submenu_hover" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Active background color of the submenu" description="Insert a background color for active elements of the submenu (hexcode)."/>
+              <LANGINFO lang="DE" label="Aktive Hintergrundfarbe des Untermenüs" description="Geben Sie eine Hintergrundfarbe für aktive Untermenüelemente ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_breadcrumb" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Background color of the breadcrumb" description="Insert a background color for the breadcrumb menu (hexcode)."/>
+              <LANGINFO lang="DE" label="Hintergrundfarbe der Brotkrumennavigation" description="Geben Sie eine Hintergrundfarbe für die Brotkrumennavigation ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_layout_color_breadcrumb_font" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Font color of the breadcrumb" description="Insert a font color for the breadcrumb menu (hexcode)."/>
+              <LANGINFO lang="DE" label="Schriftfarbe der Brotkrumennavigation" description="Geben Sie eine Schriftfarbe für die Brotkrumennavigation ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <FS_REFERENCE name="ps_layout_more_arrow" hFill="yes" imagePreview="yes" useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Image for 'more' links" description="Please choose a picture representing 'more' links (i.e. an arrow)."/>
+              <LANGINFO lang="DE" label="Bild für 'mehr' Links" description="Bitte wählen Sie ein Bild für 'mehr' Links aus (z.B. einen Pfeil)."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Layout of the homepage"/>
+            <LANGINFO lang="DE" label="Layout der Homepage"/>
+          </LANGINFOS>
+
+          <FS_REFERENCE
+            name="ps_homepage_header_background"
+            hFill="yes"
+            imagePreview="yes"
+            upload="yes"
+            useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Header picture" description="Insert a picture for the header of the homepage."/>
+              <LANGINFO lang="DE" label="Kopfbild" description="Wählen Sie ein Bild für den Kopfbereich der Startseite."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+          <FS_REFERENCE name="ps_homepage_header_text" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Header text" description="Insert a picture for the header text on the homepage."/>
+              <LANGINFO lang="DE" label="Kopftext" description="Wählen Sie ein Bild für den Text im Kopfbereich der Startseite aus."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+          <CMS_INPUT_TOGGLE
+            name="ps_navigationType"
+            type="radio"
+            hFill="yes"
+            noBreak="yes"
+            preset="copy"
+            singleLine="no"
+            useLanguages="yes">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Create graphical navigation" description="Choose your type of navigation (Image/Text)."/>
+              <LANGINFO lang="DE" label="Navigation als Grafik erzeugen" description="Wählen Sie die Art der Navigation (Grafik/Text)."/>
+            </LANGINFOS>
+            <OFF>
+              <LANGINFO lang="*" label="No"/>
+              <LANGINFO lang="DE" label="Nein"/>
+            </OFF>
+            <ON>
+              <LANGINFO lang="*" label="Yes"/>
+              <LANGINFO lang="DE" label="Ja"/>
+            </ON>
+          </CMS_INPUT_TOGGLE>
+
+          <FS_REFERENCE name="ps_hover_bg" hFill="yes" imagePreview="yes" upload="yes" useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Hover background" description="hover background for the non-graphical navigation."/>
+              <LANGINFO lang="DE" label="Hover-Hintergund" description="Hover-Hintergrundbild für die nicht-grafische Navigation."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Layout of standard page"/>
+            <LANGINFO lang="DE" label="Layout einer Standardseite"/>
+          </LANGINFOS>
+
+          <FS_REFERENCE
+            name="ps_standard_header_background"
+            hFill="yes"
+            imagePreview="yes"
+            upload="yes"
+            useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Header picture" description="Insert a picture for the header of the standard page."/>
+              <LANGINFO lang="DE" label="Kopfbild" description="Wählen Sie ein Bild für den Kopfbereich der Standardseite."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+          <FS_REFERENCE
+            name="ps_homepage_header_text_content"
+            hFill="yes"
+            imagePreview="yes"
+            upload="yes"
+            useLanguages="no">
+            <FILTER>
+              <ALLOW type="picture"/>
+              <HIDE type="file"/>
+            </FILTER>
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Header text" description="Insert a picture for the header text on the standard page."/>
+              <LANGINFO lang="DE" label="Kopftext" description="Wählen Sie ein Bild für den Text im Kopfbereich der Standardseite aus."/>
+            </LANGINFOS>
+            <PROJECTS>
+              <LOCAL name=".">
+                <SOURCES>
+                  <FOLDER name="root" store="mediastore"/>
+                </SOURCES>
+              </LOCAL>
+            </PROJECTS>
+          </FS_REFERENCE>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Layout of teaser boxes"/>
+            <LANGINFO lang="DE" label="Layout der Teaser-Boxen"/>
+          </LANGINFOS>
+
+          <CMS_GROUP tabs="top">
+
+            <CMS_GROUP>
+              <LANGINFOS>
+                <LANGINFO lang="*" label="Alternative 1"/>
+                <LANGINFO lang="DE" label="Variante 1"/>
+              </LANGINFOS>
+
+              <CMS_INPUT_TEXT name="ps_color_teaser_type1" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser boxes" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Boxen" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+              <CMS_INPUT_TEXT name="ps_headline_color_teaser_type1" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser box headline" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Box-Überschrift" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+              <CMS_INPUT_TEXT name="ps_gradient_color_teaser_type1" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser box gradient" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Box-Farbverlauf" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+            </CMS_GROUP>
+
+            <CMS_GROUP>
+              <LANGINFOS>
+                <LANGINFO lang="*" label="Alternative 2"/>
+                <LANGINFO lang="DE" label="Variante 2"/>
+              </LANGINFOS>
+
+              <CMS_INPUT_TEXT name="ps_color_teaser_type2" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser boxes" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Boxen" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+              <CMS_INPUT_TEXT name="ps_headline_color_teaser_type2" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser box headline" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Box-Überschrift" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+              <CMS_INPUT_TEXT name="ps_gradient_color_teaser_type2" hFill="yes" singleLine="no" useLanguages="no">
+                <LANGINFOS>
+                  <LANGINFO lang="*" label="Color teaser box gradient" description="Insert a color for the teaser boxes (hexcode)."/>
+                  <LANGINFO lang="DE" label="Farbwert Teaser-Box-Farbverlauf" description="Geben Sie einen Farbwert für die Teaser-Boxen ein (hexadezimal)."/>
+                </LANGINFOS>
+              </CMS_INPUT_TEXT>
+
+            </CMS_GROUP>
+
+          </CMS_GROUP>
+
+        </CMS_GROUP>
+
+        <CMS_GROUP>
+          <LANGINFOS>
+            <LANGINFO lang="*" label="Layout of tooltips"/>
+            <LANGINFO lang="DE" label="Layout der Tooltips"/>
+          </LANGINFOS>
+
+          <CMS_INPUT_TEXT name="ps_tooltip_bg_color" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Tooltip box background color" description="Insert a color for the tooltip boxes (hexcode)."/>
+              <LANGINFO lang="DE" label="Tooltip-Box Hintergrundfarbe" description="Geben Sie einen Farbwert für die Tooltip-Boxen ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+          <CMS_INPUT_TEXT name="ps_tooltip_text_color" hFill="yes" singleLine="no" useLanguages="no">
+            <LANGINFOS>
+              <LANGINFO lang="*" label="Tooltip box text color" description="Insert a color for the tooltip text (hexcode)."/>
+              <LANGINFO lang="DE" label="Tooltip-Box Textfarbe" description="Geben Sie einen Farbwert für den Tooltip-Text ein (hexadezimal)."/>
+            </LANGINFOS>
+          </CMS_INPUT_TEXT>
+
+        </CMS_GROUP>
+
+      </CMS_GROUP>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="HTML meta data"/>
+        <LANGINFO lang="DE" label="HTML-Metadaten"/>
+      </LANGINFOS>
+
+      <CMS_INPUT_TEXT name="ps_keyword" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Key words" description="Insert your key words."/>
+          <LANGINFO lang="DE" label="Schlüsselworte" description="Geben Sie hier die Schlüsselworte an"/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TEXT name="ps_description" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Description" description="Insert your description."/>
+          <LANGINFO lang="DE" label="Beschreibung" description="Geben Sie hier den beschreibenden Text an."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TEXT name="ps_publisher" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Publisher" description="Insert the publisher."/>
+          <LANGINFO lang="DE" label="Herausgeber" description="Geben Sie hier den Herausgeber an."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TEXT name="ps_copyright" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Copyright" description="Insert copyright information."/>
+          <LANGINFO lang="DE" label="Urheberrechte" description="Geben Sie hier die Urheberrechtsinformationen an."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+      <CMS_INPUT_TEXT name="ps_revisit" hFill="yes" singleLine="no" useLanguages="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="'Revisit' information" description="Insert your revisit information."/>
+          <LANGINFO lang="DE" label="'Revisit'-Information" description="Geben Sie hier den 'Revisit'-Eintrag an."/>
+        </LANGINFOS>
+      </CMS_INPUT_TEXT>
+
+    </CMS_GROUP>
+
+    <CMS_GROUP>
+      <LANGINFOS>
+        <LANGINFO lang="*" label="Sorting of product categories"/>
+        <LANGINFO lang="DE" label="Sortierung der Produktkategorien"/>
+      </LANGINFOS>
+
+      <FS_DATASET name="ps_product_property_sort" allowChoose="no" allowDelete="no" allowNew="no" hFill="yes">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Sorting of product properties"/>
+          <LANGINFO lang="DE" label="Sortierung der Produkteigenschaften"/>
+        </LANGINFOS>
+        <SOURCES>
+          <CONTENT name="product_properties_sort_order"/>
+        </SOURCES>
+      </FS_DATASET>
+
+    </CMS_GROUP>
+
+  </CMS_GROUP>
+
 </CMS_MODULE>
