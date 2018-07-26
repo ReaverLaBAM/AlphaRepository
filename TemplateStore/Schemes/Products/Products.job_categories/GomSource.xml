@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Occupational group" description="Insert the name of the occupational group."/>
+      <LANGINFO lang="DE" label="Berufsgruppe" description="Tragen Sie die Berufsgruppe ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Description" description="Add a description."/>
+      <LANGINFO lang="DE" label="Beschreibung der Berufsgruppe" description="Fügen Sie eine Beschreibung der Berufsgruppe hinzu."/>
+    </LANGINFOS>
+    <LINKEDITORS>
+      <LINKEDITOR name="textlinkinternal"/>
+      <LINKEDITOR name="textlinkexternal"/>
+    </LINKEDITORS>
+  </CMS_INPUT_DOM>
+
+  <FS_LIST name="cs_jobs" hFill="yes" height="175" hidden="yes">
+    <DATASOURCE type="database" useLanguages="no">
+      <LABELS>
+        <LABEL lang="*">#item.cs_jobtitle</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="VIEW"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+        <COLUMN show="yes" sortOrder="ascending">cs_jobtitle</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="hide"/>
+        <ADD component="overview" constraint="hide"/>
+        <ADD component="stackedview" constraint="center"/>
+      </LAYOUT>
+      <TABLE>Products.jobs</TABLE>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Jobs"/>
+      <LANGINFO lang="DE" label="Stellenangebote"/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

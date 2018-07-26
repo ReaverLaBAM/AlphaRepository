@@ -1,0 +1,7 @@
+[self]
+uid=/technical_templates
+gid=56ce5582-8816-449c-8b04-fb1368d48f1b
+store=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.TemplateFolderImpl
+root=de.espirit.firstspirit.store.access.templatestore.SectionTemplatesImpl
+

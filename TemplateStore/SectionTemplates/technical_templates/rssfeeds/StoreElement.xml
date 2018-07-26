@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE comment="" filename="rssfeeds" id="391257588201267889" previewPageRefUid="rssoverview" templateid="7333127196493528141" type="section">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="RSS feeds" language="EN"/>
+	<LANG displayname="RSS-Feeds" language="DE"/>
+</TEMPLATE>

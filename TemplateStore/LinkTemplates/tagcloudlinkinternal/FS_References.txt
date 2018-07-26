@@ -1,0 +1,12 @@
+[self]
+uid=tagcloudlinkinternal
+gid=9c5a4d21-8702-4046-8d6f-7fd2a2f0cd62
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=root
+gid=3e7ded55-05c5-42f6-9263-ab540f41ab1c
+uidType=SITESTORE_FOLDER
+class=de.espirit.firstspirit.store.access.sitestore.SiteStoreRootImpl
+

@@ -1,0 +1,21 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block space-after="3mm">
+$CMS_IF(!#row.Date.isEmpty)$
+	<fo:block>
+		<fo:inline color="#C0C0C0" font-size="10pt">$CMS_VALUE(#row.Date.format("dd.MM.yyyy"))$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Headline.isEmpty)$
+	<fo:block>
+		<fo:inline font-weight="bold" color="#CF6100">$CMS_VALUE(#row.Headline)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Subheadline.isEmpty)$
+	<fo:block space-after="1mm">
+		<fo:inline font-weight="bold">$CMS_VALUE(#row.Subheadline)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(!#row.Teaser.isEmpty)$$CMS_VALUE(#row.Teaser)$$CMS_END_IF$
+	<fo:block border-top-width="1.0pt" border-top-color="#C0C0C0" border-top-style="solid" space-before="3mm"/>
+</fo:block>

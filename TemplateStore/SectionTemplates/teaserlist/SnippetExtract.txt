@@ -1,0 +1,1 @@
+if(!st_teaser.isEmpty, st_teaser.map(x -> if(!x.st_headline.isEmpty, x.st_headline)).toString(", "))

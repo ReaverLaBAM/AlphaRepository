@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="st_description"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_description"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="st_description"/>
+					<NUMBER>150</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_description"/>
+				<MESSAGE lang="*" text="Only 150 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 150 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

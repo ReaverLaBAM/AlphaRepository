@@ -1,0 +1,56 @@
+$-- Teaser --$
+<div class="smallTeaser$--
+	--$$CMS_IF(#for.index%3 == 0)$$--
+		--$ first$--
+	---$$CMS_END_IF$$--
+--$"$CMS_VALUE(editorId())$>
+  <h3$CMS_VALUE(editorId(editorName:"st_headline"))$>$--
+  	--$$CMS_IF(!st_headline.isEmpty)$$--
+  		--$$CMS_VALUE(st_headline.convert2)$$--
+  	--$$CMS_END_IF$$--
+	--$$CMS_RENDER(template:"tooltip",
+	               infoLayer:st_infoLayer,
+	               infoLink:st_infoLink,
+	               infoPicture:st_infoPicture,
+	               infoHeadline:st_infoHeadline)$$--
+	--$</h3>
+	$CMS_IF(!st_picture.isEmpty)$
+		<dl>
+			<dt>
+				$CMS_IF(!st_teaser_link.isEmpty)$$--
+					--$<a href="$CMS_REF(st_teaser_link)$">$--
+				--$$CMS_END_IF$$--
+				--$<img src="$CMS_REF(st_picture, resolution:"TextBildTeaser")$"$CMS_VALUE(editorId(editorName:"st_picture", resolution:"TextBildTeaser"))$ />$--
+				--$$CMS_IF(!st_teaser_link.isEmpty)$$--
+					--$</a>$--
+				--$$CMS_END_IF$
+			</dt>
+			<dd>
+				$CMS_IF(!st_teaser_link.isEmpty)$$--
+					--$<a href="$CMS_REF(st_teaser_link)$">$--
+				--$$CMS_END_IF$$--
+				--$$CMS_IF(!st_teaser_text.isEmpty)$$--
+					--$$CMS_VALUE(st_teaser_text.convert2)$$--
+				--$$CMS_END_IF$$--
+				--$$CMS_IF(!st_teaser_link.isEmpty)$$--
+						--$<img class="SignLink" src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+					--$</a>$--
+				--$$CMS_END_IF$
+			</dd>
+		</dl>
+	$CMS_ELSE$
+		<p>
+			$CMS_IF(!st_teaser_link.isEmpty)$$--
+				--$<a href="$CMS_REF(st_teaser_link)$">$--
+			--$$CMS_END_IF$$--
+			--$$CMS_IF(!st_teaser_text.isEmpty)$$--
+				--$$CMS_VALUE(st_teaser_text.convert2)$$--
+			--$$CMS_END_IF$$--
+			--$$CMS_IF(!st_teaser_link.isEmpty)$$--
+					--$<img class="SignLink" src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+				--$</a>$--
+	  		--$$CMS_END_IF$
+		</p>	
+	$CMS_END_IF$
+</div>
+$-- /Teaser --$

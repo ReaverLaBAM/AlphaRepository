@@ -1,0 +1,6 @@
+[self]
+uid=Products.contacts
+gid=48148703-7b58-4402-a35c-75c1caba7808
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

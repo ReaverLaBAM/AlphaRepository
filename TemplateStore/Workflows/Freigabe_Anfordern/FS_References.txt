@@ -1,0 +1,12 @@
+[self]
+uid=Freigabe Anfordern
+gid=fbdee25d-22e3-41e8-aecf-9c8b26fa15eb
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.WorkflowImpl
+
+[optionalId]
+uid=finalRelease
+gid=3c1fcb1e-831f-4cd2-b6a2-1307f82290a0
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.ScriptImpl
+

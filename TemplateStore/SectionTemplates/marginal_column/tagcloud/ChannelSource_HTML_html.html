@@ -1,0 +1,26 @@
+$--Navigation Cloud--$
+<div class="clearfix teasermodule"$CMS_VALUE(editorId())$>
+	<h3$--
+		--$$CMS_IF(!isWebEdit)$$--
+			--$$CMS_VALUE(editorId(editorName:"st_headline"))$$--
+		--$$CMS_END_IF$$--
+	--$>$--
+		--$$CMS_IF(!st_headline.isEmpty)$$--
+			--$$CMS_VALUE(st_headline.convert2)$$--
+		--$$CMS_END_IF$$--
+		--$$CMS_RENDER(template:"tooltip",
+		        infoLayer:st_infoLayer,
+		        infoLink:st_infoLink,
+		        infoPicture:st_infoPicture,
+		        infoHeadline:st_infoHeadline)$$--
+	--$</h3>
+	<div class="clearfix text tagCloud"$--
+		--$$CMS_IF(!isWebEdit)$$--
+			--$$CMS_VALUE(editorId(editorName:"st_linklist"))$$--
+		--$$CMS_END_IF$$--
+	--$>
+		$CMS_VALUE(st_linklist)$
+	</div>
+</div>
+$--/Navigation Cloud--$
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE comment="" filename="standard" id="-4890292590649656777" previewPageRefUid="aboutus_2" templateid="-5617914130234126249" type="page">
+	<ALLOWED description="Products.press_releases" enabled="Content center" templateid="-364355654681805948"/>
+	<ALLOWED description="Products.press_releases_overview" enabled="Content center" templateid="9113707588412087658"/>
+	<ALLOWED description="Products.product_overview" enabled="Content center" templateid="-8545983778948697386"/>
+	<ALLOWED description="contact" enabled="Content right" templateid="-341542702317119352"/>
+	<ALLOWED description="downloadcenter" enabled="Content center" templateid="7113016192747056739"/>
+	<ALLOWED description="pressreleasesteaser" enabled="Content right" templateid="-1860405258669749714"/>
+	<ALLOWED description="productflash_1" enabled="Content center" templateid="5817012190036346271"/>
+	<ALLOWED description="relatedproducts" enabled="Content right" templateid="-1123800618349638579"/>
+	<ALLOWED description="table" enabled="Content center" templateid="-5503697023092459696"/>
+	<ALLOWED description="tagcloud" enabled="Content right" templateid="-348782775181286941"/>
+	<ALLOWED description="teaserlist" enabled="Content center" templateid="7584245496170730169"/>
+	<ALLOWED description="textbildteaser" enabled="Content right" templateid="1329425439197896374"/>
+	<ALLOWED description="textpicture" enabled="Content center" templateid="-4207487052450777751"/>
+	<ALLOWED enabled="Content center" templateid="-158384459179323486"/>
+	<ALLOWED enabled="Content center" templateid="-2175199389293394858"/>
+	<ALLOWED enabled="Content center" templateid="-3499342514914669673"/>
+	<ALLOWED enabled="Content center" templateid="3334043461113089932"/>
+	<ALLOWED enabled="Content center" templateid="7002878106687162334"/>
+	<EXTENSION file="html" link="html" replaceable="false" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" replaceable="false" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" replaceable="false" templateSet="7035998204614812097"/>
+	<LANG displayname="Standard" language="DE"/>
+	<LANG displayname="Standard" language="EN"/>
+	<TEMPLATEBODY name="Content center">
+		<LANG description="" displayname="Content center" language="EN"/>
+		<LANG description="" displayname="mittlerer Bereich" language="DE"/>
+	</TEMPLATEBODY>
+	<TEMPLATEBODY name="Content right">
+		<LANG description="" displayname="Content right" language="EN"/>
+		<LANG description="" displayname="rechter Bereich" language="DE"/>
+	</TEMPLATEBODY>
+</TEMPLATE>

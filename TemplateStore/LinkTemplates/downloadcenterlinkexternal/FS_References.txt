@@ -1,0 +1,12 @@
+[self]
+uid=downloadcenterlinkexternal
+gid=26aeb7dd-c28a-45d6-9de0-347fb3f8624b
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=icon_defaultLink
+gid=a985e2a1-4eea-4c3b-b3f6-fd96d14c0ad6
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+

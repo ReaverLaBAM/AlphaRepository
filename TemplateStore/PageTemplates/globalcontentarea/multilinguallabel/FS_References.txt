@@ -1,0 +1,6 @@
+[self]
+uid=multilinguallabel
+gid=d6d706c3-4b90-41be-b8e8-28c8363b821b
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+

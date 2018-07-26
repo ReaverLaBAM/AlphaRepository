@@ -1,0 +1,46 @@
+<CMS_HEADER>
+</CMS_HEADER>
+$CMS_IF(#cs.isFirstContentRow)$
+	$CMS_SET(currentTeaserInRow,0)$
+	<fo:block>
+		<fo:table table-layout="fixed" width="100%">
+			<fo:table-column column-width="54mm"/>
+			<fo:table-column column-width="54mm"/>
+			<fo:table-column column-width="55mm"/>
+			<fo:table-body>
+$CMS_END_IF$
+		$CMS_IF(currentTeaserInRow==0)$
+			<fo:table-row>
+		$CMS_END_IF$		
+				<fo:table-cell padding-left="1mm" padding-right="1mm">
+					<fo:block background-color="#C0C0C0"><fo:block margin="1mm"><fo:inline font-weight="bold">$CMS_VALUE(#row.Name)$</fo:inline></fo:block></fo:block>
+					$CMS_IF(!#row.Picture.isEmpty)$
+						<fo:block>
+							<fo:external-graphic src="$CMS_REF(#row.Picture,abs:3)$" width="100%" content-width="scale-to-fit" scaling="uniform"/>
+						</fo:block>
+					$CMS_END_IF$
+					$CMS_IF(!#row.Description.isEmpty)$
+					<fo:block space-before="1mm" space-after="1mm">$CMS_VALUE(#row.Description)$</fo:block>
+					$CMS_END_IF$
+					<fo:block>
+					</fo:block>
+				</fo:table-cell>			
+		$CMS_IF(#cs.isLastContentRow && currentTeaserInRow<2)$
+			$CMS_FOR(count, [currentTeaserInRow+1..2])$
+				<fo:table-cell padding-left="1mm" padding-right="1mm">
+					<fo:block/>
+				</fo:table-cell>
+			$CMS_END_FOR$
+			</fo:table-row>
+		$CMS_END_IF$			
+		$CMS_IF(currentTeaserInRow==2)$			
+			</fo:table-row>
+			$CMS_SET(currentTeaserInRow,0)$
+		$CMS_ELSE$
+			$CMS_SET(currentTeaserInRow,currentTeaserInRow+1)$
+		$CMS_END_IF$		
+$CMS_IF(#cs.isLastContentRow)$
+			</fo:table-body>
+		</fo:table>
+	</fo:block>
+$CMS_END_IF$

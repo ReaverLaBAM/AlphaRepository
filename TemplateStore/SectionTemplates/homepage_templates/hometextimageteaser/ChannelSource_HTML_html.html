@@ -1,0 +1,86 @@
+$-- Text/image homepage teaser --$
+<div class="clearfix module homeTeaser"$CMS_VALUE(editorId())$>
+
+	$-- Image --$
+	$CMS_IF(!st_picture.isEmpty)$
+
+		$CMS_IF(!st_link.sitestoreref.isEmpty)$$--
+			--$<a href="$CMS_REF(st_link.sitestoreref)$" title="">$--
+		--$$CMS_END_IF$$--
+
+		--$<img src="$CMS_REF(st_picture, resolution:"TextBildTeaser")$" $--
+		     --$class="Img$CMS_VALUE(if(st_picture_position, "Left", "Right"))$" $--
+		     --$width="$CMS_VALUE(ref(st_picture, resolution:"TextBildTeaser").width)$" $--
+		     --$alt=""$--
+		     --$$CMS_VALUE(editorId(editorName:"st_picture", resolution:"TextBildTeaser"))$ $--
+		--$/>$--
+
+		--$$CMS_IF(!st_link.sitestoreref.isEmpty)$$--
+			--$</a>$--
+		--$$CMS_END_IF$
+
+	$CMS_END_IF$
+	$-- /Image --$
+
+	<div class="text$CMS_VALUE(if(st_picture.isEmpty, "Left", if(st_picture_position, "Right", "Left")))$" $--
+	  --$style="margin-$CMS_VALUE(if(st_picture_position, "left", "right"))$:$CMS_VALUE(ref(st_picture, resolution:"TextBildTeaser").width)$px;">
+
+		$-- Headline --$
+		$CMS_IF(!st_headline.isEmpty)$$--
+			--$<h3$CMS_VALUE(editorId(editorName:"st_headline"))$>$--
+				--$$CMS_VALUE(st_headline.convert2)$$--
+				--$$CMS_RENDER(template:"tooltip",
+				               infoLayer:st_infoLayer,
+				               infoLink:st_infoLink,
+				               infoPicture:st_infoPicture,
+				               infoHeadline:st_infoHeadline)$$--
+			--$</h3>$--
+		--$$CMS_END_IF$
+		$-- /Headline --$
+
+		$-- Text--$
+		$CMS_IF(!st_text.isEmpty)$
+
+			<p$CMS_VALUE(editorId(editorName:"st_text"))$>
+
+				$CMS_IF(!st_link.isEmpty)$$--
+
+					--$$CMS_IF(st_linkType == "whole")$$--
+
+						--$<a href="$CMS_REF(st_link)$" title="">$--
+							--$$CMS_VALUE(st_text)$$--
+							--$<img class="SignLink" $--
+							     --$src="$CMS_REF(ps_layout_more_arrow)$" $--
+							     --$alt="" $--
+							--$/>$--
+						--$</a>$--
+
+					--$$CMS_ELSE$$--
+
+						--$$CMS_VALUE(st_text)$$--
+						--$<br />$--
+						--$<a href="$CMS_REF(st_link)$" title=""$CMS_VALUE(editorId(element:#global.gca("moreinformationlink"), editorName:"pt_label"))$>$--
+							--$<img class="SignLink" $--
+							     --$src="$CMS_REF(ps_layout_more_arrow)$" $--
+							     --$alt="" $--
+							--$/>$--
+							--$$CMS_VALUE(#global.gca("moreinformationlink"))$$--
+						--$</a>$--
+
+					--$$CMS_END_IF$$--
+		
+				--$$CMS_ELSE$$--
+
+					--$$CMS_VALUE(st_text)$$--
+
+				--$$CMS_END_IF$
+
+			</p>
+
+		$CMS_END_IF$
+		$-- /Text --$
+
+	</div>
+
+</div>
+$-- /Text/image homepage teaser --$

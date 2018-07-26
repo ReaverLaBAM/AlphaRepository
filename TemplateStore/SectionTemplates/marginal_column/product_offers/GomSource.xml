@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_DOM name="st_infoLayer" bold="no" hFill="yes" italic="no" list="no" rows="10" useLanguages="yes">
+    <FORMATS>
+      <TEMPLATE name="hometeaser"/>
+    </FORMATS>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Info layer text" description="Insert language specific text"/>
+      <LANGINFO lang="DE" label="Info-Layer-Text" description="Geben Sie hier sprachspezifischen Text ein."/>
+    </LANGINFOS>
+    <LINKEDITORS>
+      <LINKEDITOR name=""/>
+    </LINKEDITORS>
+  </CMS_INPUT_DOM>
+
+</CMS_MODULE>

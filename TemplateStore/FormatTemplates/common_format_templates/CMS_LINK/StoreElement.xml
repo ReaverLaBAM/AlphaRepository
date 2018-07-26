@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="4472453044838339290" name="CMS_LINK">
+	<LANG displayname="Link" language="EN"/>
+	<LANG displayname="Verweis" language="DE"/>
+	<style cdata="" quote="1" system="1" tag="CMS_LINK" view="link" visible="0">
+		<attr name="align" value="LEFT"/>
+		<attr name="font" value="sansserif"/>
+		<attr name="name" value="Link"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

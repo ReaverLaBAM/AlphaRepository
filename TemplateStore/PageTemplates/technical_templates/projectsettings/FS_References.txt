@@ -1,0 +1,6 @@
+[self]
+uid=projectsettings
+gid=d86cfe12-6af3-43ca-ba79-f0d829b4fc0b
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+

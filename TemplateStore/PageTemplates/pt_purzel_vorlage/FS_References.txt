@@ -1,0 +1,12 @@
+[self]
+uid=pt_purzel_vorlage
+gid=5e981e73-b805-44c7-b543-a0c6e05879e4
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+
+[optionalId]
+uid=globallinksinternal
+gid=8e6ffa6d-8378-46a3-a775-366c7996ac15
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+

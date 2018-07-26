@@ -1,0 +1,7 @@
+$CMS_IF(linktemplate.key ==  "textlinkexternal.standard")$
+$CMS_IF(!text.isEmpty)$$CMS_VALUE(text)$$CMS_ELSE$$CMS_VALUE(if(!ref.isEmpty,ref))$$CMS_END_IF$
+$CMS_ELSIF(linktemplate.key ==  "textlinkexternal.mail")$
+$-- not edited --$
+$CMS_ELSE$
+$CMS_VALUE(#global.logError("invalid value for attribute 'linktemplate': '" + linktemplate + "'"))$
+$CMS_END_IF$

@@ -1,0 +1,1 @@
+if(!st_downloadareas.isEmpty, st_downloadareas.map(x -> if(!x.st_description.isEmpty, x.st_description)).toString(", "))

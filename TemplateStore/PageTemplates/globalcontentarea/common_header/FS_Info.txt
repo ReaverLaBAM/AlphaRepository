@@ -1,0 +1,10 @@
+AllChildren: 1
+ExportVersion: 3.1
+Language_DE: Deutsch
+Language_EN: English
+PresentationChannel_-1268668680467729278: HTML
+PresentationChannel_-3710942996755142067: XML
+PresentationChannel_3658620854779572248: PDF - FOP
+TemplateSet_4762458803117367421: pdf
+TemplateSet_7035998204614812097: RSS
+TemplateSet_9062318847741885912: html

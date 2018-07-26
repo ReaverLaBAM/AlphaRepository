@@ -1,0 +1,17 @@
+[self]
+uid=productflash
+gid=62684da8-0348-49ed-9329-5ec4091af175
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
+
+[optionalId]
+uid=productflash
+gid=8435f601-1f3b-4442-aa91-927c7cfb2524
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+
+uid=Products.products
+gid=8cffeef6-f06e-4bd7-a65d-08b0b2b9d5b7
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

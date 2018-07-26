@@ -1,0 +1,17 @@
+[self]
+uid=productlink
+gid=2b71b17f-0abb-415c-ab87-4f88c8045044
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=products
+gid=3c102988-8d53-4fb9-a7f9-da584a2ceac1
+uidType=CONTENTSTORE
+class=de.espirit.firstspirit.store.access.contentstore.Content2Impl
+
+uid=tipGif
+gid=4966cbd8-ba36-4d25-8104-6bbf158834ab
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+

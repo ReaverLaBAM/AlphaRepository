@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QUERY entityType="Products">
+	<ORDERCRITERIA attribute="Name_%lang%" descending="0" />
+	<FILTERPARAM parameter="category" datatype="java.lang.Integer" value="1090" />
+	<AND>
+		<NEQ attribute="DoNotGenerate_%lang%" datatype="java.lang.Boolean" value="true" />
+		<EQ attribute="Categories_List.fs_id" parameter="category" />
+	</AND>
+</QUERY>

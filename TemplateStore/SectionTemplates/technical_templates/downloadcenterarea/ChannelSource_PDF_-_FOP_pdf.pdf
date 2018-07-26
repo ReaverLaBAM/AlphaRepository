@@ -1,0 +1,14 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block space-before="2mm">
+	<fo:block background-color="#D7DBE3" padding-top="0.5mm">
+		<fo:inline font-weight="bold" padding="1mm">$CMS_IF(!st_description.isEmpty)$$CMS_VALUE(st_description)$$CMS_END_IF$</fo:inline>
+	</fo:block>
+	$CMS_IF(st_linklist.size > 0)$
+		<fo:block space-before="1mm">
+			$CMS_FOR(link,st_linklist)$
+				$CMS_IF(!link.sitestoreref.isEmpty)$$CMS_VALUE(link)$$CMS_END_IF$
+			$CMS_END_FOR$
+		</fo:block>
+	$CMS_END_IF$	
+</fo:block>

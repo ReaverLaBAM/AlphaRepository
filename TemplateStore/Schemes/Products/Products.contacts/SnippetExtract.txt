@@ -1,0 +1,3 @@
+if(!cs_phone.isEmpty, "T: " + cs_phone) +
+if(!cs_phone.isEmpty && !cs_mail.isEmpty, " / ") +
+if(!cs_mail.isEmpty, "M: " + cs_mail)

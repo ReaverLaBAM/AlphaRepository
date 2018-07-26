@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.product_overview" filename="Products" id="-130493339555088020" previewPageRefUid="produkte_1" templateid="-8545983778948697386" type="content">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Product (overview)" language="EN"/>
+	<LANG displayname="Produkt (Übersicht)" language="DE"/>
+</TABLE>

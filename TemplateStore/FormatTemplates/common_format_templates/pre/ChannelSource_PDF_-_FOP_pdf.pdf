@@ -1,0 +1,1 @@
+<fo:block font-family="monospace" white-space-collapse="false" wrap-option="no-wrap">$CMS_VALUE(#content)$</fo:block>

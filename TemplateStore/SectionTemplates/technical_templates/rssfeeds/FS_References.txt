@@ -1,0 +1,6 @@
+[self]
+uid=rssfeeds
+gid=b5afc48b-1f85-4d36-adb9-65fc68b8baf9
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
+

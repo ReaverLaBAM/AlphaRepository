@@ -1,0 +1,17 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block>
+	<fo:block background-color="#D7DBE3" padding-top="0.5mm">
+		<fo:inline font-weight="bold" padding="1mm">$CMS_IF(!st_headline.isEmpty)$$CMS_VALUE(st_headline.convert)$$CMS_END_IF$</fo:inline>
+	</fo:block>
+	$CMS_IF(!st_picture.isEmpty)$
+	<fo:block space-before="1mm">
+		<fo:external-graphic src="$CMS_REF(st_picture,abs:3)$" width="100%" content-width="scale-to-fit" scaling="uniform"/>
+	</fo:block>
+	$CMS_END_IF$
+	$CMS_IF(!st_teaser_text.isEmpty)$
+	<fo:block>
+		<fo:inline padding="1mm">$CMS_VALUE(st_teaser_text)$</fo:inline>
+	</fo:block>
+	$CMS_END_IF$
+</fo:block>

@@ -1,0 +1,6 @@
+[self]
+uid=Products.gallery_media
+gid=8fd5ffd3-91bb-48a5-a068-155e2b769fe3
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

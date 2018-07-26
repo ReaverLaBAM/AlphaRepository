@@ -1,0 +1,65 @@
+<CMS_HEADER>
+</CMS_HEADER>
+<fo:block>
+$CMS_IF(!#row.Name.isEmpty)$
+	<fo:block>
+		<fo:inline font-size="15pt" font-weight="bold" color="#CF6100">$CMS_VALUE(#row.Name)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+	<fo:block space-after="1mm">
+		<fo:inline font-size="11pt" color="#CF6100">$CMS_VALUE(#global.gca("productinformation"))$</fo:inline>
+	</fo:block>
+	<fo:block>
+		<fo:table table-layout="fixed" width="100%">
+			<fo:table-column column-width="65mm"/>
+			<fo:table-column column-width="10mm"/>
+			<fo:table-column column-width="88mm"/>
+			<fo:table-body>
+				<fo:table-row>
+					<fo:table-cell>
+						<fo:block border-width="2pt" border-color="#C0C0C0" border-style="solid">						
+						$CMS_IF(!#row.Picture.isEmpty)$
+							<fo:block margin="2mm">
+								<fo:external-graphic src="$CMS_REF(#row.Picture,abs:3)$" width="100%" content-width="scale-to-fit" scaling="uniform"/>
+							</fo:block>
+						$CMS_END_IF$						
+						</fo:block>
+					</fo:table-cell>
+					<fo:table-cell>
+						<fo:block/>
+					</fo:table-cell>
+					<fo:table-cell>
+						<fo:block>
+						$CMS_IF(#row.PropertiesList.size>0)$
+							<fo:table table-layout="fixed" width="90mm">
+								<fo:table-column column-width="45mm"/>
+								<fo:table-column column-width="45mm"/>
+								<fo:table-body>
+								$CMS_FOR(property, #row.PropertiesList.sort(x -> if(!x.product_Properties_Type.Order_Index.isNull, x.product_Properties_Type.Order_Index, "")))$
+									<fo:table-row>
+										<fo:table-cell border-bottom-width="1pt" border-bottom-color="#C0C0C0" border-bottom-style="solid">
+											<fo:block>$CMS_IF(!property.product_Properties_Type.Name.isEmpty)$$CMS_VALUE(property.product_Properties_Type.Name)$$CMS_END_IF$</fo:block>
+										</fo:table-cell>
+										<fo:table-cell border-bottom-width="1pt" border-bottom-color="#C0C0C0" border-bottom-style="solid">
+											<fo:block>$CMS_IF(!property.Value.isEmpty)$$CMS_VALUE(property.Value)$$CMS_END_IF$$CMS_IF(!property.product_Properties_Type.Unit.isEmpty)$ $CMS_VALUE(property.product_Properties_Type.Unit)$$CMS_END_IF$</fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								$CMS_END_FOR$
+								</fo:table-body>
+							</fo:table>
+						$CMS_END_IF$
+						</fo:block>
+					</fo:table-cell>	
+				</fo:table-row>
+			</fo:table-body>
+		</fo:table>
+	</fo:block>
+	<fo:block space-before="3mm">
+		<fo:block space-after="1mm">
+			<fo:inline font-size="11pt" color="#CF6100">Features</fo:inline>
+		</fo:block>
+		$CMS_IF(!#row.Description.isEmpty)$
+			$CMS_VALUE(#row.Description)$
+		$CMS_END_IF$
+	</fo:block>
+</fo:block>

@@ -1,0 +1,3 @@
+<fo:block space-before="2mm">
+	<fo:inline font-weight="bold">$CMS_VALUE(#content)$</fo:inline>
+</fo:block>

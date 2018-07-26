@@ -1,0 +1,6 @@
+[self]
+uid=Products.productcategories
+gid=efc49290-745b-4cb5-89e1-45eb2be98953
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.QueryImpl
+

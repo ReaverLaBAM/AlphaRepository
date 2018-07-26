@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_salutation" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Salutation" description="Insert the Salutation."/>
+      <LANGINFO lang="DE" label="Anrede" description="Tragen Sie die Anrede ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_firstname" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="First name" description="Insert the first name."/>
+      <LANGINFO lang="DE" label="Vorname" description="Tragen Sie den Vornamen ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_lastname" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Last name" description="Insert the last name."/>
+      <LANGINFO lang="DE" label="Nachname" description="Tragen Sie den Nachnamen ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_phone" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Phone number" description="Insert the phone number."/>
+      <LANGINFO lang="DE" label="Telefonnummer" description="Tragen Sie die Telefonnummer ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_mail" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="E-mail" description="Insert the E-mail address."/>
+      <LANGINFO lang="DE" label="E-Mail" description="Tragen Sie die E-Mail-Adresse ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+</CMS_MODULE>

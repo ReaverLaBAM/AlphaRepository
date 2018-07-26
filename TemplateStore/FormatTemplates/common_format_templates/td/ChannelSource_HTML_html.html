@@ -1,0 +1,11 @@
+<td$--
+	--$$CMS_IF(!#style.isEmpty)$$--
+		--$$CMS_VALUE(#style)$$--
+	--$$CMS_END_IF$$--
+	--$$CMS_VALUE(if(#cell.bgcolor != null, " bgcolor='" + #cell.bgcolor + "'"))$$--
+	--$$CMS_VALUE(if(#cell.rowspan > 1, " rowspan='" + #cell.rowspan + "'"))$$--
+	--$$CMS_VALUE(if(#cell.colspan > 1, " colspan='" + #cell.colspan + "'"))$$--
+	--$$CMS_VALUE(if(#cell.align != null, " align='" + #cell.align + "'"))$$--
+--$>$--
+--$$CMS_VALUE(if(#content.isEmpty, "&nbsp;", #content))$$--
+--$</td>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_name" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Gallery name" description="Insert the gallery name."/>
+      <LANGINFO lang="DE" label="Name der Galerie" description="Tragen Sie den Namen der Galerie ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <FS_LIST name="cs_picturelist" hFill="yes" rows="20">
+    <DATASOURCE type="database" maxEntries="20" useLanguages="no">
+      <LABELS>
+        <LABEL lang="*">#item.cs_name</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD">
+          <PARAM name="add-index">FIRST</PARAM>
+        </ACTION>
+        <ACTION name="NEW">
+          <PARAM name="create-index">FIRST</PARAM>
+        </ACTION>
+        <ACTION name="REMOVE">
+          <PARAM name="show-confirm">YES</PARAM>
+        </ACTION>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="GOTO"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+        <COLUMN show="no">#fs_id</COLUMN>
+        <COLUMN show="yes" width="250">cs_name</COLUMN>
+        <COLUMN show="no">cs_description</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="stackedview" constraint="hide"/>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="left"/>
+        <ADD component="simpleview" constraint="right"/>
+      </LAYOUT>
+      <MEDIAMODE allowFolders="yes" mediaEditor="cs_picture"/>
+      <PERSISTENCEINDEX>Order_Index</PERSISTENCEINDEX>
+      <table>Products.gallery_media</table>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Pictures"/>
+      <LANGINFO lang="DE" label="Bilder"/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

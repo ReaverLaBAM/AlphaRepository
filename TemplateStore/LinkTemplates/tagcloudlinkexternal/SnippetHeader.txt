@@ -1,0 +1,4 @@
+if (
+    !text.isEmpty,
+    italic(text + " (" + size + ")")
+)

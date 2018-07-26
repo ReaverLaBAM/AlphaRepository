@@ -1,0 +1,23 @@
+$CMS_IF(#cs.isFirstContentRow)$
+	$-- job-text module --$
+	<div dragover="true" class="clearfix module"$CMS_VALUE(editorId(view:"occupationalclassification"))$>
+$CMS_END_IF$
+
+<h4>$--
+	--$$CMS_VALUE(cs_description)$$--
+--$</h4>
+$-- linkList --$
+
+<ul dragover="true" class="linkList">
+	$CMS_FOR(_job, cs_jobs)$
+		<li>
+			<a dragover="true" href="$CMS_REF(ss_jobs_details, contentId:_job.fs_id)$">$CMS_VALUE(_job.cs_jobtitle)$</a>
+		</li>
+	$CMS_END_FOR$
+</ul>
+$-- /linklist --$
+
+$CMS_IF(#cs.isLastContentRow)$
+	</div>
+	$-- /job-text  module --$
+$CMS_END_IF$

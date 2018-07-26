@@ -1,0 +1,4 @@
+if (
+    !lnk_product.isEmpty && !lnk_product.dataset.formData.cs_name.isEmpty,
+    lnk_product.dataset.formData.cs_name
+)

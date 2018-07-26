@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="cs_product_property_sort"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_product_property_sort"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

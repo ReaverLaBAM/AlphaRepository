@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OBJECT class="de.espirit.firstspirit.workflow.model.WorkflowImpl">
+	<FIELD name="activities">
+		<OBJECT class="java.util.Vector">
+			<OBJECT class="de.espirit.firstspirit.workflow.model.ActivityImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Die Bearbeitung des Objektes ist beendet, es wird eine Freigabe angefordert. Hier können Priorität, Termin und ggf. auch der Bearbeiter festgelegt werden.</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Editing of the object  has been completed, a release will be requested. Priority, deadline and – if applicable – the editor can be defined here.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Freigabe anfordern</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Request release</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="automatic" type="boolean">false</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Die Bearbeitung des Objektes ist beendet, 
+es wird eine Freigabe angefordert. 
+Hier können Priorität, Termin und ggf. auch
+der Bearbeiter festgelegt werden</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">1</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Freigabe anfordern</OBJECT>
+				</FIELD>
+				<FIELD name="script"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="type" type="int">0</FIELD>
+				<FIELD name="x" type="int">140</FIELD>
+				<FIELD name="y" type="int">170</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.ActivityImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Prüfung des zur Freigabe vorgelegten Objektes und Erteilung oder Ablehnung der Freigabe</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Checking the object submitted for release and release or refuse release.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Freigabe prüfen</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">check release</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="automatic" type="boolean">false</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Prüfung des zur Freigabe angeforderten
+Objektes und Erteilung oder Ablehnung der Freigabe</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">7</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Freigabe prüfen</OBJECT>
+				</FIELD>
+				<FIELD name="script"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="type" type="int">0</FIELD>
+				<FIELD name="x" type="int">490</FIELD>
+				<FIELD name="y" type="int">170</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.ActivityImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Zur Freigabe erforderliche Änderungen durchführen</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Changes which are necessary for a new release are accomplished.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">erneute Bearbeitung</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">edit again</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="automatic" type="boolean">false</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Zur Freigabe erforderlich Änderungen durchführen</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">11</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">erneute Bearbeitung</OBJECT>
+				</FIELD>
+				<FIELD name="script"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="type" type="int">0</FIELD>
+				<FIELD name="x" type="int">300</FIELD>
+				<FIELD name="y" type="int">20</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.ActivityImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Automatische Freigabe</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Automatic Release</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="automatic" type="boolean">true</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">15</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Automatische Freigabe</OBJECT>
+				</FIELD>
+				<FIELD name="script">
+					<OBJECT class="java.lang.String">finalRelease</OBJECT>
+				</FIELD>
+				<FIELD name="type" type="int">0</FIELD>
+				<FIELD name="x" type="int">300</FIELD>
+				<FIELD name="y" type="int">320</FIELD>
+			</OBJECT>
+		</OBJECT>
+	</FIELD>
+	<FIELD name="endStates">
+		<OBJECT class="java.util.HashSet">
+			<OBJECT class="java.lang.Long">17</OBJECT>
+		</OBJECT>
+	</FIELD>
+	<FIELD name="errorState" type="long">-1</FIELD>
+	<FIELD name="name">
+		<OBJECT class="java.lang.String">Freigabe Anfordern</OBJECT>
+	</FIELD>
+	<FIELD name="startState" type="long">0</FIELD>
+	<FIELD name="states">
+		<OBJECT class="java.util.Vector">
+			<OBJECT class="de.espirit.firstspirit.workflow.model.StateImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Ein Objekt wurde verändert.</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">An object has been changed.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Objekt verändert</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Object changed</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="b" type="int">0</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Ein Objekt wurde verändert.</OBJECT>
+				</FIELD>
+				<FIELD name="duration" type="long">0</FIELD>
+				<FIELD name="editorMode" type="int">1</FIELD>
+				<FIELD name="g" type="int">0</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">0</FIELD>
+				<FIELD name="lockStoreElement" type="boolean">false</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Objekt verändert</OBJECT>
+				</FIELD>
+				<FIELD name="r" type="int">255</FIELD>
+				<FIELD name="release" type="boolean">false</FIELD>
+				<FIELD name="type" type="int">1</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="x" type="int">6</FIELD>
+				<FIELD name="y" type="int">170</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.StateImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Zu einem veränderten Objekt wurde eine Freigabe angefordert.</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">A release has been requested for a changed object.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Freigabe angefordert</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Release requested</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="b" type="int">255</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Zu einem veränderten Objekt wurde
+eine Freigabe angefordert.</OBJECT>
+				</FIELD>
+				<FIELD name="duration" type="long">0</FIELD>
+				<FIELD name="editorMode" type="int">0</FIELD>
+				<FIELD name="g" type="int">51</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Administratoren</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">3</FIELD>
+				<FIELD name="lockStoreElement" type="boolean">true</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Freigabe angefordert</OBJECT>
+				</FIELD>
+				<FIELD name="r" type="int">51</FIELD>
+				<FIELD name="release" type="boolean">false</FIELD>
+				<FIELD name="type" type="int">1</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="x" type="int">284</FIELD>
+				<FIELD name="y" type="int">170</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.StateImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Objekt nicht freigegeben</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Object not released yet</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="b" type="int">0</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Die Änderungen wurden &lt;B&gt;nicht&lt;/B&gt; freigegeben</OBJECT>
+				</FIELD>
+				<FIELD name="duration" type="long">0</FIELD>
+				<FIELD name="editorMode" type="int">0</FIELD>
+				<FIELD name="g" type="int">0</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">9</FIELD>
+				<FIELD name="lockStoreElement" type="boolean">false</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Objekt nicht freigegeben</OBJECT>
+				</FIELD>
+				<FIELD name="r" type="int">255</FIELD>
+				<FIELD name="release" type="boolean">false</FIELD>
+				<FIELD name="type" type="int">1</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="x" type="int">465</FIELD>
+				<FIELD name="y" type="int">20</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.StateImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">automatische Freigabe</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Release by FirstSpirit</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="b" type="int">153</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Das Objekt wurden freigegeben</OBJECT>
+				</FIELD>
+				<FIELD name="duration" type="long">0</FIELD>
+				<FIELD name="editorMode" type="int">0</FIELD>
+				<FIELD name="g" type="int">204</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">5</FIELD>
+				<FIELD name="lockStoreElement" type="boolean">false</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">automatische Freig.</OBJECT>
+				</FIELD>
+				<FIELD name="r" type="int">0</FIELD>
+				<FIELD name="release" type="boolean">false</FIELD>
+				<FIELD name="type" type="int">1</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="x" type="int">478</FIELD>
+				<FIELD name="y" type="int">320</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.StateImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">freigegeben</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">released</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="b" type="int">0</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="duration" type="long">0</FIELD>
+				<FIELD name="editorMode" type="int">0</FIELD>
+				<FIELD name="g" type="int">0</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">17</FIELD>
+				<FIELD name="lockStoreElement" type="boolean">false</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">freigegeben</OBJECT>
+				</FIELD>
+				<FIELD name="r" type="int">0</FIELD>
+				<FIELD name="release" type="boolean">true</FIELD>
+				<FIELD name="type" type="int">1</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="x" type="int">109</FIELD>
+				<FIELD name="y" type="int">386</FIELD>
+			</OBJECT>
+		</OBJECT>
+	</FIELD>
+	<FIELD name="transitions">
+		<OBJECT class="java.util.Vector">
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.Vector">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">2</FIELD>
+				<FIELD name="labelPos"><NULL/><!-- class [D --></FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">60</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">140</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">1</FIELD>
+				<FIELD name="port_target" type="int">0</FIELD>
+				<FIELD name="source" type="long">0</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">1</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">true</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.Vector">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Anforderung einer Freigabe für die vorgenommenen Änderungen.</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Requesting a release for the accomplished changes.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Anfordern</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Request</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Anforderung einer Freigabe für die vorgenommenen Änderungen.</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">33</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">Bitte führen Sie die Freigabeprüfung für das folgende Objekt durch:
+
+%FIRSTspiritURL%
+
+Anmerkung: Klicken Sie auf den Link oder öffen Sie den FIRSTspirit Client und verwenden das Menü "Extras\Zu FIRSTspirit Adresse wechseln".</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String">Es wurde eine Freigabe angefordert!</OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">4</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">344.44444444444446</OBJECT>
+						<OBJECT class="java.lang.Double">1.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Anfordern</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">220</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">310</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">1</FIELD>
+				<FIELD name="port_target" type="int">0</FIELD>
+				<FIELD name="source" type="long">1</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">3</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">true</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Prüfen</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Check</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">8</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Prüfen</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">370</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">490</OBJECT>
+							<OBJECT class="java.lang.Integer">200</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">1</FIELD>
+				<FIELD name="port_target" type="int">0</FIELD>
+				<FIELD name="source" type="long">3</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">7</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">true</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Freigabe wird NICHT erteilt. Hier sollte ein Grund für die Ablehnung der Freigabe als Kommentar eingetragen werden.</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">The object will NOT be released. A reason for refusing the release should be entered as comment here.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Nicht erteilen</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">No release</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Freigabe wird NICHT erteilt. /n
+Hier sollte ein Grund für die Ablehung 
+der Freigabe als Kommentar eingetragen werden</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">5</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">Die von Ihnen angeforderte Freigabe wurde nicht erteilt! 
+
+%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String">Freigabe wurde nicht erteilt!</OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">10</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Nicht erteilen</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">530</OBJECT>
+							<OBJECT class="java.lang.Integer">170</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">530</OBJECT>
+							<OBJECT class="java.lang.Integer">80</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">2</FIELD>
+				<FIELD name="port_target" type="int">3</FIELD>
+				<FIELD name="source" type="long">7</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">9</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">true</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Bearbeiten</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Edit</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">12</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Bearbeiten</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">500</OBJECT>
+							<OBJECT class="java.lang.Integer">50</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">370</OBJECT>
+							<OBJECT class="java.lang.Integer">50</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">0</FIELD>
+				<FIELD name="port_target" type="int">1</FIELD>
+				<FIELD name="source" type="long">9</FIELD>
+				<FIELD name="storeElementRights" type="int">4</FIELD>
+				<FIELD name="target" type="long">11</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">true</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Nach dem die Änderung durchgeführt wurden, wird eine erneute Freigabe angefordert</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">After having accomplished the necessary changes a new release is requested.</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Erneut anfordern</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Request again</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Nach dem die Änderung durchgeführt wurden,
+wird eine erneute Freigabe angefordert</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">33</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">Es wurde eine erneute Freigabeanforderung gestellt. Bitte führen Sie die Freigabeprüfung durch.
+
+%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String">Erneute Freigabeanforderung</OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">14</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Erneut anfordern</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">330</OBJECT>
+							<OBJECT class="java.lang.Integer">80</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">330</OBJECT>
+							<OBJECT class="java.lang.Integer">170</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">3</FIELD>
+				<FIELD name="port_target" type="int">2</FIELD>
+				<FIELD name="source" type="long">11</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">3</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">true</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Erteilen</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Approve</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String">Freigabe wird erteilt.</OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">5</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">Die von Ihnen angeforderte Freigabe wurde erteilt! 
+
+%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String">Freigabe erteilt</OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">6</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Erteilen</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">530</OBJECT>
+							<OBJECT class="java.lang.Integer">230</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">530</OBJECT>
+							<OBJECT class="java.lang.Integer">320</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">3</FIELD>
+				<FIELD name="port_target" type="int">2</FIELD>
+				<FIELD name="source" type="long">7</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">5</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">true</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Direkt freigeben</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Direct release</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">13</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Direkt freigeben</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">180</OBJECT>
+							<OBJECT class="java.lang.Integer">230</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">500</OBJECT>
+							<OBJECT class="java.lang.Integer">350</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">3</FIELD>
+				<FIELD name="port_target" type="int">0</FIELD>
+				<FIELD name="source" type="long">1</FIELD>
+				<FIELD name="storeElementRights" type="int">256</FIELD>
+				<FIELD name="target" type="long">5</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">true</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="email_title"><NULL/><!-- class java.lang.String --></FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">16</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">530</OBJECT>
+							<OBJECT class="java.lang.Integer">380</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">380</OBJECT>
+							<OBJECT class="java.lang.Integer">410</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">3</FIELD>
+				<FIELD name="port_target" type="int">1</FIELD>
+				<FIELD name="source" type="long">5</FIELD>
+				<FIELD name="storeElementRights" type="int">4</FIELD>
+				<FIELD name="target" type="long">15</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">false</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+			<OBJECT class="de.espirit.firstspirit.workflow.model.TransitionImpl">
+				<FIELD name="_descriptions">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String"></OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="_names">
+					<OBJECT class="java.util.HashMap">
+						<OBJECT class="java.lang.String">DE</OBJECT>
+						<OBJECT class="java.lang.String">Final</OBJECT>
+						<OBJECT class="java.lang.String">EN</OBJECT>
+						<OBJECT class="java.lang.String">Final</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="description">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_groups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="email_props" type="int">0</FIELD>
+				<FIELD name="email_text">
+					<OBJECT class="java.lang.String">%FIRSTspiritURL%</OBJECT>
+				</FIELD>
+				<FIELD name="email_title">
+					<OBJECT class="java.lang.String"></OBJECT>
+				</FIELD>
+				<FIELD name="email_user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="groups">
+					<OBJECT class="java.util.ArrayList">
+						<OBJECT class="java.lang.String">Everyone</OBJECT>
+					</OBJECT>
+				</FIELD>
+				<FIELD name="id" type="long">19</FIELD>
+				<FIELD name="labelPos">
+					<ARRAY type="double">
+						<OBJECT class="java.lang.Double">500.0</OBJECT>
+						<OBJECT class="java.lang.Double">0.0</OBJECT>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="name">
+					<OBJECT class="java.lang.String">Final</OBJECT>
+				</FIELD>
+				<FIELD name="noEditorGroups">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+				<FIELD name="points">
+					<ARRAY type="[I">
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">300</OBJECT>
+							<OBJECT class="java.lang.Integer">410</OBJECT>
+						</ARRAY>
+						<ARRAY type="int">
+							<OBJECT class="java.lang.Integer">170</OBJECT>
+							<OBJECT class="java.lang.Integer">416</OBJECT>
+						</ARRAY>
+					</ARRAY>
+				</FIELD>
+				<FIELD name="port_source" type="int">0</FIELD>
+				<FIELD name="port_target" type="int">1</FIELD>
+				<FIELD name="source" type="long">15</FIELD>
+				<FIELD name="storeElementRights" type="int">4</FIELD>
+				<FIELD name="target" type="long">17</FIELD>
+				<FIELD name="taskRights" type="int">0</FIELD>
+				<FIELD name="type" type="int">2</FIELD>
+				<FIELD name="useFixedRights" type="boolean">true</FIELD>
+				<FIELD name="useStoreElementRights" type="boolean">false</FIELD>
+				<FIELD name="useTaskRights" type="boolean">false</FIELD>
+				<FIELD name="user">
+					<OBJECT class="java.util.ArrayList">
+					</OBJECT>
+				</FIELD>
+			</OBJECT>
+		</OBJECT>
+	</FIELD>
+</OBJECT>

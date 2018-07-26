@@ -1,0 +1,17 @@
+<fo:block space-before="5mm">
+$CMS_IF(!#row.Label.isEmpty)$
+	<fo:block space-after="3mm">
+		<fo:inline font-size="11pt" font-weight="bold">$CMS_VALUE(#row.Label)$</fo:inline>
+	</fo:block>
+$CMS_END_IF$
+$CMS_IF(#row.jobsList.size > 0)$
+	<fo:block space-after="3mm">
+		$CMS_FOR(item,#row.jobsList)$
+			<fo:block>
+				<fo:external-graphic src="$CMS_REF(ref(ps_layout_more_arrow),abs:3)$" border-right="3mm solid #ffffff" content-height="2mm"/><fo:inline font-size="11pt">$CMS_VALUE(item.JobTitle)$</fo:inline>
+			</fo:block>
+		$CMS_END_FOR$
+	</fo:block>
+$CMS_END_IF$
+
+</fo:block>

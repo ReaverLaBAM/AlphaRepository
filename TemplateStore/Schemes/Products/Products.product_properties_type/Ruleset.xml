@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_name"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_name"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_unit"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_unit"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

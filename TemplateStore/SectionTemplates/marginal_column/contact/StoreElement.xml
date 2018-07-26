@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE comment="" filename="contact" id="-5690288274090949280" previewPageRefUid="pressreleasesdetails" templateid="-341542702317119352" type="section">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Contact" language="EN"/>
+	<LANG displayname="Kontakt" language="DE"/>
+</TEMPLATE>

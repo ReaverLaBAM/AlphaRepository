@@ -1,0 +1,28 @@
+$-- meta --$
+<div class="clearfix meta">
+
+	$-- metanavigation --$
+	<ul id="SignKlapp">
+
+		$-- iterate over project languages and show other language icons--$
+		$CMS_FOR(_lang, #global.project.languages.filter(x -> (x != #global.language) && x.shouldGenerate))$
+			<li>$--
+				--$<a href="$CMS_REF(set_pt_thisRef, language:_lang)$" title="">$--
+					--$<img src="$CMS_REF("media:icon_" + _lang.abbreviation.upperCase)$" alt="" />$--
+					--$$CMS_VALUE(_lang.name)$$--
+				--$</a>$--
+			--$</li>
+		$CMS_END_FOR$
+		$-- /iterate over project languages and show other language icons--$
+
+		$CMS_VALUE(st_links)$
+
+		$-- include template fragment for search --$
+		$CMS_RENDER(template:"search")$
+		$-- /include template fragment for search --$
+
+	</ul>
+	$-- /metanavigation --$
+
+</div>
+$-- /meta --$

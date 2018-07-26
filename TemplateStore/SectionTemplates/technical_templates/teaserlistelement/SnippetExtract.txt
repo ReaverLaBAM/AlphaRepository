@@ -1,0 +1,1 @@
+truncate(st_teaser_text, 250)

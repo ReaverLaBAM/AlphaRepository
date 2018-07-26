@@ -1,0 +1,12 @@
+[self]
+uid=textlinkexternal
+gid=b0438969-f9e9-45d8-86d2-7e671970a112
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+[optionalId]
+uid=textLink
+gid=4b6c2432-e3b3-4aee-99c5-0f8d132e4afc
+uidType=MEDIASTORE_LEAF
+class=de.espirit.firstspirit.store.access.mediastore.MediaImpl
+

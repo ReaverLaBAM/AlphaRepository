@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<IF>
+			<EQUAL>
+				<PROPERTY name="LANG" source="#global"/>
+				<PROPERTY name="MASTER" source="#global"/>
+			</EQUAL>
+		</IF>
+		<WITH>
+			<NOT>
+				<AND>
+					<PROPERTY name="EMPTY" source="st_text"/>
+					<PROPERTY name="EMPTY" source="st_picture"/>
+				</AND>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_text"/>
+				<MESSAGE lang="*" text="Please insert language specific text or choose a picture instead!"/>
+				<MESSAGE lang="DE" text="Bitte geben Sie einen sprachspezifischen Text ein oder wählen Sie anstatt dessen ein Bild aus!"/>
+			</VALIDATION>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_picture"/>
+				<MESSAGE lang="*" text="Please choose a picture or insert language specific text instead!"/>
+				<MESSAGE lang="DE" text="Bitte wählen Sie ein Bild aus oder geben Sie anstatt dessen einen sprachspezifischen Text ein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="st_headline"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_headline"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="st_picture_description"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="st_picture_description"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

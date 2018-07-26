@@ -1,0 +1,70 @@
+$CMS_SET(_contact, null)$
+$CMS_SET(_editorId, null)$
+$CMS_IF(!#global.contentTemplate.isEmpty && #global.contentTemplate.uid == "Products.products")$
+	$CMS_IF(#global.multiPageParams.entitiesPerPage == 1 && #global.pageParams.data.size > 0 && !#global.pageParams.data.get(0).contacts.isEmpty)$
+		$CMS_SET(_contact, #global.pageParams.data.get(0).contacts)$
+		$CMS_SET(_editorId, editorId(entity:_contact, view:"contacts"))$
+	$CMS_END_IF$
+$CMS_ELSIF(!st_contact.isEmpty)$
+	$CMS_SET(_contact, st_contact.dataset.entity)$
+	$CMS_IF(isWebEdit)$
+		$CMS_SET(_editorId, editorId(entity:_contact, view:"contacts"))$
+	$CMS_ELSE$
+		$CMS_SET(_editorId, editorId(editorName:"st_contact"))$
+	$CMS_END_IF$
+$CMS_END_IF$
+
+$CMS_IF(!_contact.isEmpty)$
+	<!-- Contact -->
+	<div class="clearfix teasermodule blue"$CMS_VALUE(editorId())$>
+		<h3$CMS_VALUE(editorId(element:#global.gca("contact"), editorName:"pt_label"))$>
+			$CMS_VALUE(#global.gca("contact"))$
+			$CMS_RENDER(template:"tooltip",
+			            infoLayer:st_infoLayer,
+			            infoLink:st_infoLink,
+			            infoPicture:st_infoPicture,
+			            infoHeadline:st_infoHeadline)$
+		</h3>
+		<div class="text">
+			<p$CMS_VALUE(_editorId)$>
+
+				$CMS_IF(#global.preview)$$--
+					--$<span$CMS_VALUE(editorId(element:#global.gca("contacttext"), editorName:"pt_label"))$>$--
+				--$$CMS_END_IF$$--
+
+				--$$CMS_VALUE(#global.gca("contacttext"))$$--
+
+				--$$CMS_IF(#global.preview)$$--
+					--$</span>$--
+				--$$CMS_END_IF$
+
+				<br /><br />
+				<strong>
+					$CMS_IF(!_contact.Salutation.isEmpty)$
+						$CMS_VALUE(_contact.Salutation)$
+					$CMS_END_IF$
+					$CMS_IF(!_contact.Firstname.isEmpty)$
+						 $CMS_VALUE(_contact.Firstname)$
+					$CMS_END_IF$
+					$CMS_IF(!_contact.Lastname.isEmpty)$
+						$CMS_VALUE(_contact.Lastname)$
+					$CMS_END_IF$
+				</strong>
+				<br />
+				$CMS_IF(!_contact.Phone.isEmpty)$
+					$CMS_VALUE(#global.gca("contact_phone"))$: $CMS_VALUE(_contact.Phone)$<br />
+				$CMS_END_IF$
+				$CMS_IF(!_contact.Mail.isEmpty)$
+					$CMS_VALUE(#global.gca("contact_mail"))$: 
+					<strong>
+						<a href="mailto:$CMS_VALUE(_contact.Mail)$">
+							$CMS_VALUE(_contact.Mail)$
+						</a>
+					</strong>
+				$CMS_END_IF$
+			</p>
+		</div>
+	
+	</div>
+	<!-- /Contact  -->
+$CMS_END_IF$

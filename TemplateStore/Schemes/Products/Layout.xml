@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCHEMAGRAPH scale="1.0">
+	<TABLE height="81" name="Job_Categories" width="137" x="20" y="520"/>
+	<TABLE height="105" name="Product_Properties_Type" width="309" x="370" y="20"/>
+	<TABLE height="57" name="Galleries" width="167" x="680" y="410"/>
+	<TABLE height="50" name="Product_Properties_Type_Sort" width="274" x="390" y="210"/>
+	<TABLE height="69" name="Product_Properties" width="257" x="10" y="30"/>
+	<TABLE height="117" name="Press_Releases" width="168" x="750" y="530"/>
+	<TABLE height="177" name="Products" width="195" x="230" y="300"/>
+	<TABLE height="105" name="Contacts" width="156" x="10" y="370"/>
+	<TABLE height="141" name="Jobs" width="179" x="250" y="500"/>
+	<TABLE height="105" name="Gallery_Media" width="162" x="720" y="130"/>
+	<TABLE height="105" name="Product_Categories" width="137" x="10" y="230"/>
+	<TABLE height="69" name="Glossary" width="133" x="510" y="570"/>
+	<REFERENCE name="Product_Properties.productsList">
+		<POINT x="158" y="99"/>
+		<POINT x="275" y="300"/>
+	</REFERENCE>
+	<REFERENCE name="Galleries.gallery_MediaList">
+		<POINT x="767" y="410"/>
+		<POINT x="793" y="235"/>
+	</REFERENCE>
+	<REFERENCE name="Product_Properties_Type.product_PropertiesList">
+		<POINT x="370" y="69"/>
+		<POINT x="267" y="67"/>
+	</REFERENCE>
+	<REFERENCE name="Products.Categories_List">
+		<POINT x="230" y="346"/>
+		<POINT x="147" y="311"/>
+	</REFERENCE>
+	<REFERENCE name="Contacts.productsList">
+		<POINT x="166" y="411"/>
+		<POINT x="230" y="402"/>
+	</REFERENCE>
+	<REFERENCE name="Product_Properties_Type_Sort.product_Properties_TypeList">
+		<POINT x="526" y="210"/>
+		<POINT x="525" y="125"/>
+	</REFERENCE>
+	<REFERENCE name="Job_Categories.jobsList">
+		<POINT x="157" y="563"/>
+		<POINT x="250" y="566"/>
+	</REFERENCE>
+</SCHEMAGRAPH>

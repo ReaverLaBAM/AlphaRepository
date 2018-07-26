@@ -1,0 +1,1 @@
+$CMS_VALUE(if(!#link.text.isEmpty, #link.text))$

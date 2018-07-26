@@ -1,0 +1,6 @@
+[self]
+uid=tableunderline
+gid=79e9e728-dbf4-417e-9f13-aa0b71180103
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+

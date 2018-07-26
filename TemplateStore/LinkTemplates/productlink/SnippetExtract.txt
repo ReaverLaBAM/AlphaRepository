@@ -1,0 +1,4 @@
+if (
+    !lnk_product.isEmpty && !lnk_product.dataset.formData.cs_description.isEmpty,
+    truncate(lnk_product.dataset.formData.cs_description, 250)
+)

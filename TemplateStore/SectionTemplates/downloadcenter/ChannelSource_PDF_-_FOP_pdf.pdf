@@ -1,0 +1,5 @@
+<CMS_HEADER>
+</CMS_HEADER>
+$CMS_FOR(area,st_downloadareas)$
+	$CMS_VALUE(area)$    
+$CMS_END_FOR$

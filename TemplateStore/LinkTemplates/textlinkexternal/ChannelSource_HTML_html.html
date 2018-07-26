@@ -1,0 +1,43 @@
+$CMS_IF(linktemplate.key != "textlinkexternal.standard" && linktemplate.key !=  "textlinkexternal.mail")$$--
+
+	early escape on invalid link template
+	--$$CMS_VALUE(#global.logError("invalid value for attribute 'linktemplate': '" + linktemplate + "'"))$$--
+
+--$$CMS_ELSIF(ref.isEmpty)$$--
+
+	early escape on empty external URL
+	--$$CMS_VALUE(#global.logError("no external URL specified!"))$$--
+
+--$$CMS_ELSE$$--
+
+	--$$CMS_IF(linktemplate.key == "textlinkexternal.standard")$$--
+
+		ensure HTTP protocol prefix
+		--$$CMS_IF(!ref.startsWith("http://") && !ref.startsWith("https://"))$$--
+			--$$CMS_SET(ref, "http://" + ref)$$--
+		--$$CMS_END_IF$$--
+
+	--$$CMS_ELSE$$--
+
+		ensure mailto URL prefix
+		--$$CMS_IF(!ref.startsWith("mailto:"))$$--
+			--$$CMS_SET(ref, "mailto:" + ref)$$--
+		--$$CMS_END_IF$$--
+
+	--$$CMS_END_IF$$--
+
+	--$<a href="$CMS_VALUE(ref)$" target="_blank"$--
+
+		--$$CMS_IF(!text.isEmpty)$$--
+			--$ title="$CMS_VALUE(text)$"$--
+		--$$CMS_END_IF$$--
+
+		--$$CMS_IF(!#global.section.isEmpty && #global.section.template.uid == "hometextimageteaser")$$--
+			--$	style="background:url($CMS_REF(media:"textLink")$) left center no-repeat;padding-left:12px;text-decoration:none;"$--
+		--$$CMS_END_IF$$--
+
+	--$>$--
+		--$$CMS_VALUE(if(!text.isEmpty, text, "Link"))$$--
+	--$</a>$--
+
+--$$CMS_END_IF$

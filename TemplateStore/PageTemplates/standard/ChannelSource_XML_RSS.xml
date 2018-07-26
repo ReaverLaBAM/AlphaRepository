@@ -1,0 +1,16 @@
+$CMS_TRIM(level:1)$$--
+	--$<?xml version="1.0" encoding="$CMS_VALUE(#global.encoding)$"?>$--
+		--$$CMS_SET(feed_time,#global.page.changeDate.format("yyyy-MM-dd'T'HH:mm:ssZ").toString)$$--
+		--$$CMS_SET(formated_feed_time, feed_time.substring(0, 22) + ":" + feed_time.substring(22))$
+	<feed xmlns="http://www.w3.org/2005/Atom">
+		<title>$CMS_VALUE(ps_company_name)$$CMS_IF(!pt_title.isEmpty)$ | $CMS_VALUE(pt_title.convert2)$$CMS_END_IF$</title>
+		<link href="$CMS_REF(#global.ref)$" />
+		<link rel="self" href="$CMS_REF(#global.ref)$" />
+		<updated>$CMS_VALUE(formated_feed_time)$</updated>
+		<author>
+			<name>$CMS_VALUE(ps_company_name)$</name>
+		</author>
+		<id>$CMS_REF(#global.ref)$</id>
+		$CMS_VALUE(#global.page.body("Content center"))$
+	</feed>
+$CMS_END_TRIM$

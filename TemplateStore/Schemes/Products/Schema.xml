@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element temporal="1" version="4.0">
+		<xs:complexType dbName="CONTACTS" name="Contacts">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FIRSTNAME" javaType="java.lang.String" length="1024" name="Firstname" nullable="1" type="xs:string"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="LASTNAME" javaType="java.lang.String" length="1024" name="Lastname" nullable="1" type="xs:string"/>
+				<xs:element dbName="MAIL" javaType="java.lang.String" length="1024" name="Mail" nullable="1" type="xs:string"/>
+				<xs:element dbName="PHONE" javaType="java.lang.String" length="1024" name="Phone" nullable="1" type="xs:string"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="SALUTATION" javaType="java.lang.String" length="1024" name="Salutation_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="SALUTATION_EN" javaType="java.lang.String" length="1024" name="Salutation_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_CONTACTS" name="pk_Contacts">
+			<xs:selector xpath="Contacts"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:keyref dbName="FK_PRODUCTS_CONTACTS0" field="productsList" name="fk_Products_Contacts" refer="Contacts" tfield="contacts">
+			<xs:selector xpath="Products"/>
+			<xs:attribute xpath="CONT_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="GALLERIES" name="Galleries">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="1024" name="Name_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="1024" name="Name_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_GALLERIES" name="pk_Galleries">
+			<xs:selector xpath="Galleries"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:keyref cascadingDelete="1" dbName="FK_GALLERY_MEDIA_GALLERIES0" field="gallery_MediaList" name="fk_Gallery_Media_Galleries" refer="Galleries" tfield="galleries">
+			<xs:selector xpath="Gallery_Media"/>
+			<xs:attribute xpath="GALL_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="GALLERY_MEDIA" name="Gallery_Media">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="DESCRIPTION_DE" javaType="java.lang.String" length="1024" name="Description_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="DESCRIPTION_EN" javaType="java.lang.String" length="1024" name="Description_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="MEDIA_REF" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Media_Ref" type="xml"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="50" name="Name_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="50" name="Name_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="ORDER_INDEX" javaType="java.lang.Integer" name="Order_Index" type="xs:integer"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="GALL_FS_ID" name="GALL_FS_ID" nullable="1" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_GALLERY_MEDIA" name="pk_Gallery_Media">
+			<xs:selector xpath="Gallery_Media"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="GLOSSARY" name="Glossary">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="DESCRIPTION_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_DE" nullable="1" type="xml"/>
+				<xs:element dbName="DESCRIPTION_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_EN" nullable="1" type="xml"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="TERM_DE" javaType="java.lang.String" length="1024" name="Term_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="TERM_EN" javaType="java.lang.String" length="1024" name="Term_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_GLOSSARY" name="pk_Glossary">
+			<xs:selector xpath="Glossary"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="JOB_CATEGORIES" name="Job_Categories">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="LABEL_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Label_DE" nullable="1" type="xml"/>
+				<xs:element dbName="LABEL_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Label_EN" nullable="1" type="xml"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="1024" name="Name_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="1024" name="Name_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_JOB_CATEGORIES" name="pk_Job_Categories">
+			<xs:selector xpath="Job_Categories"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="RT_JOBS_JOB_CATEGORIES_JOBSLIST" name="RT_JOBS_JOB_CATEGORIES_JOBSLIST" visible="0">
+			<xs:sequence>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="JOBS_FS_ID" name="JOBS_FS_ID" type="xs:long" visible="0"/>
+				<xs:element dbName="JOB__FS_ID" name="JOB__FS_ID" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_RT_JOBS_JOB_CATEGORIES_JOBSLI" name="pk_rt_JOBS_JOB_CATEGORIES_jobsList">
+			<xs:selector xpath="RT_JOBS_JOB_CATEGORIES_JOBSLIST"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+			<xs:attribute xpath="JOBS_FS_ID"/>
+			<xs:attribute xpath="JOB__FS_ID"/>
+		</xs:key>
+		<xs:keyref dbName="FK_RT_JOBS_JOB_CATEGORIES_JOBSL1" name="job_CategoriesList" refer="Jobs" source="Job_Categories" tfield="jobsList">
+			<xs:selector xpath="RT_JOBS_JOB_CATEGORIES_JOBSLIST"/>
+			<xs:attribute xpath="JOBS_FS_ID"/>
+		</xs:keyref>
+		<xs:keyref dbName="FK_RT_JOBS_JOB_CATEGORIES_JOBSL2" name="jobsList" refer="Job_Categories" source="Jobs" tfield="job_CategoriesList">
+			<xs:selector xpath="RT_JOBS_JOB_CATEGORIES_JOBSLIST"/>
+			<xs:attribute xpath="JOB__FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="JOBS" name="Jobs">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="DATE_" javaType="java.util.Date" name="Date" nullable="1" type="xs:date"/>
+				<xs:element dbName="DESCRIPTION_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_DE" nullable="1" type="xml"/>
+				<xs:element dbName="DESCRIPTION_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_EN" nullable="1" type="xml"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="JOBTITLE_DE" javaType="java.lang.String" length="1024" name="JobTitle_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="JOBTITLE_EN" javaType="java.lang.String" length="1024" name="JobTitle_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="PROFIL_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Profil_DE" nullable="1" type="xml"/>
+				<xs:element dbName="PROFIL_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Profil_EN" nullable="1" type="xml"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="TASKS_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Tasks_DE" nullable="1" type="xml"/>
+				<xs:element dbName="TASKS_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Tasks_EN" nullable="1" type="xml"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="JOB__FS_ID" name="JOB__FS_ID" nullable="1" type="xs:long" visible="0"/>
+				<xs:element dbName="JOB__FS_ID0" name="JOB__FS_ID0" nullable="1" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_JOBS" name="pk_Jobs">
+			<xs:selector xpath="Jobs"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="PRESS_RELEASES" name="Press_Releases">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="CONTENT" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Content" nullable="1" type="xml"/>
+				<xs:element dbName="DATE_" javaType="java.util.Date" name="Date" nullable="1" type="xs:date"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="HEADLINE_DE" javaType="java.lang.String" length="1024" name="Headline_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="HEADLINE_EN" javaType="java.lang.String" length="1024" name="Headline_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="SUBHEADLINE_DE" javaType="java.lang.String" length="1024" name="Subheadline_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="SUBHEADLINE_EN" javaType="java.lang.String" length="1024" name="Subheadline_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="TEASER_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Teaser_DE" nullable="1" type="xml"/>
+				<xs:element dbName="TEASER_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Teaser_EN" nullable="1" type="xml"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRESS_RELEASES" name="pk_Press_Releases">
+			<xs:selector xpath="Press_Releases"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="PRODUCT_CATEGORIES" name="Product_Categories">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="DESCRIPTION_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_DE" nullable="1" type="xml"/>
+				<xs:element dbName="DESCRIPTION_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_EN" nullable="1" type="xml"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="1024" name="Name_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="1024" name="Name_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="PAGEREF" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Pageref" nullable="1" type="xml"/>
+				<xs:element dbName="PICTURE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Picture" nullable="1" type="xml"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRODUCT_CATEGORIES" name="pk_Product_Categories">
+			<xs:selector xpath="Product_Categories"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="RT_PRODUCT_CATEGORIES_PRODUCTS_CATEGORIES_LIST" name="RT_PRODUCT_CATEGORIES_PRODUCTS_CATEGORIES_LIST" visible="0">
+			<xs:sequence>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID" name="PROD_FS_ID" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID0" name="PROD_FS_ID0" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_RT_PRODUCT_CATEGORIES_PRODUCT" name="pk_rt_Product_Categories_Products_Categories_List">
+			<xs:selector xpath="RT_PRODUCT_CATEGORIES_PRODUCTS_CATEGORIES_LIST"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+			<xs:attribute xpath="PROD_FS_ID0"/>
+		</xs:key>
+		<xs:keyref dbName="FK_RT_PRODUCT_CATEGORIES_PRODUC1" name="Categories_List" refer="Products" source="Product_Categories" tfield="productsList">
+			<xs:selector xpath="RT_PRODUCT_CATEGORIES_PRODUCTS_CATEGORIES_LIST"/>
+			<xs:attribute xpath="PROD_FS_ID0"/>
+		</xs:keyref>
+		<xs:keyref dbName="FK_RT_PRODUCT_CATEGORIES_PRODUC2" name="productsList" refer="Product_Categories" source="Products" tfield="Categories_List">
+			<xs:selector xpath="RT_PRODUCT_CATEGORIES_PRODUCTS_CATEGORIES_LIST"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="PRODUCT_PROPERTIES" name="Product_Properties">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="VALUE_DE" javaType="java.lang.String" length="1024" name="Value_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="VALUE_EN" javaType="java.lang.String" length="1024" name="Value_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID" name="PROD_FS_ID" nullable="1" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRODUCT_PROPERTIES" name="pk_Product_Properties">
+			<xs:selector xpath="Product_Properties"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="RT_PRODUCT_PROPERTIES_PRODUCTS_PROPERTIESLIST" name="RT_PRODUCT_PROPERTIES_PRODUCTS_PROPERTIESLIST" visible="0">
+			<xs:sequence>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID" name="PROD_FS_ID" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID0" name="PROD_FS_ID0" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_RT_PRODUCT_PROPERTIES_PRODUCT" name="pk_rt_Product_Properties_Products_PropertiesList">
+			<xs:selector xpath="RT_PRODUCT_PROPERTIES_PRODUCTS_PROPERTIESLIST"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+			<xs:attribute xpath="PROD_FS_ID0"/>
+		</xs:key>
+		<xs:keyref dbName="FK_RT_PRODUCT_PROPERTIES_PRODUC1" name="PropertiesList" refer="Products" source="Product_Properties" tfield="productsList">
+			<xs:selector xpath="RT_PRODUCT_PROPERTIES_PRODUCTS_PROPERTIESLIST"/>
+			<xs:attribute xpath="PROD_FS_ID0"/>
+		</xs:keyref>
+		<xs:keyref dbName="FK_RT_PRODUCT_PROPERTIES_PRODUC2" name="productsList" refer="Product_Properties" source="Products" tfield="PropertiesList">
+			<xs:selector xpath="RT_PRODUCT_PROPERTIES_PRODUCTS_PROPERTIESLIST"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="PRODUCT_PROPERTIES_TYPE" name="Product_Properties_Type">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="1024" name="Name_DE" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="1024" name="Name_EN" type="xs:string"/>
+				<xs:element dbName="ORDER_INDEX" javaType="java.lang.Integer" name="Order_Index" type="xs:integer"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="UNIT_DE" javaType="java.lang.String" length="1024" name="Unit_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="UNIT_EN" javaType="java.lang.String" length="1024" name="Unit_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID" name="PROD_FS_ID" nullable="1" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRODUCT_PROPERTIES_TYPE" name="pk_Product_Properties_Type">
+			<xs:selector xpath="Product_Properties_Type"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:keyref dbName="FK_PRODUCT_PROPERTIES_PRODUCT_P0" field="product_PropertiesList" name="fk_PRODUCT_PROPERTIES_Product_Properties_Type" refer="Product_Properties_Type" tfield="product_Properties_Type">
+			<xs:selector xpath="Product_Properties"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="PRODUCT_PROPERTIES_TYPE_SELECT" name="Product_Properties_Type_Sort">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRODUCT_PROPERTIES_TYPE_SELEC" name="pk_Product_Properties_Type_Select">
+			<xs:selector xpath="Product_Properties_Type_Sort"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:keyref cascadingDelete="1" dbName="FK_PRODUCT_PROPERTIES_TYPE_PROD0" field="product_Properties_TypeList" name="fk_PRODUCT_PROPERTIES_TYPE_Product_Properties_Type_Select" refer="Product_Properties_Type_Sort" tfield="product_Properties_Type_Sort">
+			<xs:selector xpath="Product_Properties_Type"/>
+			<xs:attribute xpath="PROD_FS_ID"/>
+		</xs:keyref>
+		<xs:complexType dbName="PRODUCTS" name="Products">
+			<xs:sequence>
+				<xs:element dbName="CHANGED_BY" hidden="1" javaType="java.lang.Long" name="changed by" nullable="1" type="xs:long"/>
+				<xs:element dbName="DESCRIPTION_DE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_DE" nullable="1" type="xml"/>
+				<xs:element dbName="DESCRIPTION_EN" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Description_EN" nullable="1" type="xml"/>
+				<xs:element dbName="DONOTGENERATE_DE" javaType="java.lang.Boolean" name="DoNotGenerate_DE" type="xs:boolean"/>
+				<xs:element dbName="DONOTGENERATE_EN" javaType="java.lang.Boolean" name="DoNotGenerate_EN" type="xs:boolean"/>
+				<xs:element dbName="FS_GID" hidden="1" javaType="java.util.UUID" length="16" name="FS_GID" nullable="1" readonly="1" type="xs:uuid"/>
+				<xs:element dbName="FS_ID" hidden="1" javaType="java.lang.Integer" name="fs_id" type="xs:long"/>
+				<xs:element dbName="FS_META_DATA" hidden="1" javaType="de.espirit.or.impl.schema.JsonValue" length="65535" name="FS_META_DATA" nullable="1" type="xs:json"/>
+				<xs:element dbName="NAME_DE" javaType="java.lang.String" length="1024" name="Name_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="NAME_EN" javaType="java.lang.String" length="1024" name="Name_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="PICTURE" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="Picture" nullable="1" type="xml"/>
+				<xs:element dbName="PICTUREDESCRIPTION_DE" javaType="java.lang.String" length="1024" name="PictureDescription_DE" nullable="1" type="xs:string"/>
+				<xs:element dbName="PICTUREDESCRIPTION_EN" javaType="java.lang.String" length="1024" name="PictureDescription_EN" nullable="1" type="xs:string"/>
+				<xs:element dbName="PRODUCTOFFERS" javaType="de.espirit.firstspirit.client.editorcomponent.EditorWrapper" length="65535" name="ProductOffers" nullable="1" type="xml"/>
+				<xs:element dbName="RELEASED_BY" hidden="1" javaType="java.lang.Long" name="released by" nullable="1" type="xs:long"/>
+				<xs:element dbName="WF_COL" hidden="1" javaType="java.awt.Color" name="wf col" nullable="1" type="xs:integer"/>
+				<xs:element dbName="WF_ID" hidden="1" javaType="java.lang.Long" name="wf id" nullable="1" type="xs:long"/>
+				<xs:element dbName="CONT_FS_ID" name="CONT_FS_ID" nullable="1" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_RELEASE_TO" name="FS_RELEASE_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_FROM" name="FS_VALID_FROM" type="xs:long" visible="0"/>
+				<xs:element dbName="FS_VALID_TO" name="FS_VALID_TO" type="xs:long" visible="0"/>
+				<xs:element dbName="PROD_FS_ID" name="PROD_FS_ID" nullable="1" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key dbName="PK_PRODUCTS" name="pk_Products">
+			<xs:selector xpath="Products"/>
+			<xs:attribute xpath="fs_id"/>
+			<xs:attribute xpath="FS_RELEASE_TO"/>
+			<xs:attribute xpath="FS_VALID_FROM"/>
+			<xs:attribute xpath="FS_VALID_TO"/>
+		</xs:key>
+		<xs:complexType dbName="TRANSACTION_COUNTER" name="TRANSACTION_COUNTER" visible="0">
+			<xs:sequence>
+				<xs:element dbName="COUNTER" name="COUNTER" type="xs:long" visible="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key autoIncrement="1" dbName="PK_TRANSACTION_COUNTER" name="pk_TRANSACTION_COUNTER">
+			<xs:selector xpath="TRANSACTION_COUNTER"/>
+			<xs:attribute xpath="COUNTER"/>
+		</xs:key>
+	</xs:element>
+</xs:schema>

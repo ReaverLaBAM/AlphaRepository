@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_DATE name="cs_date" hFill="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Date" description="Insert a date." format="dd.MM.yyyy"/>
+      <LANGINFO lang="DE" label="Datum" description="Fügen Sie ein Datum hinzu." format="dd.MM.yyyy"/>
+    </LANGINFOS>
+  </CMS_INPUT_DATE>
+
+  <CMS_INPUT_TEXT name="cs_headline" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Headline" description="Insert the Headline."/>
+      <LANGINFO lang="DE" label="Überschrift" description="Tragen Sie die Überschrift ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXT name="cs_subheadline" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="2nd headline" description="Insert the second headline."/>
+      <LANGINFO lang="DE" label="2. Überschrift" description="Tragen Sie die zweite Überschrift ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_TEXTAREA name="cs_teaser" hFill="yes" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Teaser" description="Add a teaser text."/>
+      <LANGINFO lang="DE" label="Teaser" description="Fügen Sie einen Teaser-Text hinzu."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXTAREA>
+
+  <FS_LIST name="cs_content" hFill="yes" rows="10">
+    <DATASOURCE type="inline" maxEntries="5" useLanguages="no">
+      <ACTIONS>
+        <ACTION name="ADD"/>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="hide"/>
+        <ADD component="stackedview" constraint="bottom"/>
+      </LAYOUT>
+      <TEMPLATES source="sectiontemplates">
+        <TEMPLATE uid="textpicture"/>
+      </TEMPLATES>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Content" description="Add content."/>
+      <LANGINFO lang="DE" label="Inhalt" description="Fügen Sie Inhalte hinzu."/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

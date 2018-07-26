@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="lnk_text" hFill="yes" singleLine="no" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Link-Text" description="Insert your link text."/>
+      <LANGINFO lang="DE" label="Verweistext" description="Geben Sie hier den Verweistext ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <FS_DATASET name="lnk_product" allowEdit="yes" hFill="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Product link"/>
+      <LANGINFO lang="DE" label="Produktverweis"/>
+    </LANGINFOS>
+    <SOURCES>
+      <CONTENT name="products"/>
+    </SOURCES>
+  </FS_DATASET>
+
+</CMS_MODULE>

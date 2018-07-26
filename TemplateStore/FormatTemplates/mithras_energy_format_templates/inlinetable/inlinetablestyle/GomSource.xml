@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_COMBOBOX name="align" hFill="yes" singleLine="no" useLanguages="no">
+    <ENTRIES>
+      <ENTRY value="left">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Left"/>
+          <LANGINFO lang="DE" label="Linksbündig"/>
+        </LANGINFOS>
+      </ENTRY>
+      <ENTRY value="center">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Center"/>
+          <LANGINFO lang="DE" label="Zentriert"/>
+        </LANGINFOS>
+      </ENTRY>
+      <ENTRY value="right">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Right"/>
+          <LANGINFO lang="DE" label="Rechtsbündig"/>
+        </LANGINFOS>
+      </ENTRY>
+    </ENTRIES>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Horizontal alignment"/>
+      <LANGINFO lang="DE" label="Horizontale Ausrichtung"/>
+    </LANGINFOS>
+  </CMS_INPUT_COMBOBOX>
+
+  <CMS_INPUT_COMBOBOX name="bgcolor" hFill="yes" singleLine="no" useLanguages="no">
+    <ENTRIES>
+      <ENTRY value="#EDEFF2">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Light gray"/>
+          <LANGINFO lang="DE" label="Hellgrau"/>
+        </LANGINFOS>
+      </ENTRY>
+      <ENTRY value="#E5E7EC">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Dark gray"/>
+          <LANGINFO lang="DE" label="Dunkelgrau"/>
+        </LANGINFOS>
+      </ENTRY>
+      <ENTRY value="#B1B2B5">
+        <LANGINFOS>
+          <LANGINFO lang="*" label="Silver"/>
+          <LANGINFO lang="DE" label="Silber"/>
+        </LANGINFOS>
+      </ENTRY>
+    </ENTRIES>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Background color"/>
+      <LANGINFO lang="DE" label="Hintergrundfarbe"/>
+    </LANGINFOS>
+  </CMS_INPUT_COMBOBOX>
+
+</CMS_MODULE>

@@ -1,0 +1,4 @@
+import de.espirit.firstspirit.access.store.contentstore.Dataset;
+
+storeElement = context.getElement();
+return (storeElement instanceof Dataset);

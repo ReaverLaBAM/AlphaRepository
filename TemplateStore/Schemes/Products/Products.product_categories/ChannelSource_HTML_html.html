@@ -1,0 +1,74 @@
+$CMS_SET(_productsPerRow, 3)$
+
+$-- First element of row --$
+$CMS_IF((#cs.currentRowNumber % _productsPerRow) == 0)$
+	<div class="clearfix module">
+$CMS_END_IF$
+$-- /First element of row --$
+
+$-- Teaser --$
+$CMS_SET(_view, "product_categories")$
+
+<div class="smallTeaser$CMS_IF((#cs.currentRowNumber % _productsPerRow) == 0)$ first$CMS_END_IF$"$CMS_VALUE(editorId(view:_view))$>
+	<h3 class="prod_kat"$CMS_VALUE(editorId(view:_view, editorName:"cs_name"))$>$--
+		--$$CMS_IF(!cs_name.isEmpty)$$--
+			--$$CMS_VALUE(cs_name.convert2)$$--
+		--$$CMS_END_IF$$--
+	--$</h3>
+	
+	$CMS_IF(!cs_link.isEmpty)$
+		$CMS_SET(_linkBegin, "<a href=\"" + ref(cs_link).url + "\">")$
+		$CMS_SET(_linkImage, "<img class=\"SignLink\" src=\"" + ref(ps_layout_more_arrow).url + "\" alt=\"\" />")$
+		$CMS_SET(_linkEnd, "</a>")$
+	$CMS_ELSE$
+		$CMS_SET(_linkBegin, "")$
+		$CMS_SET(_linkImage, "")$
+		$CMS_SET(_linkEnd, "")$
+	$CMS_END_IF$
+
+	$CMS_IF(!cs_description.isEmpty)$$--
+
+		--$$CMS_SET(_linkDescription)$$--
+			--$$CMS_VALUE(_linkBegin)$$--
+			--$$CMS_IF(#global.preview)$$--
+				--$<span$CMS_VALUE(editorId(view:_view, editorName:"cs_description"))$>$--
+			--$$CMS_END_IF$$--
+			--$$CMS_VALUE(cs_description)$$--
+			--$$CMS_SET(set_pt_linebreak, "")$$--
+			--$$CMS_IF(#global.preview)$$--
+				--$</span>$--
+			--$$CMS_END_IF$$--
+			--$$CMS_VALUE(_linkImage)$$--
+			--$$CMS_VALUE(_linkEnd)$$--
+		--$$CMS_END_SET$$--
+
+	--$$CMS_ELSE$$--
+
+		--$$CMS_SET(_linkDescription, "")$$--
+
+	--$$CMS_END_IF$
+	
+	$CMS_IF(!cs_picture.isEmpty)$
+		<dl>
+			<dt>
+				$CMS_VALUE(_linkBegin)$$--
+					--$<img$CMS_VALUE(editorId(view:_view, editorName:"cs_picture", resolution:"TextBildTeaser"))$ src="$CMS_REF(cs_picture, resolution:"TextBildTeaser")$" alt="" />$--
+				--$$CMS_VALUE(_linkEnd)$
+			</dt>
+			<dd>
+				$CMS_VALUE(_linkDescription)$
+			</dd>
+		</dl>
+	$CMS_ELSE$
+		<p>
+			$CMS_VALUE(_linkDescription)$
+		</p>
+	$CMS_END_IF$
+</div>
+$-- /Teaser --$
+
+$-- Last element of row or last element of page --$
+$CMS_IF(((#cs.currentRowNumber % _productsPerRow) == (_productsPerRow - 1)) || #cs.isLastContentRow)$
+	</div>
+$CMS_END_IF$
+$-- /Last element of row or last element of page --$

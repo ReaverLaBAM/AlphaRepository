@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_LIST name="cs_product_property_sort" hFill="yes" rows="20">
+    <DATASOURCE type="database" maxEntries="20" useLanguages="no">
+      <LABELS>
+        <LABEL lang="*">#item.cs_name</LABEL>
+      </LABELS>
+      <ACTIONS>
+        <ACTION name="ADD"/>
+        <ACTION name="NEW"/>
+        <ACTION name="REMOVE"/>
+        <ACTION name="UP"/>
+        <ACTION name="DOWN"/>
+        <ACTION name="GOTO"/>
+        <ACTION name="EDIT"/>
+      </ACTIONS>
+      <COLUMNS>
+        <COLUMN show="no">#identifier</COLUMN>
+      </COLUMNS>
+      <LAYOUT>
+        <ADD component="toolbar" constraint="top"/>
+        <ADD component="overview" constraint="center"/>
+        <ADD component="stackedview" constraint="hide">
+          <PARAM name="show-language-tabs">yes</PARAM>
+        </ADD>
+      </LAYOUT>
+      <PERSISTENCEINDEX>Order_Index</PERSISTENCEINDEX>
+      <table>Products.product_properties_type</table>
+    </DATASOURCE>
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Sorting of product properties"/>
+      <LANGINFO lang="DE" label="Sortierung der Produkteigenschaften"/>
+    </LANGINFOS>
+  </FS_LIST>
+
+</CMS_MODULE>

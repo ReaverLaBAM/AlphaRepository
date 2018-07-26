@@ -1,0 +1,6 @@
+[self]
+uid=searchresult
+gid=4e8c4a7e-3ff9-4e24-af8a-f05829f9ffe8
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
+

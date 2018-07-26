@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FIELDS>
+	<FIELD name='st_teaser_colour'><STATE>false</STATE></FIELD>
+	<FIELD name='st_teaser_text'><STATE>false</STATE></FIELD>
+	<FIELD name='st_rows'><FIG>2</FIG></FIELD>
+</FIELDS>

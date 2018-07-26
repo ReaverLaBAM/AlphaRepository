@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="cs_description"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="RELEASE">
+				<PROPERTY name="VALID" source="cs_description"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="cs_picture"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_picture"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_name"/>
+					<NUMBER>50</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_name"/>
+				<MESSAGE lang="*" text="Only 50 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 50 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="LENGTH" source="cs_description"/>
+					<NUMBER>1024</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="cs_description"/>
+				<MESSAGE lang="*" text="Only 1,024 characters allowed!"/>
+				<MESSAGE lang="DE" text="Es sind nur 1.024 Zeichen zugelassen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

@@ -1,0 +1,6 @@
+[self]
+uid=Content Freigabe
+gid=9463b498-6541-4fcd-ab93-43a5134e9c0a
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.WorkflowImpl
+

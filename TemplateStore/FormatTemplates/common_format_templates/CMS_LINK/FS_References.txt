@@ -1,0 +1,6 @@
+[self]
+uid=CMS_LINK
+gid=570669e7-bfb0-4f8b-bca5-051c4e9aee8a
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+

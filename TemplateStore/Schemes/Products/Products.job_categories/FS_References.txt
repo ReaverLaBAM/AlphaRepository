@@ -1,0 +1,6 @@
+[self]
+uid=Products.job_categories
+gid=dd1107d1-02d3-42cc-a577-15b2e48a2403
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

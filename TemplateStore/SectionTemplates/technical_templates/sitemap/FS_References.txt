@@ -1,0 +1,12 @@
+[self]
+uid=sitemap
+gid=3ea06d83-d934-4ceb-9c0e-c79715fcb636
+uidType=TEMPLATESTORE
+class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
+
+[optionalId]
+uid=sitemap_4
+gid=9db829d9-dd32-4dea-86e8-deaa3c264333
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+

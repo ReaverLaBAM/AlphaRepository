@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RULES>
+	<RULE>
+		<WITH>
+			<NOT>
+				<PROPERTY name="EMPTY" source="size"/>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="size"/>
+				<MESSAGE lang="*" text="The editor must not be empty!"/>
+				<MESSAGE lang="DE" text="Der Editor darf nicht leer sein!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<LESS_THAN>
+					<PROPERTY name="VALUE" source="size"/>
+					<NUMBER>1</NUMBER>
+				</LESS_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="size"/>
+				<MESSAGE lang="*" text="The value may not be less than 1!"/>
+				<MESSAGE lang="DE" text="Der Wert darf nicht unter 1 liegen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+	<RULE>
+		<WITH>
+			<NOT>
+				<GREATER_THAN>
+					<PROPERTY name="VALUE" source="size"/>
+					<NUMBER>4</NUMBER>
+				</GREATER_THAN>
+			</NOT>
+		</WITH>
+		<DO>
+			<VALIDATION scope="SAVE">
+				<PROPERTY name="VALID" source="size"/>
+				<MESSAGE lang="*" text="The value may not exceed 4!"/>
+				<MESSAGE lang="DE" text="Der Wert darf nicht über 4 liegen!"/>
+			</VALIDATION>
+		</DO>
+	</RULE>
+</RULES>

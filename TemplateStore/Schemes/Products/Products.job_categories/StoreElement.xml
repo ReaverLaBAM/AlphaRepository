@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE comment="" description="Products.job_categories" filename="Job_Categories" id="-5268142202946637557" previewPageRefUid="jobs_detail" templateid="7002878106687162334" type="content">
+	<EXTENSION file="html" link="html" templateSet="9062318847741885912"/>
+	<EXTENSION file="pdf" link="pdf" templateSet="4762458803117367421"/>
+	<EXTENSION file="xml" link="xml" templateSet="7035998204614812097"/>
+	<LANG displayname="Klassifizierung (Stellenangebote)" language="DE"/>
+	<LANG displayname="Occupational classification" language="EN"/>
+</TABLE>

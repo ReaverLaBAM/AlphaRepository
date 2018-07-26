@@ -1,0 +1,6 @@
+[self]
+uid=evenrow
+gid=e2819c69-d40d-409d-937b-f28745957ebc
+uidType=TEMPLATESTORE_STYLETEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.StyleTemplateImpl
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <FS_DATASET name="st_gallery" allowDelete="no" allowNew="no" hFill="yes" useLanguages="no">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Gallery" description="Choose the gallery."/>
+      <LANGINFO lang="DE" label="Bildergalerie" description="Wählen Sie die Bildergalerie aus."/>
+    </LANGINFOS>
+    <SOURCES>
+      <CONTENT name="galleries"/>
+    </SOURCES>
+  </FS_DATASET>
+
+</CMS_MODULE>

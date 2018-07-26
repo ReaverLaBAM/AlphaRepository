@@ -1,0 +1,6 @@
+[self]
+uid=Products.product_offers
+gid=5e607b69-b4ae-41a3-9916-c2135378cc3b
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

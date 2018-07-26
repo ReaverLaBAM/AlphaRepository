@@ -1,0 +1,94 @@
+$-- Teaser Template --$
+<div class="clearfix teasermodule imageTeaser$--
+	--$$CMS_IF(!st_teaser_colour)$$--
+		--$ blue$--
+	--$$CMS_END_IF$$--
+--$"$CMS_VALUE(editorId())$>
+	<h3$--
+		--$$CMS_IF(!st_teaser_colour)$$--
+			--$ class="h3back"$--
+		--$$CMS_END_IF$$--
+	--$$CMS_VALUE(editorId(editorName:"st_headline"))$>$--
+		--$$CMS_IF(!st_headline.isEmpty)$$--
+			--$$CMS_VALUE(st_headline.convert2)$$--
+		--$$CMS_END_IF$$--
+		--$$CMS_RENDER(template:"tooltip",
+            infoLayer:st_infoLayer,
+            infoLink:st_infoLink,
+            infoPicture:st_infoPicture,
+            infoHeadline:st_infoHeadline)$$--
+	--$</h3>
+	<div class="clearfix text">
+		$CMS_IF(!st_picture.isEmpty)$
+			<dl>
+				<dt class="floatLeft">
+					$CMS_IF(!st_link.isEmpty)$$--
+						--$<a href="$CMS_REF(st_link)$">$--
+					--$$CMS_END_IF$$--
+					--$<img src="$CMS_REF(st_picture, resolution:"TeaserBox")$" alt=""$CMS_VALUE(editorId(editorName:"st_picture", resolution:"TeaserBox"))$ />$--
+					--$$CMS_IF(!st_link.isEmpty)$$--
+						--$</a>$--
+					--$$CMS_END_IF$
+				</dt>
+				<dd style="margin-left:80px;">
+					<p style="padding:0px"$CMS_VALUE(editorId(editorName:"st_text"))$>
+		$CMS_ELSE$
+			<p$CMS_VALUE(editorId(editorName:"st_text"))$>
+		$CMS_END_IF$
+		$CMS_IF(st_link.isEmpty)$
+
+			$CMS_IF(!st_text.isEmpty)$$--
+				--$$CMS_VALUE(st_text)$$--
+				--$$CMS_SET(set_pt_linebreak, "")$$--
+			--$$CMS_END_IF$
+
+		$CMS_ELSE$
+
+			$CMS_IF(st_linkType)$$--
+
+				--$$CMS_IF(!st_text.isEmpty)$$--
+					--$$CMS_VALUE(st_text)$$--
+					--$$CMS_SET(set_pt_linebreak, "")$$--
+					--$<br />$--
+				--$$CMS_END_IF$$--
+				--$<a href="$CMS_REF(st_link)$" title="$--
+					--$$CMS_IF(!st_headline.isEmpty)$$--
+						--$$CMS_VALUE(st_headline)$$--
+					--$$CMS_END_IF$$--
+				--$">$--
+					--$<img class="SignLink" src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+					--$&nbsp;$--
+					--$$CMS_IF(st_link_text.isEmpty)$$--
+						--$$CMS_VALUE(#global.gca("moreinformationlink"))$$--
+					--$$CMS_ELSE$$--
+						--$$CMS_VALUE(st_link_text)$$--
+					--$$CMS_END_IF$$--
+				--$</a>$--
+
+			--$$CMS_ELSE$$--
+
+				--$<a href="$CMS_REF(st_link)$" title="$--
+					--$$CMS_IF(!st_headline.isEmpty)$$--
+						--$$CMS_VALUE(st_headline)$$--
+					--$$CMS_END_IF$$--
+				--$">$--
+					--$$CMS_IF(!st_text.isEmpty)$$--
+						--$$CMS_VALUE(st_text)$$--
+						--$$CMS_SET(set_pt_linebreak, "")$$--
+					--$$CMS_END_IF$$--
+					--$<img class="SignLink" src="$CMS_REF(ps_layout_more_arrow)$" alt="" />$--
+				--$</a>$--
+
+			--$$CMS_END_IF$
+
+		$CMS_END_IF$
+		$CMS_IF(!st_picture.isEmpty)$
+					</p>
+				</dd>
+			</dl>
+		$CMS_ELSE$
+			</p>
+		$CMS_END_IF$
+	</div>
+</div>
+$-- Teaser-Template --$

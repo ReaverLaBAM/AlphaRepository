@@ -1,0 +1,4 @@
+if (
+    !sitestoreref.isEmpty && !sitestoreref.pageRef.isEmpty && !sitestoreref.pageRef.page.formData.pt_highlightPicture.isEmpty,
+    sitestoreref.pageRef.page.formData.pt_highlightPicture
+)

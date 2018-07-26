@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FIELDS>
+	<FIELD name='st_linkType'><SEL><VALUE>whole</VALUE></SEL></FIELD>
+	<FIELD name='st_picture_position'><STATE>false</STATE></FIELD>
+</FIELDS>

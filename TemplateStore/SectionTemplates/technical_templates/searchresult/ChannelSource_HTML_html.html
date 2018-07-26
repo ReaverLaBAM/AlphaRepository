@@ -1,0 +1,29 @@
+$-- browseIn --$
+<div class="clearfix browseIn twoBorder" style="padding:0px; margin:10px 0px 0px 0px; border-bottom:none;">$--
+	--$<ul class="clearfix" style="padding:2px">$--
+
+		--$<li class="pageStart noImage"$CMS_VALUE(editorId(element:#global.gca("searchresults"), editorName:"pt_label"))$>$--
+			--$$CMS_VALUE(st_linklist.size * 2)$ $--
+			--$$CMS_VALUE(#global.gca("searchresults"))$$--
+		--$</li>$--
+
+		--$<li class="pageEnd">$--
+			--$<a href="#top" title="next page"$CMS_VALUE(editorId(element:#global.gca("next"), editorName:"pt_label"))$>$--
+				--$$CMS_VALUE(#global.gca("next"))$$--
+			--$</a>$--
+		--$</li>$--
+		--$<li class="page">$--
+			--$1$--
+			--$<span class="trennstrich">$--
+				--$|$--
+			--$</span>$--
+		    --$<a href="#top" title="page 2">$--
+		    	--$2$--
+		    --$</a>$--
+		--$</li>$--
+
+	--$</ul>$--
+--$</div>
+$-- /browseIn --$
+
+$CMS_VALUE(st_linklist)$

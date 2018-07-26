@@ -1,0 +1,63 @@
+<CMS_HEADER>
+
+	<CMS_FUNCTION name="PageGroup" resultname="fr_cs_navigation">
+		<CMS_CDATA_PARAM name="directoryRendering"><![CDATA[<a href="$CMS_REF(#nav.ref)$">$CMS_VALUE(#nav.pos)$</a>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="directoryRenderingSelected"><![CDATA[$CMS_VALUE(#nav.pos)$]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="nextAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("next"))$">$CMS_VALUE(#global.gca("next"))$</a>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="nextNotAvailable"><![CDATA[<div style="margin:0px;padding-right:25px;float:right;width:35px">&nbsp;</div>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="previousAvailable"><![CDATA[<a href="$CMS_REF(#nav.ref)$" title="$CMS_VALUE(#global.gca("previous"))$">$CMS_VALUE(#global.gca("previous"))$</a>]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="previousNotAvailable"><![CDATA[<div style="margin:0px;padding-left:25px; float:left;width:35px">&nbsp;</div]]></CMS_CDATA_PARAM>
+		<CMS_CDATA_PARAM name="delimiter"><![CDATA[<span class="trennstrich">|</span>]]></CMS_CDATA_PARAM>
+	</CMS_FUNCTION>
+
+</CMS_HEADER>
+$CMS_IF(#cs.isFirstContentRow)$
+	$-- browseIn --$
+	<div class="clearfix browseIn twoBorder" style="margin-bottom:0px">
+		<ul>
+			<li class="pageStart">$CMS_VALUE(fr_cs_navigation.previous)$</li>
+			<li class="pageEnd">$CMS_VALUE(fr_cs_navigation.next)$</li>
+			<li class="page">$CMS_VALUE(fr_cs_navigation.directory)$</li>
+		</ul>
+	</div>
+	$-- /browseIn --$
+$CMS_END_IF$
+
+$CMS_SET(_template, "Products.press_releases_overview")$
+$CMS_SET(_view, "pressreleases")$
+$-- Press Release Teaser --$
+<div class="vevent clearfix module presseListe"$--
+	--$$CMS_IF(#cs.isFirstContentRow)$$--
+		--$ style="border-top:none;"$--
+	--$$CMS_END_IF$$--
+	--$$CMS_VALUE(editorId(view:_view, template:_template))$$--
+--$>
+	<span class="datum dtstart"$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_date"))$>$--
+		--$$CMS_IF(!#row.Date.isEmpty)$$--
+			--$$CMS_VALUE(#row.Date.format("dd.MM.yyyy"))$$--
+			--$<span class="value-title" title="$CMS_VALUE(#row.Date.format("yyyy-MM-dd'T'HH:mm:ss"))$">$--
+			--$</span>$--
+		--$$CMS_END_IF$$--
+	--$</span>
+	$CMS_IF(!#row.Headline.isEmpty)$$--
+		--$<h2 class="summary"$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_headline"))$>$--
+			--$$CMS_VALUE(#row.Headline.convert2)$$--
+		--$</h2>$--
+	--$$CMS_END_IF$
+	$CMS_IF(!#row.Subheadline.isEmpty)$$--
+		--$<h4 class="description"$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_subheadline"))$>$--
+			--$$CMS_VALUE(#row.Subheadline.convert2)$$--
+		--$</h4>$--
+	--$$CMS_END_IF$
+	<p$CMS_VALUE(editorId(view:_view, template:_template, editorName:"cs_teaser"))$>
+		<a class="url" href="$CMS_REF(ss_press_releases_details, contentId:#row.getId())$">
+			$CMS_IF(!#row.Teaser.isEmpty)$
+				$CMS_VALUE(#row.Teaser.convert2)$
+			$CMS_END_IF$
+			<span class="mehr">&nbsp;<img src="$CMS_REF(ps_layout_more_arrow)$" alt="" /></span>
+		</a>
+	</p>
+	<abbr class="location" style="display:none" title="Dortmund">Dortmund</abbr>
+	<abbr class="geo" style="display:none" title="51.502973;7.529132">Dortmund</abbr>
+</div>
+$-- /Press Release Teaser --$

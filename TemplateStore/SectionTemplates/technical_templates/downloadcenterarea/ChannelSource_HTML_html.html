@@ -1,0 +1,15 @@
+$CMS_SET(_idPostfix, #global.section.id + "_" + #for.index)$
+$-- Linklist-Description --$
+<li>$--
+	--$<a href="#top" id="A_$CMS_VALUE(_idPostfix)$" class="cssTxtNotSelected" onclick="outline('ID_$CMS_VALUE(_idPostfix)$'); changePlus('A_$CMS_VALUE(_idPostfix)$');">$--
+		--$$CMS_IF(!st_description.isEmpty)$$--
+			--$$CMS_VALUE(st_description)$$--
+		--$$CMS_END_IF$$--
+	--$</a>$--
+--$</li>
+$-- Linklist --$
+<li class="ohne show" id="ID_$CMS_VALUE(_idPostfix)$">
+	<ul>
+		$CMS_VALUE(st_linklist)$
+	</ul>
+</li>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMS_MODULE>
+
+  <CMS_INPUT_TEXT name="cs_term" hFill="yes" singleLine="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Term" description="Insert the term."/>
+      <LANGINFO lang="DE" label="Begriff" description="Tragen Sie den Begriff ein."/>
+    </LANGINFOS>
+  </CMS_INPUT_TEXT>
+
+  <CMS_INPUT_DOM name="cs_description" hFill="yes" list="no" useLanguages="yes">
+    <LANGINFOS>
+      <LANGINFO lang="*" label="Description" description="Add a description."/>
+      <LANGINFO lang="DE" label="Beschreibung" description="Fügen Sie eine Beschreibung hinzu."/>
+    </LANGINFOS>
+    <LINKEDITORS>
+      <LINKEDITOR name=""/>
+    </LINKEDITORS>
+  </CMS_INPUT_DOM>
+
+</CMS_MODULE>

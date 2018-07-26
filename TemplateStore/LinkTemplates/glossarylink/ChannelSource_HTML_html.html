@@ -1,0 +1,24 @@
+$CMS_IF(!content.isEmpty && !content.dataset.isNull && !content.dataset.formData.isNull)$$--
+	--$$CMS_SET(_formData, content.dataset.formData)$$--
+	--$<!-- Tooltip -->$--
+	--$<span class="tip">$--
+		--$<a class="glossary" href="#top">$--
+			--$$CMS_VALUE(_formData.cs_term)$$--
+		--$</a>$--
+		--$<span class="clearfix toolTip">$--
+			--$<span class="innerTip">$--
+				--$<a class="tipLink" href="#top">$--
+					--$$CMS_IF(!_formData.cs_term.isEmpty)$$--
+						--$<strong>$--
+							--$$CMS_VALUE(_formData.cs_term)$$--
+						--$</strong>$--
+						--$<br />$--
+					--$$CMS_END_IF$$--
+					--$$CMS_VALUE(_formData.cs_description)$$--
+				--$</a>$--
+			--$</span>$--
+			--$<img class="tipGif" src="$CMS_REF(media:"tipGif")$" alt="" />$--
+		--$</span>$--
+	--$</span>$--
+	--$<!-- /Tooltip -->$--
+--$$CMS_END_IF$

@@ -1,0 +1,15 @@
+if (
+    !sitestoreref.isEmpty && !sitestoreref.pageRef.isEmpty,
+    if (
+        !sitestoreref.pageRef.page.formData.pt_headline.isEmpty,
+        sitestoreref.pageRef.page.formData.pt_headline
+    ) +
+    if (
+        !sitestoreref.pageRef.page.formData.pt_headline.isEmpty && !sitestoreref.pageRef.page.formData.pt_subheadline.isEmpty,
+        " / "
+    ) + 
+    if (
+        !sitestoreref.pageRef.page.formData.pt_subheadline.isEmpty,
+        sitestoreref.pageRef.page.formData.pt_subheadline
+    )
+)

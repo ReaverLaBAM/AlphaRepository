@@ -1,0 +1,79 @@
+$-- browseIn --$
+<div class="clearfix browseIn twoBorder" style="padding:0px; margin:10px 0px 0px 0px;"$CMS_VALUE(editorId())$>
+	<ul style="padding:2px">
+		<li class="pageStart"><a href="javascript:history.back()" title="$CMS_VALUE(#global.gca("backlink"))$">$CMS_VALUE(#global.gca("backlink"))$</a></li>
+	</ul>
+</div>
+$-- /browseIn --$
+
+$CMS_SET(_view, "jobs")$
+$CMS_IF(#global.preview)$$--
+	--$<div$CMS_VALUE(editorId(view:_view))$>$--
+--$$CMS_END_IF$
+$-- Page header --$
+<div class="clearfix ContainerHead" style="padding:0px; margin:0px">
+
+	<div height="10px">&nbsp;</div>
+
+	$CMS_IF(!cs_jobtitle.isEmpty)$$--
+		--$<h2$CMS_VALUE(editorId(view:_view, editorName:"cs_jobtitle"))$>$--
+			--$$CMS_VALUE(cs_jobtitle.convert2)$$--
+		--$</h2>$--
+	--$$CMS_END_IF$
+
+	$CMS_IF(!cs_description.isEmpty)$$--
+		--$<p$CMS_VALUE(editorId(view:_view, editorName:"cs_description"))$>$--
+			--$$CMS_VALUE(cs_description)$$--
+		--$</p>$--
+	--$$CMS_END_IF$
+
+</div>
+$-- /Page header --$
+
+$-- text module --$
+$CMS_IF(!cs_task.isEmpty)$
+	<div class="clearfix module">
+
+		<h4$CMS_VALUE(editorId(element:#global.gca("task"), editorName:"pt_label"))$>$--
+			--$$CMS_VALUE(#global.gca("task"))$$--
+		--$</h4>
+
+		$CMS_IF(#global.preview)$$--
+			--$<div$CMS_VALUE(editorId(view:_view, editorName:"cs_task"))$>$--
+		--$$CMS_END_IF$$--
+
+		--$$CMS_VALUE(cs_task)$$--
+
+		--$$CMS_IF(#global.preview)$$--
+			--$</div>$--
+		--$$CMS_END_IF$
+
+	</div>
+$CMS_END_IF$
+$-- /text  module --$
+
+$-- text module  --$
+$CMS_IF(!cs_profil.isEmpty)$
+	<div class="clearfix module">
+
+		<h4$CMS_VALUE(editorId(element:#global.gca("profil"), editorName:"pt_label"))$>$--
+			--$$CMS_VALUE(#global.gca("profil"))$$--
+		--$</h4>
+
+		$CMS_IF(#global.preview)$$--
+			--$<div$CMS_VALUE(editorId(view:_view, editorName:"cs_profil"))$>$--
+		--$$CMS_END_IF$$--
+
+		--$$CMS_VALUE(cs_profil)$$--
+
+		--$$CMS_IF(#global.preview)$$--
+			--$</div>$--
+		--$$CMS_END_IF$
+
+	</div>
+$CMS_END_IF$
+$-- /text module --$
+
+$CMS_IF(#global.preview)$$--
+	--$</div>$--
+--$$CMS_END_IF$

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QUERY entityType="Product_Categories">
+	<ORDERCRITERIA attribute="Name_%lang%" descending="0" />
+</QUERY>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="3424468601976230652" name="tableunderline">
+	<LANG displayname="Tabellenunterschrift" language="DE"/>
+	<LANG displayname="Table underline" language="EN"/>
+	<style tag="tableunderline" view="flow">
+		<attr name="align" value="LEFT"/>
+		<attr name="name" value="tableunderline"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>

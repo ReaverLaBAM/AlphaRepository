@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FIELDS>
+	<FIELD name='ps_navigationType'><STATE>true</STATE></FIELD>
+	<FIELD name='ps_revisit'><TEXT>After 14 Days</TEXT></FIELD>
+</FIELDS>

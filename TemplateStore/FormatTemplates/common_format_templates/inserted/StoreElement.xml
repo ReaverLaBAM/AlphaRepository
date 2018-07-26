@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORMATTEMPLATE id="-150335208502154100" name="inserted">
+	<LANG displayname="Eingefügt" language="DE"/>
+	<LANG displayname="Inserted" language="EN"/>
+	<style system="1" tag="inserted" view="inline" visible="0">
+		<attr name="align" value="LEFT"/>
+		<attr name="color" value="#578316"/>
+		<attr name="font-style" value="underline"/>
+		<attr name="font" value="sansserif"/>
+		<attr name="name" value="inserted"/>
+		<render>
+			<channel conversion="Convert HTML" name="RSS" templateSetId="7035998204614812097"/>
+			<channel conversion="Convert HTML" name="html" templateSetId="9062318847741885912"/>
+			<channel conversion="Convert HTML" name="pdf" templateSetId="4762458803117367421"/>
+		</render>
+	</style>
+</FORMATTEMPLATE>
