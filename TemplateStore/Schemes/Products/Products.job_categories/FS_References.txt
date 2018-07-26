@@ -4,3 +4,24 @@ gid=dd1107d1-02d3-42cc-a577-15b2e48a2403
 uidType=TEMPLATESTORE_SCHEMA
 class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
 
+[optionalId]
+uid=jobs_detail
+gid=0cb6ed02-7c65-4883-a3e3-0ee8990c3f30
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+
+uid=Products.jobs
+gid=c22746e3-b705-4d77-b082-a7e3c2ad68bd
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+
+uid=textlinkexternal
+gid=b0438969-f9e9-45d8-86d2-7e671970a112
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+uid=textlinkinternal
+gid=5646974e-fe30-4aec-b82e-675d82928170
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+

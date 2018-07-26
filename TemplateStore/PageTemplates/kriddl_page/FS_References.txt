@@ -1,6 +1,0 @@
-[self]
-uid=kriddl_page
-gid=deb65ee5-9981-4d5c-a9c7-401ee264c627
-uidType=TEMPLATESTORE
-class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
-

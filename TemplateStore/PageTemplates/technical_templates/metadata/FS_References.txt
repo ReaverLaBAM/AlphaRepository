@@ -4,3 +4,9 @@ gid=82fa0953-96f8-463d-aed8-989375cf46c3
 uidType=TEMPLATESTORE
 class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
 
+[optionalId]
+uid=Products.product_categories
+gid=6d8562a8-c9e5-4103-8a87-2d8a3ec73d77
+uidType=TEMPLATESTORE_SCHEMA
+class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
+

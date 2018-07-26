@@ -4,3 +4,19 @@ gid=b5afc48b-1f85-4d36-adb9-65fc68b8baf9
 uidType=TEMPLATESTORE
 class=de.espirit.firstspirit.store.access.templatestore.SectionTemplateImpl
 
+[optionalId]
+uid=rssoverview
+gid=97b3b55d-1422-4828-b699-0bae617644e0
+uidType=SITESTORE_LEAF
+class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
+
+uid=pressfeed
+gid=0e6aa197-c128-4c67-8e86-a59bcf2bf03a
+uidType=GLOBALSTORE
+class=de.espirit.firstspirit.store.access.globalstore.GCAPageImpl
+
+uid=productfeed
+gid=f9611058-7914-489c-a767-bcacd7e8b247
+uidType=GLOBALSTORE
+class=de.espirit.firstspirit.store.access.globalstore.GCAPageImpl
+
