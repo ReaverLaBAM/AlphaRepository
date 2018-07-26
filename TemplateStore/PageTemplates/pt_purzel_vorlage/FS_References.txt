@@ -4,3 +4,42 @@ gid=5e981e73-b805-44c7-b543-a0c6e05879e4
 uidType=TEMPLATESTORE
 class=de.espirit.firstspirit.store.access.templatestore.PageTemplateImpl
 
+<<<<<<< HEAD
+=======
+[optionalId]
+uid=product_offers
+gid=c358103b-cf72-4f41-ac1d-74249362476c
+uidType=CONTENTSTORE
+class=de.espirit.firstspirit.store.access.contentstore.Content2Impl
+
+uid=root
+gid=28b8f1dc-6eb1-4986-a366-607637fbc167
+uidType=MEDIASTORE_FOLDER
+class=de.espirit.firstspirit.store.access.mediastore.MediaStoreRootImpl
+
+uid=root
+gid=3e7ded55-05c5-42f6-9263-ab540f41ab1c
+uidType=SITESTORE_FOLDER
+class=de.espirit.firstspirit.store.access.sitestore.SiteStoreRootImpl
+
+uid=hometeaser
+gid=2318457b-976e-4cd5-a55e-5ec2d4acecd3
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+
+uid=p
+gid=d443547c-5c82-4579-a3d5-7644a7c160b7
+uidType=TEMPLATESTORE_FORMATTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.FormatTemplateImpl
+
+uid=textlinkexternal
+gid=b0438969-f9e9-45d8-86d2-7e671970a112
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+uid=textlinkinternal
+gid=5646974e-fe30-4aec-b82e-675d82928170
+uidType=TEMPLATESTORE_LINKTEMPLATE
+class=de.espirit.firstspirit.store.access.templatestore.LinkTemplateImpl
+
+>>>>>>> 3c3094ee1467b9eb7c66aeac2db9ff781696bbd3

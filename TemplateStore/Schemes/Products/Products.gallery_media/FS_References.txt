@@ -4,6 +4,7 @@ gid=8fd5ffd3-91bb-48a5-a068-155e2b769fe3
 uidType=TEMPLATESTORE_SCHEMA
 class=de.espirit.firstspirit.store.access.templatestore.TableTemplateImpl
 
+<<<<<<< HEAD
 [optionalId]
 uid=root
 gid=28b8f1dc-6eb1-4986-a366-607637fbc167
@@ -15,3 +16,5 @@ gid=a7c80f59-f685-4ad0-819f-cb6e49b7eaac
 uidType=SITESTORE_LEAF
 class=de.espirit.firstspirit.store.access.sitestore.PageRefImpl
 
+=======
+>>>>>>> 3c3094ee1467b9eb7c66aeac2db9ff781696bbd3
